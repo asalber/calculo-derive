@@ -1,0 +1,16 @@
+\psset{unit=1.5, ticksize=-3pt 0, algebraic}
+\begin{pspicture*}(-1,-0.5)(3.5,2.5)
+\footnotesize
+\psaxes[arrows=<->,ticks=none,labels=none](0,0)(-0.5,-0.5)(3.5,2.5)
+\psplot[linecolor=blue]{0.5}{3.1}{(x-1.8)^2+0.5}
+\psline[linecolor=red,linestyle=dashed](1.8,0)(1.8,0.5)(0,0.5)
+\psline[linecolor=red,linestyle=dashed](1,0)(1,1.14)(0,1.14)
+\psxTick(1.8){x_0}
+\psxTick(1){x}
+\psxTick(0.5){x_0-\delta}
+\psxTick(3.2){x_0+\delta}
+\psyTick(0.5){f(x_0)}
+\psyTick(1.14){f(x)}
+\rput[r](-0.3,0.8){\rotateleft{$\leq$}}
+\psdot[linecolor=green](1.8,0.5)
+\end{pspicture*}

@@ -1,0 +1,17 @@
+\psset{unit=0.5,yunit=0.8, algebraic, ticksize=-3pt 0, linewidth=0.8pt}
+\begin{pspicture*}(-1,-1)(10,10)
+\footnotesize
+\psaxes[arrows=<->,ticks=none](0,0)(-1,-1)(10,10)
+\psplot[linecolor=blue]{0}{3.8}{1/(x-4)+5}
+\psplot[linecolor=blue]{4.1}{10}{1/(x-4)+5}
+\psline[linecolor=red](0,5)(10,5)
+\psline[linecolor=red](4,0)(4,10)
+\psxTick(4){a}
+\psyTick(5){b}
+\rput[r](10,4.5){Asíntota horizontal}
+\rput[r](10,3.5){$y=b$}
+\rput[l](4.2,1.5){Asíntota vertical}
+\rput[l](4.2,0.5){$x=a$}
+\end{pspicture*}
+
+

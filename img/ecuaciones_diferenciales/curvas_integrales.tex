@@ -1,0 +1,17 @@
+\psset{yunit=0.15,xunit=1.5, ticksize=-3pt 0}
+\begin{pspicture*}(-3,-5)(3,36)
+\footnotesize
+\psaxes[arrows=<->,Dy=5](0,0)(-2,-1)(2,35)
+\psplot[linecolor=blue]{-2}{2}{0}
+\rput[l](2.1,0){$C=0$}
+\psplot[linecolor=blue]{-2}{2}{2.7183 x exp}
+\rput[l](2.1,8){$C=1$}
+\psplot[linecolor=blue]{-2}{2}{2.7183 x exp 2 mul}
+\rput[l](2.1,15){$C=2$}
+\psplot[linecolor=blue]{-2}{2}{2.7183 x exp 3 mul}
+\rput[l](2.1,22){$C=3$}
+\psplot[linecolor=blue]{-2}{2}{2.7183 x exp 4 mul}
+\rput[l](2.1,29){$C=4$}
+\psplot[linecolor=red]{-2}{2}{2.7183 x exp 5 mul}
+\rput[l](2.1,35){$C=5$}
+\end{pspicture*}

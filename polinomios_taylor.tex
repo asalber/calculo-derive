@@ -1,0 +1,172 @@
+%$HeadURL: https://practicas-derive.googlecode.com/svn/trunk/polinomios_taylor.tex $
+%$LastChangedDate: 2009-11-16 16:11:46 +0100 (lun, 16 nov 2009) $
+%$LastChangedRevision: 5 $
+%$LastChangedBy: asalber $
+
+\chapter{Polinomios de Taylor}
+
+\section{Fundamentos teóricos}
+
+A veces, las funciones elementales como las trigonométricas, las exponenciales y las logarítmicas, o composiciones de las mismas, son difíciles de tratar y suelen aproximarse mediante polinomios que son funciones mucho más simples y con muy buenas propiedades, ya que son continuas y derivables (a cualquier orden) en todos los reales.
+
+\subsection{Polinomio de Taylor}
+Dada una función $f(x)$, $n$ veces derivable en un punto $a$, se llama \emph{polinomio de Taylor} de orden $n$ para $f$ en $a$, al polinomio
+\[
+P_{n,f,a}(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n}(a)}{n!}(x-a)^n= \sum_{i=0}^{n}\frac{f^{(i}(a)}{i!}(x-a)^i.
+\]
+
+Este polinomio es el polinomio de grado menor o igual que $n$ que mejor aproxima a $f$ en un entorno del punto $a$, y por tanto, si $x$ está próximo a $a$, $f(x)\approx P_{n,f,a}(x)$. Además, cuanto mayor es el grado del polinomio, mejor es la aproximación, tal y como se muestra en el ejemplo de la figura~\ref{g:polinomios}.
+\begin{figure}[h!]
+\begin{center}
+\scalebox{1}{\input{img/polinomios_taylor/polinomios_seno}}
+\caption{Polinomios de Taylor de distintos grados para la función $\sen x$ en el punto 0.}
+\label{g:polinomios}
+\end{center}
+\end{figure}
+
+Cuando nos interesa aproximar una función en un entorno del 0, la ecuación del polinomio de Taylor resulta especialmente simple:
+\[
+P_{n,f,0}(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots+\frac{f^{(n}(0)}{n!}x^n= \sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i,
+\]
+y este polinomio se conoce como \emph{polinomio de Mc Laurin} de orden $n$ de $f$.
+
+\subsection{Resto de Taylor}
+Los polinomios de Taylor nos permiten calcular el valor aproximado de una función en un entorno de un punto, pero normalmente el valor que proporciona el polinomio de Taylor difiere del valor real de la función, es decir, se comete un error en la aproximación. Dicho error se conoce como el \emph{resto de Taylor} de orden $n$ para $f$ en $a$, y es
+\[
+R_{n,f,a}(x)=f(x)-P_{n,f,a}(x).
+\]
+
+El resto mide el error cometido al aproximar $f(x)$ mediante $P_{n,f,a}(x)$ y nos permite expresar la función $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
+\[
+f(x)=P_{n,f,a}(x)+R_{n,f,a}(x).
+\]
+Esta última expresión se conoce como \emph{fórmula de Taylor} de orden $n$ para $f$ en el punto $a$.
+
+\subsubsection*{Forma de Lagrange del resto}
+Normalmente, cuando se aproxima una función mediante un polinomio de Taylor, no se conoce el error cometido en la aproximación. No obstante, es posible acotar dicho error de acuerdo al siguiente teorema.
+
+\begin{teorema}
+Sea $f$ una función para la que las $n+1$ primeras derivadas están definidas en el intervalo $[a,x]$. Entonces existe un $t\in(a,x)$ tal que el resto de Taylor de orden $n$ para $f$ en el punto $a$ viene dado por
+\[
+R_{n,f,a}(x)=\frac{f^{(n+1}(t)}{(n+1)!}(x-a)^{n+1}.
+\]
+\end{teorema}
+Esta expresión se conoce como \emph{forma de Lagrange del resto}.
+
+
+Este teorema nos permite acotar el resto en valor absoluto, ya que una vez fijado el valor de $x$ donde queremos aproximar el valor de la función, el resto en la forma de Lagrange es una función que sólo depende de $t$. Puesto que $t\in (a,x)$, basta con encontrar el máximo del valor absoluto de esta función en dicho intervalo para tener una cota del error cometido.
+
+\newpage
+
+\section{Ejercicios resueltos}
+
+\begin{enumerate}[leftmargin=*]
+\item Calcular los polinomios de Taylor de la función $\log x$ en el punto 1, hasta el grado 4
+ y representarlos junto a la función en la misma gráfica. ¿Qué polinomio aproxima mejor a la función en un entorno del punto 1?
+
+\begin{indicacion}
+{
+\begin{enumerate}
+\item Introducir $\log(x)$ en la línea de edición. Utilizar el menú
+\texttt{Cálculo/Polinomios de Taylor}. En el cuadro que aparece,
+mantener en el campo \texttt{Variable} la $x$, escribir $1$ en el
+campo \texttt{Punto}, por ser $1$ el punto en que se desea realizar
+el cálculo, y escribir $1$ en el campo \texttt{Grado} para calcular
+el polinomio de grado $1$. Pinchar en \texttt{Simplificar} y se
+obtiene el polinomio de grado $1$.
+\item Marcando la expresión $\log(x)$ y repitiendo el proceso
+anterior con grados 2,3 y 4 sucesivamente, se obtienen los
+polinomios pedidos.
+\item Para representar la función $\log(x)$ se marca dicha
+expresión, a continuación se pincha en el botón \texttt{Ventana 2D}
+de la barra de botones para acceder al entorno de gráficos de dos
+dimensiones, y una vez allí se pincha en el botón
+\texttt{Representar Expresión}.
+\item Para volver a la Ventana de Álgebra se pincha en el botón
+\texttt{Activar la Ventana de Álgebra}, y una vez en ella se realiza
+lo indicado en el apartado anterior sucesivamente con los polinomios
+de grados 1,2,3 y 4 para obtener sus representaciones gráficas.
+\item Al haber cinco gráficas en la misma ventana es conveniente
+indicar a qué polinomio corresponde cada una de ellas. Para ello, en
+la Ventana de Gráficos-2D se pincha en el punto del gráfico en que
+se desea colocar la anotación. A continuación se utiliza el menú
+\texttt{Insertar/Anotación}, se escribe en el campo \texttt{Texto}
+del cuadro la anotación que se desea que aparezca y se pincha en el
+botón \texttt{Sí}.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item Dar el valor aproximado de $\log 1.2$ utilizando los polinomios del ejercicio anterior y calcular el error cometido en cada caso. Rellenar la siguiente tabla.
+\[
+\begin{tabular}{|c|c|c|c|}
+\hline
+Punto & Grado & Aproximación
+& Error Cometido \\
+\hline\hline
+&  &  &  \\ \hline
+&  &  &  \\ \hline
+&  &  &  \\ \hline
+&  &  &  \\ \hline
+&  &  &  \\ \hline
+\end{tabular}
+\]
+
+\begin{indicacion}
+{
+\begin{enumerate}
+\item Para calcular los valores aproximados de $\log 1.2$ proporcionados
+por cada uno de los polinomios obtenidos en el ejercicio anterior,
+desde la Ventana de Álgebra se utiliza el menú
+\texttt{Introducir/Valor de una Variable}. En el cuadro que aparece
+se introduce $x$ en el campo \texttt{Nombre de la Variable} y 1.2 en
+el campo \texttt{Valor a asignar}, y una vez hecho esto se pincha en
+el botón \texttt{Sí}. Se marcan sucesivamente los polinomios
+obtenidos y se pincha en el símbolo $\approx$ para obtener las
+aproximaciones dadas por cada polinomio.
+\item Para calcular el error cometido en cada caso se calcula el valor absoluto de la diferencia entre
+$\log(1.2)$ y la aproximación obtenida. Así, si la aproximación
+obtenida con el polinomio de grado 1 fue $0.2$ se introduce en la
+línea de edición $ABS(\log(1\operatorname{.}2)-0\operatorname{.}2)$
+y se pincha en el símbolo $\approx$.
+\end{enumerate}
+}
+\end{indicacion}
+
+\item Calcular el polinomio de Mc Laurin de orden 3 para la función $\sen x$, y utilizarlo para aproximar el valor de $\sen 1/2$, dando una cota del error cometido. Hacer lo mismo para orden 5.
+
+\begin{indicacion}
+{ Para realizar este ejercicio basta seguir las indicaciones
+realizadas en los ejercicios anteriores, teniendo en cuenta que al
+tratarse de polinomios de Mc Laurin en el campo \texttt{Punto} habrá
+que poner $0$. }
+
+\end{indicacion}
+
+
+\end{enumerate}
+
+
+\section{Ejercicios propuestos}
+
+\begin{enumerate}[leftmargin=*]
+\item  Dada la función $f(x)=\sqrt{x+1}$ se pide:
+\begin{enumerate}
+    \item  El polinomio de Taylor de cuarto grado de $f$ en $x=0$.
+
+    \item  Calcular un valor aproximado de $\sqrt{1.02}$ utilizando
+    un polinomio de segundo grado y otro utilizando un polinomio de
+    cuarto grado. Dar una cota del error cometido en cada caso.
+\end{enumerate}
+
+\item Dadas las funciones
+$f(x)=e^x$ y $g(x)=\cos x$, se pide:
+\begin{enumerate}
+   \item  Calcular los polinomios de McLaurin de segundo grado para $f$
+   y $g$.
+
+   \item  Utilizar los polinomios anteriores para calcular
+   \[ \lim_{x\rightarrow 0}\frac{e^x-\cos x}{x}.\]
+\end{enumerate}
+\end{enumerate}

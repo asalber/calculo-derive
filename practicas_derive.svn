@@ -1,0 +1,19 @@
+% SVN Keyword cache
+
+% Global values:
+\def \svnrev {5}
+\def \svndate {2009-11-16 16:11:46 +0100 (lun, 16 nov 2009)}
+\def \svnauthor {asalber}
+\def \svnyear {2009}
+\def \svnmonth {11}
+\def \svnday {16}
+\def \svnhour {16}
+\def \svnminute {11}
+\def \svnsecond {46}
+\def \svntimezonehour {+01}
+\def \svntimezoneminute {00}
+\svn@gdefverb \svnurl {https://practicas-derive.googlecode.com/svn/trunk/practicas_derive.tex}
+\svn@gdefverb \svnfname {practicas_derive.tex}
+
+
+

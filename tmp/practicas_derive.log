@@ -1,0 +1,1520 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.5.3)  22 OCT 2012 16:58
+entering extended mode
+ Source specials enabled.
+ %&-line parsing enabled.
+**practicas_derive.tex
+(./practicas_derive.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/svn-multi/svn-multi.sty
+Package: svn-multi 2009/04/21 v2.1a SVN Keywords for multi-file LaTeX documents
+
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(./practicas_derive.svn))
+pdfTeX warning (\pdfinfo): not allowed in DVI mode (\pdfoutput <= 0); ignoring 
+it
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
+Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Spanish'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@spanish = a dialect from \language0
+\es@datefmt=\count89
+\es@quottoks=\toks15
+\es@quotdepth=\count90
+Package babel Info: Making " an active character on input line 492.
+Package babel Info: Making . an active character on input line 585.
+Package babel Info: Making < an active character on input line 630.
+Package babel Info: Making > an active character on input line 630.
+)) (/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(/usr/share/texmf-texlive/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texmf-texlive/tex/latex/ucs/ucs.sty
+Package: ucs 2004/10/17 UCS: Unicode input support
+
+(/usr/share/texmf-texlive/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2004/10/17 UCS: Unicode global data
+)
+\uc@secondtry=\count91
+\uc@combtoks=\toks18
+\uc@combtoksb=\toks19
+\uc@temptokena=\toks20
+)
+(/usr/share/texmf-texlive/tex/latex/type1cm/type1cm.sty
+Package: type1cm 2002/09/05 v0.04 BlueSky/Y&Y Type1 CM font definitions (DPC, p
+atched RF)
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen104
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks22
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks23
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks24
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+) (./macros.sty
+Package: macros 1998/01/01 Conjunto de macros creadas por ALFREDO SANCHEZ ALBER
+CA para la Universidad San Pablo CEU
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf-texlive/tex/latex/ntheorem/ntheorem.sty
+Style `ntheorem', Version 1.25 <2005/07/07>
+Package: ntheorem 2005/07/07 1.25
+\theorem@style=\toks26
+\theorem@@style=\toks27
+\theorembodyfont=\toks28
+\theoremnumbering=\toks29
+\theorempreskipamount=\skip46
+\theorempostskipamount=\skip47
+\theoremindent=\dimen113
+\theorem@indent=\dimen114
+\theoremheaderfont=\toks30
+\theoremseparator=\toks31
+\theoremprework=\toks32
+\theorempostwork=\toks33
+\theoremsymbol=\toks34
+\qedsymbol=\toks35
+\theoremkeyword=\toks36
+\qedsymbol=\toks37
+\thm@topsepadd=\skip48
+) (/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks38
+\verbatim@line=\toks39
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf-texlive/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count104
+\FV@InFile=\read2
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count105
+\FV@StepNumber=\count106
+\FV@OutFile=\write3
+)
+\c@definition=\count107
+\c@definicion=\count108
+\c@remark=\count109
+\c@observacion=\count110
+\c@teorema=\count111
+\c@lema=\count112
+\c@corolario=\count113
+\c@teoremasn=\count114
+\c@example=\count115
+\c@ejemplo=\count116
+\c@ejercicio=\count117
+\titulolength=\skip49
+\codigolength=\skip50
+\indicacionlength=\skip51
+\anchurarecuadro=\skip52
+\grosorrecuadro=\skip53
+) (/usr/share/texmf-texlive/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/home/alf/texmf/tex/generic/pstricks.tex
+(/usr/share/texmf-texlive/tex/generic/xkeyval/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+(/usr/share/texmf-texlive/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks40
+\XKV@tempa@toks=\toks41
+\XKV@depth=\count118
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+)))
+(/home/alf/texmf/tex/generic/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count119
+\pstFP@xia=\count120
+\pstFP@xib=\count121
+\pstFP@xfa=\count122
+\pstFP@xfb=\count123
+\pstFP@rega=\count124
+\pstFP@regb=\count125
+\pstFP@regs=\count126
+\pstFP@times=\count127
+)
+\psLoopIndex=\count128
+
+`PSTricks' v2.31  <2012/08/24> (tvz)
+\pst@dima=\dimen115
+\pst@dimb=\dimen116
+\pst@dimc=\dimen117
+\pst@dimd=\dimen118
+\pst@dimg=\dimen119
+\pst@dimh=\dimen120
+\pst@dimm=\dimen121
+\pst@dimn=\dimen122
+\pst@dimo=\dimen123
+\pst@dimp=\dimen124
+\pst@hbox=\box29
+\pst@ibox=\box30
+\pst@boxg=\box31
+\pst@cnta=\count129
+\pst@cntb=\count130
+\pst@cntc=\count131
+\pst@cntd=\count132
+\pst@cntg=\count133
+\pst@cnth=\count134
+\pst@cntm=\count135
+\pst@cntn=\count136
+\pst@cnto=\count137
+\pst@cntp=\count138
+\@zero=\count139
+\pst@toks=\toks42
+(/home/alf/texmf/tex/generic/pstricks.con)
+\psunit=\dimen125
+\psxunit=\dimen126
+\psyunit=\dimen127
+\pst@C@@rType=\count140
+\pslinewidth=\dimen128
+\psk@startLW=\dimen129
+\psk@endLW=\dimen130
+\pst@customdefs=\toks43
+\pslinearc=\dimen131
+\pst@symbolStep=\dimen132
+\pst@symbolWidth=\dimen133
+\pst@symbolLinewidth=\dimen134
+\everypsbox=\toks44
+\psframesep=\dimen135
+\pslabelsep=\dimen136
+\pst@shift=\dimen137
+\theoverlaybox=\box32
+)
+File: pstricks.tex 2012/08/24 v2.31 `PSTricks' (tvz,hv)
+
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: dvips.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)))
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-all.sty
+Package: pst-all 2008/01/01 the main pstricks tools
+
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-node.sty
+Package: pst-node 2006/01/01 package wrapper for pst-node.tex
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-node.tex  v1.01, 2008/11/26
+\psrow=\count141
+\pscol=\count142
+\psmatrixcnt=\count143
+\psrowsep=\skip54
+\pscolsep=\skip55
+)
+File: pst-node.tex 2008/11/26 1.01 `pst-node' (tvz)
+) (/usr/share/texmf-texlive/tex/latex/pst-tree/pst-tree.sty
+Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
+
+(/usr/share/texmf-texlive/tex/generic/pst-tree/pst-tree.tex
+ v1.11, 2009/09/17(tvz,dg,hv)
+\pstree@rootbox=\box33
+\pstree@box=\box34
+\psnodecnt=\count144
+\pstreelevel=\count145
+\pstreecnt=\count146
+\pstree@cnt=\count147
+\pstree@stop=\count148
+)
+File: pst-tree.tex 2009/09/17 1.11 `pst-tree' (tvz,hv)
+)
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-plot.sty
+Package: pst-plot 2004/07/15 package wrapper for pst-plot.tex
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-plot.tex
+(/usr/share/texmf-texlive/tex/generic/multido/multido.tex
+ v1.41, 2004/05/18 <tvz>
+\multido@count=\count149
+\multidocount=\count150
+\multido@stuff=\toks45
+)  v1.04, 2009/06/08)
+File: pst-plot.tex 2009/06/08 1.04 `pst-plot' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-grad/pst-grad.sty
+Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-grad/pst-grad.tex
+`pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
+File: pst-grad.tex 2006/11/27 1.06 `pst-grad' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-coil/pst-coil.sty
+Package: pst-coil 2006/08/11 package wrapper for pst-coil.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-coil/pst-coil.tex  v1.06, 2006/11/27)
+File: pst-coil.tex 2006/11/05 v1.00 `pst-coil' (tvz)
+) (/usr/share/texmf-texlive/tex/latex/pst-text/pst-text.sty
+Package: pst-text 2006/01/01 package wrapper for pst-text.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-text/pst-text.tex
+ v1.00, 2006/11/05(tvz,hv))
+File: pst-text.tex 2006/11/05 1.00 `pst-text' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-3d/pst-3d.sty
+Package: pst-3d 2005/09/02 package wrapper for pst-3d.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-3d/pst-3d.tex
+`PST-3d' v1.00, 2005/09/03 (tvz))
+File: pst-3d.tex 2005/09/03 v1.00 `PST-3d' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-eps/pst-eps.sty
+Package: pst-eps 2005/05/20 package wrapper for pst-eps.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-eps/pst-eps.tex  v1.00, 2006/11/04
+\pst@epsout=\write4
+\pst@tempout=\write5
+)
+File: pst-eps.tex 2006/11/04 1.00 `pst-eps' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-fill/pst-fill.sty
+Package: pst-fill 2005/09/13 package wrapper for pst-fill.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-fill/pst-fill.tex
+`PST-Fill' v1.01, 2007/03/10 (tvz,dg,hv)
+\pst@fillbox=\box35
+)
+File: pst-fill.tex 2007/03/10 v1.01 `PST-fill' (tvz,dg)
+)
+(/usr/share/texmf-texlive/tex/latex/pstricks-add/pstricks-add.sty
+Package: pstricks-add 2009/03/17 v. 0.13 package wrapper for pstricks-add.tex (
+hv)
+
+(/usr/share/texmf-texlive/tex/generic/pstricks-add/pstricks-add.tex
+(/usr/share/texmf-texlive/tex/generic/pst-math/pst-math.tex
+`pst-math' v0.23 , (CJ,hv)) `pstricks-add' v3.35, 2009/10/12 (dr,hv)
+\pst@dimm=\dimen138
+\pst@dimn=\dimen139
+\pst@dimo=\dimen140
+\pst@dimp=\dimen141
+\pst@cntm=\count151
+\pst@cntn=\count152
+\pst@cnto=\count153
+\pst@cntp=\count154
+\@zero=\count155
+\pstRadUnit=\dimen142
+\pstRadUnitInv=\dimen143
+\pshooklength=\dimen144
+\pshookwidth=\dimen145
+\@digitcounter=\count156
+\psk@subticksize=\dimen146
+\pst@xticksizeA=\dimen147
+\pst@xticksizeB=\dimen148
+\pst@xticksizeC=\dimen149
+\pst@yticksizeA=\dimen150
+\pst@yticksizeB=\dimen151
+\pst@yticksizeC=\dimen152
+\psk@llx=\dimen153
+\psk@lly=\dimen154
+\psk@urx=\dimen155
+\psk@ury=\dimen156
+\pst@xunit=\dimen157
+\pst@yunit=\dimen158
+\linecnt=\count157
+\chart@ColorIndex=\dimen159
+\chart@ColorStep=\dimen160
+\pst@chartHeight=\dimen161
+\pst@chartStackDepth=\dimen162
+\pst@chartStackWidth=\dimen163
+\chart@Toggle=\count158
+)
+File: pstricks-add.tex 2009/10/12 v3.35 `PSTricks-add' (hv)
+)
+(/usr/share/texmf-texlive/tex/latex/multido/multido.sty
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+))
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+)
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+)
+\epsfxsize=\dimen166
+\epsfysize=\dimen167
+)
+(/usr/share/texmf-texlive/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2009/05/18 v2.2 Customized lists
+\enit@toks=\toks46
+\labelindent=\skip56
+\enit@outerparindent=\dimen168
+\enitdp@desc=\count159
+)
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip57
+\subfigcapskip=\skip58
+\subfigcaptopadj=\dimen169
+\subfigbottomskip=\skip59
+\subfigcapmargin=\dimen170
+\subfiglabelskip=\skip60
+\c@subfigure=\count160
+\c@lofdepth=\count161
+\c@subtable=\count162
+\c@lotdepth=\count163
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip61
+\subfig@bottom=\skip62
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen171
+\Hy@linkcounter=\count164
+\Hy@pagecounter=\count165
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 2864.
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3191.
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count166
+\Field@Width=\dimen172
+\Fld@charsize=\dimen173
+\Field@toks=\toks47
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring ON on input line 4395.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count167
+\c@Item=\count168
+\c@Hfootnote=\count169
+)
+*hyperref using driver hdvips*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2009/10/09 v6.79a Hyperref driver for dvips
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2009/10/09 v6.79a Hyperref definitions for pdfmark specials
+\pdf@docset=\toks48
+\pdf@box=\box36
+\pdf@toks=\toks49
+\pdf@defaulttoks=\toks50
+\Fld@listcount=\count170
+))
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\utf@viii@undeferr' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\endgroup' on input line 25.
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen174
+\captionmargin@=\dimen175
+\captionwidth=\dimen176
+\caption@indent=\dimen177
+\caption@parindent=\dimen178
+\caption@hangindent=\dimen179
+)
+\c@ContinuedFloat=\count171
+Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
+)
+(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
+\Gm@cnth=\count172
+\Gm@cntv=\count173
+\c@Gm@tempcnt=\count174
+\Gm@bindingoffset=\dimen180
+\Gm@wd@mp=\dimen181
+\Gm@odd@mp=\dimen182
+\Gm@even@mp=\dimen183
+\Gm@dimlist=\toks51
+)
+(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip63
+\f@ncyO@elh=\skip64
+\f@ncyO@erh=\skip65
+\f@ncyO@olh=\skip66
+\f@ncyO@orh=\skip67
+\f@ncyO@elf=\skip68
+\f@ncyO@erf=\skip69
+\f@ncyO@olf=\skip70
+\f@ncyO@orf=\skip71
+)
+(/usr/share/texmf-texlive/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2007/08/12 v2.8 Sectioning titles
+\ttl@box=\box37
+\beforetitleunit=\skip72
+\aftertitleunit=\skip73
+\ttl@plus=\dimen184
+\ttl@minus=\dimen185
+\ttl@toksa=\toks52
+\titlewidth=\dimen186
+\titlewidthlast=\dimen187
+\titlewidthfirst=\dimen188
+)
+(./practicas_derive.aux (./licencia.aux) (./introduccion_derive.aux)
+(./funciones_elementales.aux) (./limites_continuidad.aux)
+(./derivadas_aplicaciones_parciales.aux
+
+LaTeX Warning: Label `g:funcion_creciente' multiply defined.
+
+
+LaTeX Warning: Label `sub@g:funcion_creciente' multiply defined.
+
+
+LaTeX Warning: Label `g:funcion_decreciente' multiply defined.
+
+
+LaTeX Warning: Label `sub@g:funcion_decreciente' multiply defined.
+
+
+LaTeX Warning: Label `g:maximo' multiply defined.
+
+
+LaTeX Warning: Label `sub@g:maximo' multiply defined.
+
+
+LaTeX Warning: Label `g:minimo' multiply defined.
+
+
+LaTeX Warning: Label `sub@g:minimo' multiply defined.
+
+
+LaTeX Warning: Label `g:funcion_concava_arriba' multiply defined.
+
+
+LaTeX Warning: Label `sub@g:funcion_concava_arriba' multiply defined.
+
+
+LaTeX Warning: Label `g:funcion_concava_abajo' multiply defined.
+
+
+LaTeX Warning: Label `sub@g:funcion_concava_abajo' multiply defined.
+
+) (./polinomios_taylor.aux) (./integrales.aux) (./ecuaciones_diferenciales.aux)
+)
+\openout1 = `practicas_derive.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+ (/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
+)
+Package hyperref Info: Link coloring ON on input line 67.
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count175
+)
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+
+(./practicas_derive.out) (./practicas_derive.out)
+\@outlinefile=\write6
+\openout6 = `practicas_derive.out'.
+
+\AtBeginShipoutBox=\box38
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry detected driver: dvips*
+-------------------- Geometry parameters
+paper: a4paper
+landscape: --
+twocolumn: --
+twoside: true
+asymmetric: --
+h-parts: 72.2698pt, 452.96826pt, 72.2698pt
+v-parts: 85.35826pt, 674.33032pt, 85.35826pt
+hmarginratio: --
+vmarginratio: --
+lines: --
+heightrounded: --
+bindingoffset: 0.0pt
+truedimen: --
+includehead: --
+includefoot: --
+includemp: --
+driver: dvips
+-------------------- Page layout dimensions and switches
+\paperwidth  597.50787pt
+\paperheight 845.04684pt
+\textwidth  452.96826pt
+\textheight 674.33032pt
+\oddsidemargin  -0.00018pt
+\evensidemargin -0.00018pt
+\topmargin  -23.91173pt
+\headheight 12.0pt
+\headsep    25.0pt
+\footskip   30.0pt
+\marginparwidth 111.0pt
+\marginparsep   11.0pt
+\columnsep  10.0pt
+\skip\footins  9.0pt plus 4.0pt minus 2.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+\mag 1000
+\@twosidetrue \@mparswitchtrue 
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+(/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+)
+File: img/logo_uspceu_01.eps Graphic file (type eps)
+
+<img/logo_uspceu_01.eps> [1
+
+]
+\openout2 = `licencia.aux'.
+
+ (./licencia.tex
+File: img/cc-logo.eps Graphic file (type eps)
+ <img/cc-logo.eps>
+File: img/cc-by.eps Graphic file (type eps)
+ <img/cc-by.eps>
+File: img/cc-e.eps Graphic file (type eps)
+
+<img/cc-e.eps>
+File: img/cc-c.eps Graphic file (type eps)
+ <img/cc-c.eps> [1
+
+]) [2
+
+
+] (./practicas_derive.toc [3])
+\tf@toc=\write7
+\openout7 = `practicas_derive.toc'.
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.04448pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+\openout2 = `introduccion_derive.aux'.
+
+ (./introduccion_derive.tex
+Cap\'{\i }tulo 1.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 15.
+
+LaTeX Font Info:    No file OMScmss.fd. on input line 15.
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead on input line 15.
+
+
+LaTeX Warning: Command \textregistered invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 18.
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 18.
+
+File: img/introduccion_derive/introduccion.eps Graphic file (type eps)
+<img/introduccion_derive/introduccion.eps>
+File: img/introduccion_derive/icono.eps Graphic file (type eps)
+ <img/introduccion_derive/icono.eps>
+File: img/introduccion_derive/principal.eps Graphic file (type eps)
+
+<img/introduccion_derive/principal.eps> [1
+
+
+]
+File: img/introduccion_derive/authorexpression.eps Graphic file (type eps)
+
+<img/introduccion_derive/authorexpression.eps> [2]
+Overfull \hbox (43.50511pt too wide) in paragraph at lines 164--170
+[][]\OT1/cmr/m/n/10 Para elim-i-nar una ex-pre-si^^Son de la ven-tana de Al-ge-
+bra, bas-ta con se-lec-cionarla y uti-lizar el men^^Su \OT1/cmtt/m/n/10 Editar-
+>Borrar
+ []
+
+[3]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4]
+File: img/introduccion_derive/expresiones.eps Graphic file (type eps)
+ <img/introduccion_derive/expresiones.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5]
+Overfull \hbox (8.67055pt too wide) in paragraph at lines 371--376
+[][]\OT1/cmr/m/n/10 Para re-cu-per-ar en una ven-tana de []Alge-bra el con-teni
+do de un archi-vo se uti-liza el men^^Su \OT1/cmtt/m/n/10 Archivo->Abrir\OT1/cm
+r/m/n/10 ,
+ []
+
+
+Overfull \hbox (44.95052pt too wide) in paragraph at lines 407--422
+[][]\OT1/cmr/m/n/10 Para im-prim-ir el con-tenido de una ven-tana de []Alge-bra
+, o bi-en una gr^^Safi-ca, se uti-liza el men^^Su \OT1/cmtt/m/n/10 Archivo->Imp
+rimir\OT1/cmr/m/n/10 .
+ []
+
+[6]
+File: img/introduccion_derive/2d-plot.eps Graphic file (type eps)
+ <img/introduccion_derive/2d-plot.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: img/introduccion_derive/expresionesygraficas.eps Graphic file (type eps)
+<img/introduccion_derive/expresionesygraficas.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8]
+File: img/introduccion_derive/modotraza.eps Graphic file (type eps)
+ <img/introduccion_derive/modotraza.eps>
+Overfull \hbox (0.22592pt too wide) in paragraph at lines 530--535
+[][]\OT1/cmr/m/n/10 Es posi-ble cen-trar la gr^^Safi-ca de una fun-ci^^Son en c
+ualquier pun-to me-di-ante el men^^Su \OT1/cmtt/m/n/10 Seleccionar->Rango
+ []
+
+File: img/introduccion_derive/3d-plot.eps Graphic file (type eps)
+<img/introduccion_derive/3d-plot.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (8.65004pt too wide) in paragraph at lines 553--559
+\OT1/cmr/m/n/10 el as-pec-to de la gr^^Safi-ca rep-re-sen-ta-da. De to-dos el-l
+os, s^^Solo co-mentare-mos el men^^Su \OT1/cmtt/m/n/10 Editar->Gr^^Safica->N^^S
+umero
+ []
+
+) [9] [10]
+\openout2 = `funciones_elementales.aux'.
+
+ (./funciones_elementales.tex
+Cap\'{\i }tulo 2.
+(./img/funciones_elementales/funcion_creciente.tex)
+(./img/funciones_elementales/funcion_decreciente.tex) [11
+
+
+
+]
+(./img/funciones_elementales/maximo.tex)
+(./img/funciones_elementales/minimo.tex)
+(./img/funciones_elementales/funcion_concava_arriba.tex)
+(./img/funciones_elementales/funcion_concava_abajo.tex) [12]
+(./img/funciones_elementales/asintota_vertical_horizontal.tex)
+(./img/funciones_elementales/asintota_oblicua.tex)
+(./img/funciones_elementales/funcion_periodica.tex) [13]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 171--173
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 179--181
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 187--189
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 196--197
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 205--207
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 215--217
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 225--227
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 232--234
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 239--241
+[][][][][][]  
+ []
+
+[14
+
+]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 271--273
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 285--287
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 307--309
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 353--355
+[][][][][][]  
+ []
+
+[15]) [16] [17]
+\openout2 = `limites_continuidad.aux'.
+
+ (./limites_continuidad.tex [18
+
+
+
+]
+Cap\'{\i }tulo 3.
+[19] [20] [21]
+
+! LaTeX Error: Environment multicols undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \begin{multicols}
+                       {2}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{enumerate} on input line 219 ended by \end{multicols}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.237 \end{multicols}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 260--262
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 278--280
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 309--311
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 322--324
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 345--347
+[][][][][][]  
+ []
+
+[22]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 364--366
+[][][][][][]  
+ []
+
+
+! LaTeX Error: Environment multicols undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.370 \begin{multicols}
+                       {2}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{enumerate} on input line 213 ended by \end{multicols}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.378 \end{multicols}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 409--411
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 464--466
+[][][][][][]  
+ []
+
+
+! LaTeX Error: Environment multicols undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.474 \begin{multicols}
+                       {2}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[23]
+
+! LaTeX Error: \begin{enumerate} on input line 472 ended by \end{multicols}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.512 \end{multicols}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment multicols undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.531 \begin{multicols}
+                       {2}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[24]
+
+! LaTeX Error: \begin{enumerate} on input line 472 ended by \end{multicols}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.541 \end{multicols}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) [25]
+\openout2 = `derivadas_aplicaciones_parciales.aux'.
+
+ (./derivadas_aplicaciones_parciales.tex [26
+
+
+
+]
+Cap\'{\i }tulo 4.
+(./img/derivadas/secante.tex) [27] (./img/derivadas/tangente.tex) [28]
+(./img/funciones_elementales/funcion_creciente.tex)
+(./img/funciones_elementales/funcion_decreciente.tex)
+(./img/funciones_elementales/maximo.tex)
+(./img/funciones_elementales/minimo.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29] (./img/funciones_elementales/funcion_concava_arriba.tex)
+(./img/funciones_elementales/funcion_concava_abajo.tex)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 236.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 236.
+
+[30]
+File: img/derivadas_parciales/tangente_parcial.eps Graphic file (type eps)
+ <img/derivadas_parciales/tangente_parcial.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 331.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 331.
+
+[31] [32] [33]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 561--563
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 609--611
+[][][][][][]  
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 679--679
+[]\OT1/cmr/m/n/8 Para la fun-ci^^Son $\OML/cmm/m/it/8 g\OT1/cmr/m/n/8 (\OML/cmm
+/m/it/8 x\OT1/cmr/m/n/8 )$, pode-mos, para su defini-ci^^Son, uti-lizar la fun-
+ci^^Son condi-cional de De-rive
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 679--681
+[][][][][][]  
+ []
+
+
+Underfull \vbox (badness 3428) has occurred while \output is active []
+
+ [34]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 718--720
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 732--734
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 742--744
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 753--755
+[][][][][][]  
+ []
+
+[35]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 765--767
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 778--780
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 787--789
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 801--803
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 832--834
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 853--855
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 880--882
+[][][][][][]  
+ []
+
+[36]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 903--905
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 933--935
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 947--949
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 959--961
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 998--1000
+[][][][][][]  
+ []
+
+[37]) [38]
+\openout2 = `polinomios_taylor.aux'.
+
+ (./polinomios_taylor.tex
+Cap\'{\i }tulo 5.
+(./img/polinomios_taylor/polinomios_seno.tex) [39
+
+
+
+]
+Package hyperref Info: bookmark level for unknown teorema defaults to 0 on inpu
+t line 49.
+ [40]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 98--100
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 134--136
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 143--144
+[][][][][][]  
+ []
+
+[41]) [42]
+\openout2 = `integrales.aux'.
+
+ (./integrales.tex
+Cap\'{\i }tulo 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+[43
+
+
+
+] (./img/integrales/suma_inferior.tex) (./img/integrales/suma_superior.tex)
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+(./img/integrales/integral_definida.tex) [46]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 300--302
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 305--307
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 310--312
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 331--333
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 344--346
+[][][][][][]  
+ []
+
+[47]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 360--362
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 378--380
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 416--418
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 443--445
+[][][][][][]  
+ []
+
+[48] [49]) [50]
+\openout2 = `ecuaciones_diferenciales.aux'.
+
+ (./ecuaciones_diferenciales.tex
+Cap\'{\i }tulo 7.
+[51
+
+
+
+] (./img/ecuaciones_diferenciales/curvas_integrales.tex)
+Package hyperref Info: bookmark level for unknown teoremasn defaults to 0 on in
+put line 85.
+ [52] [53]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 168--170
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 198--200
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 212--214
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 230--232
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 246--248
+[][][][][][]  
+ []
+
+[54]
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 273--275
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 287--289
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 304--306
+[][][][][][]  
+ []
+
+
+Overfull \hbox (1.42223pt too wide) in paragraph at lines 316--318
+[][][][][][]  
+ []
+
+[55]) [56]
+\svn@write=\write8
+\openout8 = `practicas_derive.svn'.
+
+\tf@thm=\write9
+\openout9 = `practicas_derive.thm'.
+
+ (./practicas_derive.aux (./licencia.aux) (./introduccion_derive.aux) (./funcio
+nes_elementales.aux) (./limites_continuidad.aux)
+(./derivadas_aplicaciones_parciales.aux) (./polinomios_taylor.aux)
+(./integrales.aux) (./ecuaciones_diferenciales.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13504 strings out of 495062
+ 199686 string characters out of 1182645
+ 425822 words of memory out of 3000000
+ 16254 multiletter control sequences out of 15000+50000
+ 19298 words of font info for 73 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 53i,14n,92p,461b,765s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on practicas_derive.dvi (61 pages, 778968 bytes).

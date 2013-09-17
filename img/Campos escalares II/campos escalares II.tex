@@ -1,0 +1,1451 @@
+\documentclass[a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+%\usepackage{ntheorem}
+\usepackage{macros}
+\usepackage[dvips]{graphicx}
+%\usepackage{times}
+\usepackage{subfigure}
+\usepackage[small,bf]{caption2}
+\usepackage[compat2,top=1.5cm, bottom=1.8cm, left=2.54cm, right=2.54cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\lhead{\textsc{Universidad San Pablo CEU}} \rhead{\textsl{\textsf{Departamento
+de Matemáticas, Física Aplicada y Fisicoquímica}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\floatpagefraction}{.8}
+\renewcommand{\textfraction}{.1}
+\setcaptionwidth{\textwidth} \addtolength{\captionwidth}{-40pt}
+\captionstyle{indent} \setlength\captionindent{\parindent}
+
+\begin{document}
+\sloppy \practica{Práctica de Cálculo con Derive}{Derivadas y
+Aplicaciones en Funciones Reales de Varias Variables}
+
+\bigskip
+\section*{Fundamentos Teóricos}
+Incluso un estudio superficial de las funciones de varias
+variables, como el que se ofrece en estas prácticas, resultaría
+demasiado limitado sin una introducción a los múltiples conceptos
+que tendrían su origen en el ya visto de deriva de una función de
+una única variable como tasa de variación de la función. Entre
+ellos, algunos tan importantes como: derivadas parciales,
+derivadas direccionales y gradientes; para los que, de forma muy
+breve, además de su definición, pretendemos dar su interpretación
+geométrica y alguna de sus aplicaciones.
+
+
+
+
+
+\subsection*{Derivadas parciales de una función de $n$ variables}
+
+Recordemos que la derivada de una función de una única variable en
+un punto $x=a$ se define como el cociente entre el incremento que
+experimenta la función y el incremento en la variable, tomado en
+el límite cuando el incremento en la variable tiende a cero; o lo
+que es lo mismo, se trata de la tasa de variación instantánea de
+la función en dicho punto. Si llamamos $h$ al incremento en la
+variable, la derivada de la función en $x=a$ se nota como $f'(a)$
+ó $\dfrac{{\text{d}f}} {{\text{d}x}}(a)$, y se calcula como:
+
+
+\[
+f'(a) = \frac{{\text{d}f}} {{\text{d}x}}(a) = \mathop {\lim
+}\limits_{h \to 0} \frac{{f(a + h) - f(a)}} {h}
+\]
+
+
+Y para cualquier $x$, en un conjunto en el que la función de una
+única variable sea derivable, puede definirse la función derivada
+$f'(x)$ ó $\dfrac{{\text{d}f}} {{\text{d}x}}$, mediante el límite:
+
+\[
+f'(x) = \frac{{\text{d}f}} {{\text{d}x}} = \mathop {\lim
+}\limits_{h \to 0} \frac{{f(x + h) - f(x)}} {h}
+\]
+que, no obstante, se calcula aplicando las adecuadas reglas de
+derivación, más bien que acudiendo a la resolución directa del
+límite.
+
+De igual forma, si tenemos una función de $n$ variables
+$f(\vec{x})=f(x_1,x_2,...,x_n)$, se pueden definir esas mismas
+tasas de variación instantáneas con respecto a cada una de las
+variables en un punto $\vec{a}=(a_1,a_2,...,a_n)$, para obtener
+las \emph{Derivadas Parciales} de la función con respecto a cada
+una de las variables en el punto $\vec{x}=\vec{a}$, que se notarán
+como $f_{x_i}(\vec{a})$, o bien por $\dfrac{\partial f}{\partial
+x_i}(\vec{a})$:
+
+
+
+\[
+f_{x_i}(\vec{a})=\dfrac{\partial f}{\partial
+x_i}(\vec{a})=\lim_{h\rightarrow
+0}\frac{f(a_1,\ldots,a_i+h,\ldots,a_n)-f(a_1,\ldots,a_i,\ldots,a_n)}{h},
+\]
+
+
+Y la \emph{Función Derivada Parcial} con respecto a cualquiera de
+las variables $x_i$, para todos los $\vec{x}$ de un conjunto, que
+se notará como $f_{x_i}$, o $\dfrac{\partial f}{\partial x_i}$:
+
+\[
+f_{x_i}=\dfrac{\partial f}{\partial x_i}=\lim_{h\rightarrow
+0}\frac{f(x_1,\ldots,x_i+h,\ldots,x_n)-f(x_1,\ldots,x_i,\ldots,x_n)}{h},
+\]
+
+Lo cual, a efectos de cálculo, se resume en que la derivada
+parcial de una función de varias variables se obtiene como la
+derivada de una función de una única variable, que es aquella con
+respecto a la que se deriva, y constantes el resto. Como
+consecuencia, las reglas de derivación también se aplican en el
+cálculo de las derivadas parciales de este tipo de funciones, sin
+más que considerar constantes todas aquellas variables con
+respecto a las que no estamos derivando.
+
+Si para las funciones de una variable la derivada en un punto $a$
+tiene una interpretación gráfica sencilla como la pendiente de la
+recta tangente a la gráfica de la función en el punto $(a,f(a))$,
+también para funciones de dos variables la derivada parcial con
+respecto a $x$ en el punto $\vec{a}=(x_0,y_0)$:
+
+\[
+\frac{{\partial f}} {{\partial x}}(x_0 ,y_0 ) = \mathop {\lim
+}\limits_{h \to 0} \frac{{f(x_0  + h,y_0 ) - f(x_0 ,y_0 )}} {h}
+\]
+representa la pendiente de la recta tangente a la curva que se
+obtiene al cortar la gráfica de la función en el punto
+$(x_0,y_0,z_0=f(x_0,y_0))$ mediante el plano en el que $y$
+permanece constante e igual a $y_0$, y tan sólo varía el valor de
+$x$. E igualmente, la derivada parcial con respecto a $y$ será la
+pendiente de la recta tangente a la curva que se obtiene al cortar
+la gráfica de la función en $(x_0,y_0,z_0=f(x_0,y_0))$ mediante el
+plano $x=x_0$.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{derivparcial.eps}
+\caption{La derivada parcial de una función $f(x,y)$ con respecto
+a $x$ en el punto $(x_0,y_0)$, como la pendiente de la recta
+tangente a la curva descrita por la intersección de la superficie
+de $f$ y el plano de ecuación $y=y_0$.}
+\end{center}
+\end{figure}
+
+Con respecto a la relación entre las derivadas parciales y la
+continuidad hay que tener en cuenta los siguientes puntos:
+
+\begin{itemize}
+
+\item Como ya sucedía con las funciones de una única variable, en
+las que la continuidad en un punto no garantiza la existencia de
+la derivada en dicho punto, las funciones de varias variables
+continuas en un punto pueden no tener derivadas parciales en dicho
+punto.
+
+\item Sin embargo, de forma completamente diferente a lo que
+sucede con las funciones de una única variable, existen funciones
+de varias variables con todas sus derivadas parciales en un punto
+y tal que ni tan siquiera son continuas en dicho punto. Si las
+derivadas parciales, además de existir, son continuas en el punto,
+entonces sí que la función también lo será.
+\end{itemize}
+
+\subsubsection*{Vector gradiente} El conjunto de las $n$ derivadas
+parciales de una función de $n$ variables $f(x_1,x_2,\ldots,x_n)$,
+expresado en forma vectorial, recibe el nombre de \emph{Vector
+Gradiente de $f$}. Es decir:
+
+\[
+\left(\frac{\partial f}{\partial x_1}(\vec a),\frac{\partial
+f}{\partial x_2}(\vec a),\ldots,\frac{\partial f}{\partial
+x_n}(\vec a)\right)
+\]
+
+El gradiente de $f$ también puede expresarse como la actuación de
+un operador diferencial (entendemos como operador una expresión
+matemática formal que tendrá sentido matemático una vez aplicado
+sobre una función) llamado \emph{Operador Nabla}, que se nota como
+$\vec\nabla$, sobre $f$. La expresión del operador nabla en
+coordenadas cartesianas es:
+
+\[
+\vec {\nabla} =\left(\frac{\partial}{\partial x_1},\frac{\partial
+}{\partial x_2},\ldots,\frac{\partial }{\partial x_n}\right)
+\]
+de forma que el gradiente de $f$ se expresa como:
+
+\[
+\vec{\nabla}f=\left(\frac{\partial}{\partial x_1},\frac{\partial
+}{\partial x_2},\ldots,\frac{\partial }{\partial
+x_n}\right)f=\left(\frac{\partial f}{\partial x_1},\frac{\partial
+f}{\partial x_2},\ldots,\frac{\partial f}{\partial x_n}\right)
+\]
+y el gradiente de $f$ en $\vec a$:
+
+\[
+\vec {\nabla} f(\vec a)=\left(\frac{\partial f}{\partial x_1}(\vec
+a),\frac{\partial f}{\partial x_2}(\vec a),\ldots,\frac{\partial
+f}{\partial x_n}(\vec a)\right)
+\]
+
+A pesar de que la introducción del vector gradiente en este punto
+de la práctica ha sido simplemente formal, con el objetivo de
+aligerar la notación de todos aquellos desarrollos en los que
+aparece el conjunto de las derivadas parciales de la función de
+$n$ variables, tanto su interpretación como sus aplicaciones son
+muy importantes, e irán apareciendo en otros puntos de la
+práctica.
+
+
+\subsection*{Derivadas parciales sucesivas de una función de $n$
+variables}
+
+De la misma forma que en las funciones de una variable, mediante
+los límites que las definen, siempre y cuando existan, obtenemos
+las segundas, terceras y derivadas de cualquier orden. Es decir,
+si $f$ es una función real de $n$ variables, con sus
+correspondientes derivadas parciales, a su vez también las mismas
+son funciones de $n$ variables que, en determinadas condiciones,
+podrán derivarse de nuevo con respecto a sus $n$ variables para
+obtener derivadas parciales segundas, y así sucesivamente hasta
+órdenes superiores de derivación.
+
+Para la derivada parcial de segundo orden se utiliza la notación
+$f_{x_ix_j}$ ó $\dfrac{{\partial ^2 f}} {{\partial x_j \partial
+x_i }}$:
+
+
+\[
+f_{x_i x_j }  = \frac{{\partial ^2 f}} {{\partial x_j \partial x_i
+}} = \frac{\partial } {{\partial x_j }}\left( {\frac{{\partial f}}
+{{\partial x_i }}} \right)
+\]
+
+Por ejemplo, para una función de dos variables $f(x,y)$, tenemos
+dos derivadas parciales de primer orden, que siguen siendo
+funciones de las variables $x$ e $y$:
+
+\[
+\frac{{\partial f}} {{\partial x}}(x,y)\; ,\; \frac{{\partial f}}
+{{\partial y}}(x,y)
+\]
+y cuatro diferentes de segundo orden, que también serán funciones
+de $x$ e $y$, aunque ya no se refleje para aligerar la notación:
+
+
+\[
+\frac{\partial } {{\partial x}}\left( {\frac{{\partial f}}
+{{\partial x}}} \right) = \frac{{\partial ^2 f}} {{\partial x^2 }}
+\]
+
+\[
+\frac{\partial } {{\partial y}}\left( {\frac{{\partial f}}
+{{\partial x}}} \right) = \frac{{\partial ^2 f}} {{\partial
+y\partial x}}
+\]
+
+
+\[
+\frac{\partial } {{\partial x}}\left( {\frac{{\partial f}}
+{{\partial y}}} \right) = \frac{{\partial ^2 f}} {{\partial
+x\partial y}}
+\]
+
+\[
+\frac{\partial } {{\partial y}}\left( {\frac{{\partial f}}
+{{\partial y}}} \right) = \frac{{\partial ^2 f}} {{\partial y^2 }}
+\]
+
+La primera y la última reciben el nombre de derivadas segundas,
+mientras que la segunda y tercera se denominan derivadas cruzadas.
+
+Si procedemos con las derivadas parciales de tercer orden
+tendríamos ocho diferentes, y el número es más amplio con
+funciones de tres o más variables. No obstante, el teorema
+conocido con \emph{Teorema de Schwartz de las Derivadas Cruzadas}
+reduce el número de derivadas parciales diferentes ya que afirma:
+
+Si $f$ es una función de $n$ variables con derivadas parciales
+segundas cruzadas continuas en un conjunto abierto que contiene al
+punto $\vec{a}$, entonces en dicho punto se cumple
+
+\[
+\frac{{\partial ^2 f}} {{\partial x_i \partial x_j }} =
+\frac{{\partial ^2 f}} {{\partial x_j \partial x_i }}
+\]
+
+e igual con las derivadas cruzadas de tercer y superior orden.
+
+Es decir, si se cumplen las hipótesis del teorema de Shwartz
+concluimos que, a efectos de cálculo, tan sólo importa el número
+de veces que se deriva respecto a cada variable, pero no el orden
+de la derivación.
+
+\subsubsection*{Matriz Hessiana} Con el conjunto de todas las derivadas
+parciales segundas se define la \emph{Matriz Hessiana} de una
+función $f(x_1,x_2,\ldots,x_n)$, y se nota $H_f$, de tal manera
+que la fila $i$ es el vector gradiente de la derivada parcial de
+$f$ con respecto a $x_i$, es decir:
+
+\[
+\renewcommand{\arraystretch}{2.2}
+H_f=\left( {\vec \nabla \frac{{\partial f}} {{\partial x_1 }},\vec
+\nabla \frac{{\partial f}} {{\partial x_2 }},...,\vec \nabla
+\frac{{\partial f}} {{\partial x_n }}} \right)=\left(
+\begin{array}{cccc}
+ \dfrac{\partial^2 f}{\partial x_1^2}  & \dfrac{\partial^2 f}{\partial x_2\partial x_1}& \cdots & \dfrac{\partial^2 f}{\partial x_n\partial x_1}\\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_2} & \dfrac{\partial^2 f}{\partial x_2^2}  & \cdots & \dfrac{\partial^2 f}{\partial x_n\partial x_2} \\
+                 \vdots                  &                 \vdots                  & \ddots &                 \vdots                  \\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_n} & \dfrac{\partial^2 f}{\partial x_2\partial x_n} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2}  \\
+\end{array}
+\right)
+\]
+Con ello, la matriz Hessiana en $\vec a$:
+
+\[
+\renewcommand{\arraystretch}{2.2}
+H_f(\vec a)=\left(
+\begin{array}{cccc}
+ \dfrac{\partial^2 f}{\partial x_1^2}( \vec a)  & \dfrac{\partial^2 f}{\partial x_2\partial x_1}(\vec a) & \cdots & \dfrac{\partial^2 f}{\partial x_n\partial x_1}(\vec a) \\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_2}(\vec a) & \dfrac{\partial^2 f}{\partial x_2^2}(\vec a)  & \cdots & \dfrac{\partial^2 f}{\partial x_n\partial x_2}(\vec a) \\
+                 \vdots                  &                 \vdots                  & \ddots &                 \vdots                  \\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_n}(\vec a) & \dfrac{\partial^2 f}{\partial x_2\partial x_n}(\vec a) & \cdots & \dfrac{\partial^2 f}{\partial x_n^2}(\vec a)  \\
+\end{array}
+\right)
+\]
+
+Al determinante de esta matriz, $\left| {H_f \left( {\vec a}
+\right)} \right|$, se le llama \emph{Hessiano} de $f$ en $\vec a$,
+que tiene, entre otras aplicaciones, la de servir para determinar
+el carácter de los extremos relativos de una función de varias
+variables (máximos, mínimos y puntos silla).
+
+
+
+\subsection*{Derivadas direccionales de una función de $n$
+variables}
+
+Recordemos que mediante cada una de las derivadas parciales de una
+función de varias variables en un punto $\vec x= \vec a$
+cuantificamos la tasa de variación instantánea de la función
+cuando incrementamos en $h$ el valor de la coordenada con respecto
+a la cual estamos derivando; es decir, si derivamos con respecto a
+la variable $x_i$, pasaríamos de $(a_1,a_2,...,a_i,...,a_n)$ a
+$(a_1,a_2,...,a_{i}+h,...,a_n)$, o en forma vectorial de $\vec a$
+a $\vec a + h \vec {e}_i$, donde $\vec {e}_i$ es el vector
+unitario de la base canónica cuya única componente no nula es un
+$1$ en la posición $i$.
+
+Pero nada impide analizar la tasa de variación instantánea de la
+función cuando pasamos de un punto $\vec a$ a otro próximo en el
+que hayan cambiado los valores de varias coordenadas y que
+expresaremos como $\vec{a}+h\vec{v}$. Si es así, definimos la
+\emph{Derivada de la Función en el Punto $\vec a$ Según el Vector
+$\vec v$}:
+
+
+\[
+D_{\vec v} f\left(\vec a\right) = \mathop {\lim }\limits_{h \to 0}
+\frac{{f(\vec a + h\vec v) - f(\vec a)}} {h} = \mathop {\lim
+}\limits_{h \to 0} \frac{{f\left(a_1  + hv_1 ,a_2  + hv_2 ,...,a_n
++ hv_n \right) - f\left(a_1 ,a_2 ,...,a_n \right)}} {h}
+\]
+
+Si $\vec v$ es un vector unitario, es decir, si su módulo vale la
+unidad, entonces la derivada según $\vec v$ recibe el nombre de
+\emph{Derivada Direccional}. De hecho, las derivadas parciales son
+derivadas direccionales según los vectores unitarios de la base
+canónica. Por ejemplo, si $f$ es una función de dos variables y
+$\vec {a}=(x_0,y_0)$:
+
+
+\[
+D_{\vec i} f\left( {\vec a} \right) = \mathop {\lim }\limits_{h
+\to 0} \frac{{f\left( {\vec a + h\vec i} \right) - f\left( {\vec
+a} \right)}} {h} = \mathop {\lim }\limits_{h \to 0} \frac{{f\left(
+{x_0  + h,y_0 } \right) - f\left( {x_0 ,y_0 } \right)}} {h} =
+\frac{{\partial f}} {{\partial x}}\left( {\vec a} \right)
+\]
+
+De igual forma:
+
+\[
+D_{\vec j} f\left( {\vec a} \right) = \frac{{\partial f}}
+{{\partial y}}\left( {\vec a} \right)
+\]
+
+\subsection*{El hiperplano tangente a la gráfica de una función de
+$n$ variables}
+
+Recordemos que la ecuación de la recta tangente a la gráfica de
+una función de una única variable en el punto $(a,f(a))$ viene
+dada por la ecuación:
+\[
+y = f(a) + f'(a) \cdot (x - a)
+\]
+
+Para funciones de dos variables, y por extensión para las de $n$
+variables, por ejemplo $f(x,y)$, en un punto $\vec a=(x_0,y_0)$ no
+tendremos una recta tangente a la gráfica de la función en
+$\left(\vec a, f\left(\vec a\right)\right)$ sino infinitas,
+dependiendo de la dirección considerada, con su correspondiente
+derivada direccional como pendiente de la recta tangente en dicha
+dirección. Pero más importante que las infinitas rectas tangentes
+sería el plano que, en caso de existir, contendría a todas ellas,
+y cuya ecuación podría demostrarse que sería:
+
+
+\[
+z = f\left( {\vec a} \right) + \frac{{\partial f}} {{\partial
+x}}\left( {\vec a} \right)\cdot \left( {x - x_0 } \right) +
+\frac{{\partial f}} {{\partial y}}\left( {\vec a} \right)\cdot
+\left( {y - y_0 } \right) = f\left( {x_0 ,y_0 } \right) +
+\frac{{\partial f}} {{\partial x}}\left( {x_0 ,y_0 } \right) \cdot
+\left( {x - x_0 } \right) + \frac{{\partial f}} {{\partial
+y}}\left( {x_0 ,y_0 } \right) \cdot \left( {y - y_0 } \right)
+\]
+Si utilizamos la definición del vector gradiente en $\vec a$, la
+fórmula anterior es:
+
+\[
+z = f\left( {\vec a} \right) + \vec \nabla f\left( {\vec a}
+\right) \cdot \left( {\vec x - \vec a} \right)
+\]
+
+
+De igual forma, en una función de $n$ variables,
+$f\left(x_1,x_2,...,x_n\right)$ y un punto $\vec a
+=\left(a_1,a_2,...,a_n\right)$, si existe, la ecuación del
+hiperplano tangente a la gráfica de la función en el punto
+$\left(\vec a, f\left(\vec a\right)\right)$ es:
+
+\[
+x_{n + 1}  = f\left( {\vec a} \right) + \frac{{\partial f}}
+{{\partial x_1 }}\left( {\vec a} \right) \cdot \left( {x_1  - a_1
+} \right) + \frac{{\partial f}} {{\partial x_2 }}\left( {\vec a}
+\right) \cdot \left( {x_2  - a_2 } \right) + ... + \frac{{\partial
+f}} {{\partial x_n }}\left( {\vec a} \right) \cdot \left( {x_n  -
+a_n } \right)
+\]
+Y si utilizamos la expresión del vector gradiente, la anterior
+ecuación nos queda como:
+
+\[
+x_{n+1} = f\left( {\vec a} \right) + \vec \nabla f\left( {\vec a}
+\right) \cdot \left( {\vec x - \vec a} \right)
+\]
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{planotangente.eps}
+\caption{Plano tangente a la gráfica de una función de dos
+variables}
+\end{center}
+\end{figure}
+
+
+Al referirnos a las ecuaciones del plano, o hiperplano, tangente a
+una función de varias variables en un punto dado, hemos matizado
+que, en caso de existir, dicho plano se calcularía mediante las
+fórmulas dadas, pero sólo ``en caso de existir", porque para este
+tipo de funciones la existencia de todas las derivadas parciales
+en un punto, y por lo tanto la posibilidad de aplicar la fórmula,
+no garantiza la existencia del plano tangente. En el siguiente
+punto veremos qué condiciones, al margen de la existencia de las
+derivadas parciales, se requieren para que una función tenga plano
+(hiperplano) tangente en un punto y el calificativo que recibirán
+las funciones que lo tengan.
+
+\subsection*{Funciones diferenciables de $n$ variables}
+
+Recordemos que para funciones reales de una única variable el
+concepto de diferenciabilidad es equivalente al de derivabilidad.
+Una función de este tipo es diferenciable en un punto si es
+derivable en dicho punto, y lo anterior implica toda una serie de
+propiedades conocidas, tales como la continuidad de la función o
+la existencia de la recta tangente en el punto. Sin embargo, para
+funciones reales de $n$ variables el problema es más complejo; por
+ejemplo, al hablar de derivadas podemos tomar infinitas derivadas
+direccionales. Entonces, ¿qué entendemos por una función
+diferenciable?, ¿tal vez aquella para la que existan todas sus
+derivadas direccionales?. En realidad, el criterio matemático de
+diferenciabilidad en un punto para funciones de varias variables
+también debería garantizar propiedades como la continuidad en
+dicho punto, o la existencia de la generalización de la recta
+tangente a la gráfica de la función, que ahora se transforma en el
+plano o hiperplano tangente. Pero la mera existencia de las
+derivadas direccionales en un punto, sea cual fuere la dirección,
+no garantiza tales propiedades; de hecho, como ya se ha comentado
+en apartados anteriores, la función puede incluso no ser continua
+en dicho punto.
+
+No obstante, para llegar a un criterio de diferenciabilidad en
+varias variables, podemos seguir apoyándonos en lo que sucede en
+funciones de una única variable. Sabemos que $f$, función de una
+única variable, es diferenciable en $a$ si existe:
+
+\[
+f'(a) = \mathop {\lim }\limits_{h \to 0} \frac{{f(a + h) - f(a)}}
+{h}
+\]
+Teniendo en cuenta que $h=\Delta x=x-a$, el anterior límite queda:
+\[
+f'(a) = \mathop {\lim }\limits_{\Delta x \to 0} \frac{{f(a +
+\Delta x) - f(a)}} {{\Delta x}} = \mathop {\lim }\limits_{x \to a}
+\frac{{f(x) - f(a)}} {{x - a}}
+\]
+Y si añadimos que $f'(a)$ es una constante y por lo tanto:
+\[
+f'(a) = \mathop {\lim }\limits_{x \to a} f'(a)
+\]
+Obtenemos fácilmente:
+
+\[
+\mathop {\lim }\limits_{x \to a} \left( {\frac{{f(x) - f(a)}} {{x
+- a}} - f'(a)} \right) = 0
+\]
+Con lo cual:
+
+\[
+\mathop {\lim }\limits_{x \to a} \left( {\frac{{f(x) - f(a) -
+f'(a) \cdot (x - a)}} {{x - a}}} \right) = 0
+\]
+Cuya interpretación es sencilla si tenemos en cuenta que la
+ecuación de la recta tangente a la gráfica de la función en el
+punto $\left(a,f(a)\right)$ es:
+
+\[
+y = f(a) + f'(a) \cdot (x - a)
+\]
+Luego, $f$ será diferenciable en el punto $a$ si su valor en un
+cierto $x$ cercano a $a$ puede aproximarse mediante su recta
+tangente, de forma que la diferencia entre la función y la recta
+tangente se aproxime a cero incluso más rápidamente que $x-a$ a
+medida que $x$ tiende a $a$.
+
+De igual manera, si $f$ es una función real de $n$ variables,
+sustituyendo $x-a$ por el vector $\vec {x}-\vec{a}$, y $f'(a)$ por
+el vector que contiene todas las derivadas parciales, es decir,
+por el vector gradiente en $\vec a$, $f$ será diferenciable en
+$\vec a$ si cumple:
+
+
+\[
+\mathop {\lim }\limits_{\vec x \to \vec a} \left( {\frac{{f\left(
+{\vec x} \right) - f\left( {\vec a} \right) - \vec \nabla f\left(
+{\vec a} \right) \cdot \left( {\vec x - \vec a} \right)}}
+{{\left\| {\vec x - \vec a} \right\|}}} \right) = 0
+\]
+donde hemos utilizado el módulo del vector $\vec x-\vec a$ para
+poder realizar el cociente propuesto, ya que el numerador de la
+fracción es un escalar.
+
+Y la interpretación de dicho límite también es sencilla: $f$ será
+diferenciable en $\vec a$ si su valor en un cierto $\vec x$,
+cercano a $\vec a$, puede aproximarse mediante $f\left( {\vec a}
+\right) + \vec \nabla f\left( {\vec a} \right) \cdot \left( {\vec
+x - \vec a} \right)$, a medida que $\vec x$ tiende a $\vec a$.
+Además, en estas condiciones es cuando verdaderamente tiene
+sentido hablar de la existencia del plano (hiperplano) tangente
+como aproximación de la función, cuya ecuación ya vimos:
+\[
+x_{n+1} = f\left( {\vec a} \right) + \vec \nabla f\left( {\vec a}
+\right) \cdot \left( {\vec x - \vec a} \right)
+\]
+
+Y, en definitiva, la función será diferenciable en el punto si
+existe el plano (hiperplano) tangente a la gráfica de la función
+en dicho punto.
+
+Referido a funciones diferenciables existe un teorema muy
+importante que aporta condiciones suficientes de
+diferenciabilidad, en muchos casos más fácilmente evaluables que
+el límite que aparece en la definición. Su enunciado es:
+
+Si $f$, función de $n$ variables, es continua en $\vec a$ y todas
+sus derivadas parciales, $\dfrac{{\partial f}} {{\partial x_i }} ,
+i=1,2,...,n$, también son continuas en $\vec a$, entonces $f$ es
+diferenciable en $\vec a$.
+
+Entre otras propiedades importantes, la diferenciabilidad en un
+punto ya sí que garantiza la continuidad en dicho punto.
+
+\subsection*{Diferencial de una función de $n$ variables}
+Si $f$ es diferenciable en $\vec a$, mediante la definición de
+diferenciabilidad podría demostrarse que el incremento que
+experimenta la función cuando pasamos de $\vec a$ a un cierto
+$\vec x$, próximo a $\vec a$, puede aproximarse mediante el
+producto escalar del gradiente en $\vec a$ por el vector $\vec x
+-\vec a$. Es decir:
+
+
+\[
+f\left( {\vec x} \right) - f\left( {\vec a} \right) \approx \vec
+\nabla f\left( {\vec a} \right) \cdot \left( {\vec x - \vec a}
+\right)
+\]
+
+Teniendo en cuenta que: $\Delta f = f\left( {\vec x} \right) -
+f\left( {\vec a} \right)$, $\Delta \vec x = \vec x - \vec a $, y
+que si $\vec x$ tiende a $\vec a$ entonces $\Delta \vec x$ se
+suele notar como d$\vec x$, obtenemos:
+
+
+\[
+\Delta f \approx \vec \nabla f\left( {\vec a} \right) \cdot \Delta
+\vec x = \vec \nabla f\left( {\vec a} \right) \cdot \text{d}\vec x
+\]
+donde $\vec \nabla f\left( {\vec a} \right) \cdot \text{d}\vec x$
+recibe el nombre de diferencial total de la función en el punto
+$\vec a$, y se nota como d$f$.
+
+Luego, si $\vec x$ tiende a $\vec a$ y $f$ es diferenciable en
+$\vec a$, se cumple (prescindiendo de la dependencia en $\vec a$):
+
+\[
+\Delta f \approx \text{d}f = \vec \nabla f \cdot \text{d}\vec x
+\]
+que se trata de una ecuación completamente similar a la que
+utiliza con las funciones de una única variable: $\text{d}f = f'
+\cdot \text{d}x$.
+
+Por ejemplo, para funciones de dos variables, $f(x,y)$, la
+diferencial queda:
+
+\[
+\text{d}f = \frac{{\partial f}} {{\partial x}} \cdot \text{d}x +
+\frac{{\partial f}} {{\partial y}} \cdot \text{d}y
+\]
+
+Y haciendo explícita la dependencia en $\vec a=(x_0,y_0)$,
+obtenemos:
+
+\[
+\text{d}f = \frac{{\partial f}} {{\partial x}}\left( {x_0 ,y_0 }
+\right) \cdot \left( {x - x_0 } \right) + \frac{{\partial f}}
+{{\partial y}}\left( {x_0 ,y_0 } \right) \cdot \left( {y - y_0 }
+\right)
+\]
+
+\subsection*{El gradiente en funciones diferenciables}
+
+Al margen de la definición formal dada en apartados anteriores, el
+gradiente tiene especial importancia en funciones diferenciables,
+para las que se cumplen una serie de teoremas que sirven para
+darle una interpretación geométrica. Entre ellos, el más
+importante por sus consecuencias, que también expondremos, es:
+
+Si $f$ es una función de $n$ variables diferenciable en $\vec a$,
+entonces la derivada direccional según el vector unitario $\vec v$
+viene dada por el producto escalar del gradiente en $\vec a$ por
+el vector $\vec v$:
+
+\[
+D_{\vec v} f\left( {\vec a} \right) = \vec \nabla f\left( {\vec a}
+\right) \cdot \vec v
+\]
+
+Como consecuencias geométricas destacan:
+
+\begin{itemize}
+\item Teniendo en cuenta que el producto escalar es igual al
+producto de módulos por el coseno del ángulo que forman los
+vectores, y que el módulo del vector $\vec v$ es igual a la
+unidad, por tratarse de una derivada direccional:
+
+\[
+D_{\vec v} f\left( {\vec a} \right) = \vec \nabla f\left( {\vec a}
+\right) \cdot \vec v = \left\| {\vec \nabla f\left( {\vec a}
+\right)} \right\| \cdot \left\| {\vec v} \right\| \cdot \cos
+\alpha  = \left\| {\vec \nabla f\left( {\vec a} \right)} \right\|
+\cdot \cos \alpha
+\]
+
+Luego la derivada direccional (tasa de variación de la función en
+la dirección escogida) será máxima cuando $\alpha$ es 0, es decir,
+cuando $\vec v$ tiene la misma dirección y sentido del gradiente;
+y será mínima cuando $\alpha$ es $\pi$, es decir, cuando $\vec v$
+tiene la misma dirección y distinto sentido del gradiente. En
+otras palabras, para una función diferenciable en un punto, el
+gradiente en dicho punto marca la dirección y sentido de máximo
+crecimiento de la función.
+
+\item Además, si tenemos en cuenta que el conjunto de nivel de una
+función de $n$ variables lo forman los puntos en los que la
+función permanece constante, entonces la derivada direccional
+según cualquier vector $\vec v$ unitario tangente a dicho conjunto
+en cualquier punto $\vec a$ del conjunto de nivel será 0 (no hay
+tasa de variación a lo largo de la curva de nivel). Por lo tanto:
+
+\[
+D_{\vec v} f\left( {\vec a} \right) = \vec \nabla f\left( {\vec a}
+\right) \cdot \vec v = \left\| {\vec \nabla f\left( {\vec a}
+\right)} \right\| \cdot \left\| {\vec v} \right\| \cdot \cos
+\alpha  = \left\| {\vec \nabla f\left( {\vec a} \right)} \right\|
+\cdot \cos \alpha=0
+\]
+y si $\left\| {\vec \nabla f\left( {\vec a} \right)} \right\| \ne
+0$, la única posibilidad es que $\cos \alpha=0$, con lo cual
+$\alpha=\pi/2$, y el gradiente resulta ser perpendicular a los
+vectores tangentes al conjunto de nivel; es decir, el gradiente
+también nos da la dirección perpendicular al conjunto de nivel.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{gradiente.eps}
+\caption{Vectores gradiente}
+\end{center}
+\end{figure}
+
+
+
+\end{itemize}
+
+\subsection*{Extremos relativos de funciones de $n$ variables}
+
+Al igual que en las funciones reales de una única variable, los
+máximos y mínimos locales de las funciones de $n$ variables
+reciben el nombre de \emph{Extremos Locales o Relativos}; y como
+ya sucedía para las funciones de una variable, en las que
+buscábamos los extremos relativos en los puntos que anulan la
+primera derivada, para el caso de varias variables también existe
+un teorema importante que aporta una condición necesaria para la
+existencia de un extremo local en un punto $\vec a$:
+
+Si $\vec a$ es un punto perteneciente al interior del dominio de
+$f$, función de $n$ variables, tal que $\vec a$ es un extremo
+local de $f$, y además $f$ admite derivadas parciales en $\vec a$,
+entonces el gradiente en dicho punto es nulo; o lo que es lo
+mismo, se anulan todas las derivadas parciales:
+
+
+\[
+\vec \nabla f\left( {\vec a} \right) = \left( {\frac{{\partial f}}
+{{\partial x_1 }}\left( {\vec a} \right),\frac{{\partial f}}
+{{\partial x_2 }}\left( {\vec a} \right),...,\frac{{\partial f}}
+{{\partial x_n }}\left( {\vec a} \right)} \right) = \left(
+{0,0,...,0} \right) = \vec 0
+\]
+
+El anterior teorema aporta una condición necesaria de extremo
+local, pero no suficiente; es decir, pueden existir puntos en los
+que se anule el gradiente que no sean extremos locales. Teniendo
+en cuenta que los puntos en los que se anula el gradiente reciben
+el nombre de \emph{Puntos Críticos}, concluimos que todos los
+extremos locales en los que existan las derivadas parciales serán
+puntos críticos, pero no todos los puntos críticos son extremos
+locales.
+
+¿Dónde, por tanto, habrá que buscar la presencia de extremos
+locales para una función de varias variables dada?:
+
+\begin{itemize}
+\item En el interior del dominio y siempre que existan las
+derivadas parciales, los candidatos se encontrarán en los puntos
+críticos.
+
+\item Pero también habrá que analizar de forma particular los
+puntos del interior en los que no existe alguna de las derivadas
+parciales; es decir, los puntos en los que no existe el gradiente.
+
+\item E igualmente los puntos frontera del dominio.
+
+\end{itemize}
+
+Dejando a un lado lo que puede suceder en lo puntos frontera o en
+los que no existe el gradiente, una vez que hemos detectado un
+punto crítico, y por tanto un candidato a extremo relativo, lo
+ideal sería disponer de un criterio similar al existente para
+funciones de una única variable, en las que se cumple que si la
+derivada segunda en el punto crítico es positiva, entonces tenemos
+un mínimo, y un máximo si es negativa. Para funciones de varias
+variables las derivadas segundas (tanto las referidas a una única
+variable como las cruzadas) se ordenan dentro de la matriz
+hessiana, y es el siguiente teorema el que nos da el criterio de
+clasificación de los puntos críticos:
+
+Consideremos $\vec a$ punto crítico de $f$, y tal que existen
+todas sus derivadas parciales segundas en dicho punto, con las que
+formamos la matriz hessiana. Consideremos también las $n$ matrices
+cuadradas que podemos formar contenidas en la matriz hessiana, la
+primera de ellas de orden 1, cuyo único elemento sería:
+
+\[
+\left( {\frac{{\partial ^2 f}} {{\partial x_1^2 }}\left( {\vec a}
+\right)} \right)
+\]
+La segunda, de orden 2:
+\[
+\renewcommand{\arraystretch}{2.2}
+\left(
+\begin{array}{cc}
+ \dfrac{\partial^2 f}{\partial x_1^2}( \vec a)  & \dfrac{\partial^2 f}{\partial x_2\partial x_1}(\vec a)  \\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_2}(\vec a) & \dfrac{\partial^2 f}{\partial x_2^2}(\vec a)  \\
+\end{array}
+\right)
+\]
+Y así hasta orden $n$, que tendríamos la propia matriz hessiana:
+\[
+\renewcommand{\arraystretch}{2.2}
+H_f(\vec a)=\left(
+\begin{array}{cccc}
+ \dfrac{\partial^2 f}{\partial x_1^2}( \vec a)  & \dfrac{\partial^2 f}{\partial x_2\partial x_1}(\vec a) & \cdots & \dfrac{\partial^2 f}{\partial x_n\partial x_1}(\vec a) \\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_2}(\vec a) & \dfrac{\partial^2 f}{\partial x_2^2}(\vec a)  & \cdots & \dfrac{\partial^2 f}{\partial x_n\partial x_2}(\vec a) \\
+                 \vdots                  &                 \vdots                  & \ddots &                 \vdots                  \\
+ \dfrac{\partial^2 f}{\partial x_1\partial x_n}(\vec a) & \dfrac{\partial^2 f}{\partial x_2\partial x_n}(\vec a) & \cdots & \dfrac{\partial^2 f}{\partial x_n^2}(\vec a)  \\
+\end{array}
+\right)
+\]
+Si llamamos $D_1,D_2,...,D_n$ a sus respectivos determinantes, el
+punto $\vec a$ será:
+
+\begin{itemize}
+\item Un mínimo local si todos los determinantes,
+$D_1,D_2,...,D_n$, son mayores que 0.
+
+\item Un máximo local si hay alternancia en el signo de los
+determinantes siendo el primero negativo. Es decir: $D_1<0$,
+$D_2>0$, $D_3<0$,...
+
+\item Un punto silla (llamado así por su forma parecida a la de
+una silla de montar a caballo) si no todos los determinantes son
+nulos (luego puede haber alguno que sí que lo sea) y no se cumple
+ninguna de las secuencias que implicarían un máximo o un mínimo.
+
+\item El criterio no decide si todos los determinantes son nulos.
+En esta caso, entre otras posibilidades, se podría proceder a un
+estudio local de los valores de la función.
+
+\end{itemize}
+
+\section*{Ejercicios Prácticos}
+
+\begin{enumerate}
+
+
+
+\item  Calcular las siguientes derivadas parciales:
+
+\begin{enumerate}
+
+\item  $\dfrac{\partial }{\partial V}\dfrac{nRT}{V}.$
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Introducir la expresión en Derive.
+
+\item Utilizar el botón \texttt{Hallar una derivada}, desplegando
+la lista de hipotéticas variables en las que podemos derivar
+(evidentemente, para Derive tanto $n$ como $R$ también son
+variables), y escoger la variable $V$ y el orden $1$.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item  $\dfrac{\partial ^{2}}{\partial x\partial y}e^{x+y}\ $sen$\ \dfrac{x}{%
+y}.$
+
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Introducir la expresión en Derive. Tener en cuenta la
+sintaxis adecuada de la función seno: $\sin$.
+
+\item Utilizar el botón \texttt{Hallar una derivada}, desplegando
+la lista de hipotéticas variables en las que podemos derivar y
+escoger la variable $y$ y el orden $1$. Con ello, obtenemos la
+primera derivada con respecto a $y$.
+
+\item Una vez obtenida primera derivada con respecto a $y$, para
+obtener la segunda con respecto a $x$, marcamos la expresión
+obtenida en el apartado anterior y volvemos a derivarla (botón
+\texttt{Hallar una derivada}) pero con respecto a $x$, escogiendo
+como orden de derivación el $1$.
+
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item  $\dfrac{\partial ^{3}}{\partial y\partial x^2}e^{x+y}\ $sen$\ \dfrac{x}{%
+y}.$
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Como ya tenemos la expresión de la función introducida para
+el apartado anterior, la marcamos y pasamos directamente a la
+derivación.
+
+\item En primer lugar realizamos la derivada de segundo orden con
+respecto a $x$. Para ello, botón \texttt{Hallar una derivada},
+escoger como variable de derivación $x$ y como orden $2$.
+
+\item Para la derivada de orden 3, partiendo de la expresión
+generada en el apartado anterior, volvemos a derivar pero ahora
+con respecto a $y$ y de orden 1.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item  Dada la función
+\[
+f(x,y,z)=\ \text{sen}\left( \left( x^{2}-y^{2}\right) z\right)
+\]
+\begin{enumerate}
+
+\item Definir la función en Derive y calcular $f(0,-1,\pi/2)$.
+
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para definirla, tan sólo introducir la expresión con su
+correspondiente operador de definición y la sintaxis adecuada de
+la función seno:
+
+\[
+f(x,y,z):=\sin((x^2-y^2)z)
+\]
+
+\item Una vez definida, para calcular $f(0,-1,\pi/2)$, introducir
+directamente la expresión en la línea de edición y simplificar.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item Calcular su vector gradiente.
+
+\begin{indicacion}
+{Para calcular su vector gradiente, utilizar la función
+$\operatorname{GRAD}$, indicando también las variables en las que
+se realizarán las derivadas parciales:
+
+\[
+\operatorname{GRAD}(F(x,y,z), [x,y,z])
+\]
+
+}
+\end{indicacion}
+
+\item Calcular su matriz Hessiana.
+
+\begin{indicacion}
+{Para calcular la matriz Hessiana, aplicar de nuevo el gradiente
+sobre la expresión del gradiente calculado en el apartado
+anterior. Para ello, simplemente marcar la expresión anterior y
+volver a aplicar el gradiente, o directamente:
+$\operatorname{GRAD}(\operatorname{GRAD}(F(x,y,z),[x,y,z]),[x,y,z])$
+
+}
+\end{indicacion}
+
+\item Comprobar que se cumple el teorema Schwartz de las derivadas
+para las derivas cruzadas, calculando:
+
+\begin{enumerate}
+
+\item $\dfrac{{\partial ^3 f}} {{\partial x\partial z\partial y}}$
+
+\item $\dfrac{{\partial ^3 f}} {{\partial z\partial x\partial y}}$
+
+\item ¿Puedes predecir el valor de: $\dfrac{{\partial ^3 f}}
+{{\partial y\partial x\partial z}}$?
+
+\end{enumerate}
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para el primero de los apartados, calcular, mediante el
+botón \texttt{Hallar una derivada}, en primer lugar la derivada de
+orden 1 con respecto a $y$. A continuación derivar, con orden de
+derivación 1, la expresión resultante con respecto a $z$. Y
+posteriormente derivar, de nuevo con orden 1, con respecto a $x$.
+
+\item Para el segundo de los apartados, proceder como en el
+primero pero cambiando el orden de derivación: en primer lugar con
+respecto a $y$, luego con respecto a $x$, y por último con
+respecto a $z$. Observar cómo, a pesar de haber cambiado el orden
+de derivación, el resultado final no ha variado.
+
+\item En el último de los apartados, se puede predecir fácilmente
+que el resultado será el mismo, ya que únicamente hemos cambiado
+el orden de derivación. No obstante, puede comprobarse fácilmente.
+
+\end{enumerate}
+
+}
+\end{indicacion}
+
+
+\end{enumerate}
+
+\item Sea la función
+\[
+f(x,y,z) = \log \left( {x^2  + y - z} \right)
+\]
+
+\begin{enumerate}
+
+\item Definirla y calcular todas sus derivadas parciales de primer
+orden.
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para definirla, utilizar el operador de definición,
+\texttt{:=}.
+
+\item Para calcular sus derivadas parciales, proceder
+consecutivamente, mediante el botón \texttt{Hallar una derivada},
+al cálculo de la derivada parcial de orden 1 con respecto a $x$,
+luego con respecto a $y$, y finalmente con respecto a $z$.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+
+\item Calcular el vector gradiente.
+
+\begin{indicacion}
+{Utilizar la función $\operatorname{GRAD}$:
+
+\[
+\operatorname{GRAD}(f(x,y,z),[x,y,z])
+\]
+
+
+}
+\end{indicacion}
+
+\item Analizar la continuidad de las derivadas parciales en el
+punto $(1,1,0)$, y sacar conclusiones sobre la diferenciabilidad
+de $f$ en dicho punto.
+
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para la continuidad de las parciales, tener en cuenta que
+las derivadas parciales obtenidas son funciones racionales
+(cocientes de polinomios de varias variables), y que dicho tipo de
+funciones sólo presentas discontinuidades en los puntos $(x,y,z)
+\in \mathbb{R}^3$ que anulan el denominador.
+
+\item Para la diferenciabilidad, tener en cuenta el teorema que
+afirma que si las derivadas parciales son continuas en el punto
+considerado la función será diferenciable en dicho punto.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item Dar la expresión de la diferencial de $f$ en $(1,1,0)$
+(calcular el producto escalar del vector gradiente en $(1,1,0)$
+por el vector $(x-1,y-1,z-0)$).
+
+\begin{indicacion}
+{Recordar que si la función es diferenciable en un punto $\vec a$,
+entonces la diferencial de la función en dicho punto puede
+expresarse como el producto escalar del vector gradiente en $\vec
+a$ por el vector $\vec x-\vec a$. Es decir:
+
+\[
+df\left( {\vec a} \right) = \vec \nabla f\left( {\vec a} \right)
+\cdot \left( {\vec x - \vec a} \right)
+\]
+
+Por lo tanto:
+
+\begin{enumerate}
+
+\item Calcular el gradiente en cualquier $(x,y,z)$ asignándole una
+definición. Por ejemplo:
+
+\[
+\operatorname{gradiente}(x,y,z):=\operatorname{GRAD}(f(x,y,z),[x,y,z])
+\]
+
+\item Calcular el gradiente en el punto $(1,1,0)$.
+
+\item Calcular el vector $\vec x-\vec a$, donde $\vec x$ es un
+punto de coordenadas $(x,y,z)$ muy próximo a $\vec a$:
+
+\[
+\vec{x}-\vec{a}=(x,y,z)-(1,1,0)=(x-1,y-1,z)
+\]
+
+\item Multiplicar escalarmente el gradiente en el punto $(1,1,0)$
+por el vector $\vec x-\vec a$.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item Calcular el incremento en la función cuando pasamos del
+punto $(1,1,0)$ a $(1.1\;,1.1\;,0.1)$. Comprobar que se cumple que
+dicho incremento puede aproximarse por el incremento diferencial.
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para calcular el incremento en la función cuando pasamos del
+punto $(1,1,0)$ al punto  $(1.1\;,1.1\;,0.1)$, simplemente si
+hemos definido la función habrá que calcular:
+$f(1.1\;,1.1\;,0.1)-f(1,1,0)$.
+
+\item Recordar que si el punto $\vec x$ está próximo a $\vec a$,
+entonces el incremento en la función puede aproximarse mediante la
+diferencial de la misma, que a su vez se puede expresar como el
+producto escalar del gradiente por el vector $\vec x-\vec a$. Por
+lo tanto:
+
+
+\[
+\Delta f = f(1.1,{\kern 1pt} \,1.1,\,0.1) - f(1,1,0) \approx df =
+\vec \nabla f\left( {1,1,0} \right) \cdot \left( {\left(
+{1.1,\,1.1,\,0.1} \right) - \left( {1,1,0} \right)} \right)
+\]
+
+
+
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item Sea la función:
+
+\[
+f(x,y,z,t) = x^4  + 3y^2  - 2z + t^2
+\]
+
+\begin{enumerate}
+
+\item Definirla y calcular su vector gradiente.
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para la definición, utilizar $:=$.
+
+\item Para el gradiente, tener en cuenta:
+
+\[
+\operatorname{GRAD}(F(x_1,x_2,...,x_n),[x_1,x_2,...,x_n])
+\]
+en donde, además de la función, hay que indicar las variables de
+las que depende.
+
+En nuestro caso:
+
+\[
+\operatorname{GRAD}(F(x,y,z,t),[x,y,z,t])
+\]
+
+
+
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item A la vista de las derivadas parciales de primer orden,
+¿crees que la función será diferenciable en el punto $(0,0,0,0)$?.
+
+\begin{indicacion}
+{Recordar que si las derivadas parciales son continuas en el punto
+considerado, cosa que sucede en nuestro caso, entonces la función
+es diferenciable en dicho punto.
+}
+\end{indicacion}
+
+\item Utiliza el vector gradiente para calcular la derivada
+direccional de la función $f$ en el punto $(0,0,0,0)$ según la
+dirección dada por el vector $(1,1,1,1)$.
+
+\begin{indicacion}
+{Según la parte teórica de la práctica, sabemos que si la función
+es diferenciable en un punto $\vec a$, entonces se cumple que la
+derivada direccional según un vector unitario $\vec v$ viene dada
+por el producto escalar del gradiente en $\vec a$ por el vector
+unitario $\vec v$. Es decir:
+
+\[
+D_{\vec v} f\left( {\vec a} \right) = \vec \nabla f\left( {\vec a}
+\right) \cdot \vec v
+\]
+
+En nuestro caso $\vec a =(0,0,0,0)$, y el vector unitario $\vec v$
+lo obtenemos multiplicando el vector $(1,1,1,1)$ por el inverso de
+su módulo:
+
+
+\[
+\vec v = \frac{{\left( {1,1,1,1} \right)}} {{\operatorname{Abs}
+\left( {1,1,1,1} \right)}}
+\]
+
+Por lo tanto:
+
+\begin{enumerate}
+
+\item Calculamos el gradiente mediante:
+
+\[
+\operatorname{GRAD}(F(x,y,z,t),[x,y,z,t])
+\]
+
+
+\item Definimos el gradiente como función de función de $(x,y,z,t)$, mediante el operador de definición
+$:=$.
+
+\item Calculamos el gradiente en el punto $(0,0,0,0)$.
+
+\item Calculamos la derivada direccional multiplicando
+escalarmente el gradiente en el punto $(0,0,0,0)$ por el vector
+unitario $\vec v$.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item Sea la función $f(x,y)=10-(x^2+y^2)$:
+
+\begin{enumerate}
+
+\item Definirla y dibujar su gráfica. A la vista de la gráfica,
+¿crees que el existe el plano tangente a la gráfica de la función
+cuando $(x,y)=(2,2)$?.
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para definirla, utilizar el operador de definición $:=$,
+teniendo en cuenta que la función depende de las variables $x$ e
+$y$.
+
+\item Para dibujarla, utilizar el botón \texttt{Ventana 3D}, y una vez en el
+entorno de dibujo de funciones de dos variables utilizar el botón
+\texttt{Representar}.
+
+\item Si la gráfica obtenida, como de hecho así sucede en este
+ejemplo, queda cortada a una cierta altura y no se aprecia
+adecuadamente su forma, podemos utilizar el botón \texttt{Ajuste del
+Mínimo/Máximo} para cambiar el rango de valores de la caja en la que
+se muestra la gráfica. En nuestro caso conviene cambiar los valores
+de $z$ y poner, por ejemplo, un $z$ mínimo de $-20$ y un $z$ máximo
+de $20$.
+
+\item En cuanto al plano tangente a la gráfica cuando $(x,y)=(2,2)$,
+al que corresponde $z=f(2,2)=10-(4+4)=2$, no observamos en dicho
+punto ninguna irregularidad que impida la existencia del plano
+tangente.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\item ¿Es la función diferenciable en $(2,2)$?.
+\begin{indicacion}
+{Calcular el vector gradiente mediante
+$\operatorname{GRAD}(F(x,y),[x,y])$, ya que la función tan sólo
+depende de las variables $x$ e $y$, y comprobar que las derivadas
+parciales son continuas en cualquier $(x,y)$, y por lo tanto en
+$(2,2)$, lo cual implica que será diferenciable en $(2,2)$, o lo que
+es lo mismo, existe el plano tangente a la gráfica de la función
+cuando $(x,y)=(2,2)$. }
+\end{indicacion}
+
+
+\item Calcular la ecuación del plano tangente en dicho punto y representarlo.
+
+\begin{indicacion}
+{
+
+\begin{enumerate}
+
+\item Una vez calculado el vector gradiente de la función, se puede
+definir la función vectorial gradiente, evaluarla en el punto
+$(2,2)$, y tener en cuenta que la ecuación del plano tangente viene
+dada por:
+
+\[
+z=f(2,2)+ \vec \nabla f (2,2)\cdot (x-2,y-2)
+\]
+
+\item Una vez obtenida la ecuación del plano tangente, mediante los
+botones \texttt{Ventana 3D} y \texttt{Representar}, obtenemos la
+gráfica del plano tangente, sin necesidad de borrar la gráfica de
+$f(x,y)$, con lo cual podemos comprobar si de verdad hemos obtenido
+o no la gráfica del plano tangente.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item Para cada una de las siguientes funciones:
+
+
+\[
+\begin{array}{*{20}c}
+{g(x,y) = x^2  - y^2 }  \\
+{h(x,y) = x^4  + y^4  + 6x^2 y^2 }  \\
+
+ \end{array}
+\]
+
+\begin{enumerate}
+
+\item Calcular el gradiente.
+
+\begin{indicacion}
+{Una vez definidas las funciones, y teniendo en cuenta que ambas
+tienen dos variables, $x$ e $y$, utilizar
+$\operatorname{GRAD}(g(x,y),[x,y])$, e igual para $h$.
+
+}
+\end{indicacion}
+
+
+\item Calcular sus puntos críticos.
+
+\begin{indicacion}
+{Sabemos que los puntos críticos son aquellos en los que se anula el
+gradiente (y que el ser punto crítico es una condición necesaria
+aunque no suficiente de extremo local). Por lo tanto, para
+calcularlos hay que resolver el sistema que se forma en cada una de
+las funciones igualando el vector gradiente a $\vec 0$. Para ello,
+en sistemas sencillos, aunque no necesariamente lineales como sucede
+con él que se genera en la función $h(x,y)$, podemos proceder con el
+menú \texttt{Resolver->Sistema} e introducir las ecuaciones
+(componentes del gradiente igualadas a $0$), escogiendo como
+variables de resolución tanto $x$ como $y$.
+
+}
+\end{indicacion}
+
+\item Utilizar el criterio del signo de los sucesivos
+determinantes de la matriz Hessiana para clasificar los puntos
+críticos.
+
+\begin{indicacion}
+{Para cada una de las funciones:
+\begin{enumerate}
+
+\item Calcular la matriz Hessiana de cada una de las funciones.
+Por ejemplo, para la función $g(x,y)$, utilizaríamos:
+$\operatorname{Grad}(\operatorname{Grad}(g(x,y),[x,y]),[x,y])$.
+
+\item Evaluar la matriz Hessiana en los puntos críticos obtenidos en
+apartados anteriores.
+
+\item Tener en cuenta el signo del número que aparece en la primera fila
+y primera columna, además del signo del determinante de toda la
+matriz Hessiana, para clasificar los puntos críticos.
+
+\end{enumerate}
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\section*{Problemas}
+\begin{enumerate}
+
+
+\item Una nave espacial está en problemas cerca del sol. Se
+encuentra en la posición $(1,1,1)$ y la temperatura de la nave
+cuando está en la posición $(x,y,z)$ viene dada por
+$T(x,y,z)=\mbox{e}^{-x^2-2y^2-3z^2}$ donde $x,y,z$ se miden en
+metros. ¿En qué dirección debe moverse la nave para que la
+temperatura decrezca lo más rápidamente posible?.
+
+\item Sea la función:
+
+
+\[
+f(x,y) = e^{xy} x\cos y
+\]
+
+\begin{enumerate}
+
+\item Calcular gradiente y matriz Hessiana.
+
+\item ¿Es la función diferenciable en $(0,0)$?. Si es
+diferenciable en dicho punto, calcular para el mismo:
+
+\begin{enumerate}
+
+\item Plano tangente.
+
+\item Diferencial.
+
+\item Derivada direccional en la dirección el vector (1,2).
+
+\end{enumerate}
+
+\end{enumerate}
+
+\item Sea la función:
+
+
+\[
+f(x,y) = 10 - \sqrt {x^2  + y^2 }
+\]
+
+\begin{enumerate}
+
+\item Representar su gráfica. A la vista de la misma, ¿crees que
+la función tendrá plano tangente en $(0,0)$?.
+
+\item Calcular su vector gradiente.
+
+\item ¿Son las derivadas parciales continuas en (0,0)?. ¿Podemos
+concluir a la vista de este resultado que la función no es
+diferenciable en (0,0)?.
+
+\item ¿Es la función diferenciable en (0,0)?.
+
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+\end{document}

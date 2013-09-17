@@ -1,0 +1,848 @@
+\documentclass[a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+%\usepackage{ntheorem}
+\usepackage{macros}
+\usepackage[dvips]{graphicx}
+%\usepackage{times}
+\usepackage{subfigure}
+\usepackage[small,bf]{caption2}
+\usepackage[compat2,top=1.5cm, bottom=1.8cm, left=2.54cm, right=2.54cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\lhead{\textsc{Universidad San Pablo CEU}} \rhead{\textsl{\textsf{Departamento
+de Matemáticas, Física Aplicada y Fisicoquímica}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\floatpagefraction}{.8}
+\renewcommand{\textfraction}{.1}
+\setcaptionwidth{\textwidth} \addtolength{\captionwidth}{-40pt}
+\captionstyle{indent} \setlength\captionindent{\parindent}
+
+\begin{document}
+\sloppy \practica{Práctica de Cálculo con Derive}{Funciones con
+Valores Vectoriales}
+
+\bigskip
+\section*{Fundamentos Teóricos}
+En anteriores prácticas nuestro objetivo ha sido el estudio de
+funciones con valores reales, ya sean de una o varias variables. Sin
+embargo, no todas las funciones tienen como valor un único número
+real. Por ejemplo:
+
+\begin{itemize}
+
+\item Si consideramos la velocidad de una partícula para un cierto tiempo
+$t$, el valor de la función velocidad es un vector con tres
+componentes reales que serán funciones del tiempo:
+\[
+\vec v(t)=\left(v_x(t),v_y(t),v_z(t)\right)
+\]
+\item Si consideramos la fuerza que experimenta una
+partícula cargada por encontrarse en el punto de coordenadas
+$(x,y,z)$, de nuevo se trata de un vector con tres componentes, las
+cuales a su vez dependerán de las tres variables de posición:
+
+\[
+\vec f(x,y,z) = \left( {f_x (x,y,z),f_y (x,y,z),f_z (x,y,z)}
+\right)
+\]
+
+\end{itemize}
+
+Tanto la velocidad como la fuerza descritas son funciones
+vectoriales (su resultado es un vector), de una variable en el
+caso de la velocidad $(t)$, o de varias variables en el caso de la
+fuerza $(x,y,z)$.
+
+
+
+\subsection*{Funciones vectoriales de variable real}
+
+Una \emph{función vectorial $\vec f$ de variable real}, también
+llamada trayectoria, es una asignación que a cada escalar $t$ en
+un dominio $D$, le asigna el vector $\vec f(t)$ de $\mathbb{R}^n$,
+cuyas componentes son: $f_1(t), f_2(t),...,f_n(t)$. Es decir:
+
+\[
+\vec f(t)=\left(f_1(t), f_2(t),...,f_n(t)\right)
+\]
+donde $f_1,f_2,...,f_n$ son funciones reales de la variable $t$.
+
+Para funciones vectoriales con dos o tres componentes
+respectivamente, en un sistema de coordenadas cartesianas, las
+notaciones habituales son:
+
+\[
+\vec f(t) = \left( {f_1 (t),f_2 (t)} \right) = f_1 (t)\,\vec i +
+f_2 (t)\,\vec j = \left( {f_x (t),f_y (t)} \right) = f_x (t)\,\vec
+i + f_y (t)\,\vec j\; \in \mathbb {R}^2
+\]
+
+\[
+\vec f(t) = \left( {f_1 (t),f_2 (t),f_3 (t)} \right) = f_1
+(t)\,\vec i + f_2 (t)\,\vec j + f_3 (t)\,\vec k = \left( {f_x
+(t),f_y (t),f_z (t)} \right) = f_x (t)\,\vec i + f_y (t)\,\vec j +
+f_z (t)\,\vec k\; \in \mathbb {R}^3
+\]
+
+\subsection*{Gráfica de una función vectorial de variable real}
+
+Sea $\vec f$ una función vectorial y supongamos que consideramos
+todos los vectores $\vec f(t)$ con $n$ componentes y con origen en
+el origen de coordenadas, para un cierto $t$ en el dominio de
+$\vec f$. La gráfica de $\vec f$ es la curva $n$ dimensional que
+se obtiene al unir los extremos de los vectores $\vec f(t)$.
+
+Por ejemplo, si $\vec f(t) \in \mathbb {R}^3$, es decir: $\vec
+f(t)=f_x (t)\,\vec i + f_y (t)\,\vec j + f_z (t)\,\vec k$,
+entonces su gráfica es una curva tridimensional cuyas ecuaciones
+paramétricas son:
+
+\[
+\left\{ {\begin{array}{*{20}c}
+   {x = f_x (t)}  \\
+   {y = f_y (t)}  \\
+   {z = f_z (t)}  \\
+
+ \end{array} } \right.
+\]
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{grafica.eps}
+\caption{Gráfica de una función vectorial de variable real con 3
+componentes}
+\end{center}
+\end{figure}
+
+\subsection*{Operaciones con funciones vectoriales de variable
+real}
+
+Sin más que tener en cuenta que el resultado de la aplicación de
+una función vectorial sobre un cierto $t$ es un vector, las
+operaciones con funciones vectoriales serán las mismas que las
+operaciones con vectores.
+
+Si $\vec f(t)$ y $\vec g(t)$ son dos funciones vectoriales con
+valores en $\mathbb{R}^n$, y $h(t)$ es una función real de
+variable real, entonces se definen:
+
+\begin{itemize}
+
+\item Suma: $\left(\vec f + \vec g \right)(t)=\vec f(t)+ \vec
+g(t)$
+
+\item Producto por una función escalar: $\left( h \cdot \vec f
+\right)(t) = h(t) \cdot \vec f(t)$
+
+\item Producto escalar: $\left( \vec f \cdot \vec g \right)(t) =
+\vec f(t) \cdot \vec g(t)$
+
+\item Producto vectorial (sólo para funciones vectoriales de
+$\mathbb{R}^2$ en $\mathbb{R}^2$, ó de $\mathbb{R}^3$ en
+$\mathbb{R}^3$): $\left( {\vec f \times \vec g} \right)(t) = \vec
+f(t) \times \vec g(t)$
+
+\end{itemize}
+
+
+\subsection*{Límites, continuidad y derivadas de funciones
+vectoriales de variable real}
+
+Las definiciones de límite, continuidad y derivada de una función
+vectorial de variable real, $\vec f(t)=\left(f_1(t),
+f_2(t),...,f_n(t)\right)$, constituyen una extensión de sus
+correspondientes definiciones en funciones reales de variable real
+sin más que considerar que para la función vectorial $\vec f(t)$:
+
+\begin{itemize}
+\item Existe el límite en un punto $t_0$ si existe, en dicho
+punto, el límite de cada una de las componentes, y se calcula
+mediante:
+
+\[
+\mathop {\lim }\limits_{t \to t_0 } \vec f\left( t \right) =
+\left( {\mathop {\lim }\limits_{t \to t_0 } f_1 \left( t
+\right),\mathop {\lim }\limits_{t \to t_0 } f_2 \left( t
+\right),...,\mathop {\lim }\limits_{t \to t_0 } f_n \left( t
+\right)} \right)
+\]
+
+\item Es continua en un punto $t_0$ si lo son cada una de sus
+componentes.
+
+\item Es derivable en un punto $t_0$ si lo son cada una de las
+componentes, y la derivada en $t_0$ se calcula mediante:
+
+
+\[
+\frac{{d\vec f}} {{dt}}\left( {t_0 } \right) = \left( {\frac{{df_1
+}} {{dt}}\left( {t_0 } \right),\frac{{df_2 }} {{dt}}\left( {t_0 }
+\right),...,\frac{{df_3 }} {{dt}}\left( {t_0 } \right)} \right)
+\]
+
+\end{itemize}
+
+
+\subsection*{La cinemática y las funciones vectoriales de variable
+real}
+
+La cinemática, como estudio del movimiento de los cuerpos
+independientemente de las causas que los producen, es un ejemplo
+claro de análisis de una función vectorial de variable real y sus
+sucesivas derivadas. De hecho, analizar el movimiento de una
+partícula se concreta en el estudio de la función vector de posición
+como función del tiempo $t$:
+
+
+\[
+\vec r(t) = x(t)\vec i + y(t)\vec j + z(t)\vec k
+\]
+
+
+Su derivada con respecto a $t$ nos da el valor de la velocidad:
+
+
+\[
+\vec v(t) = \frac{{d\vec r}} {{dt}} = \frac{{dx}} {{dt}}\vec i +
+\frac{{dy}} {{dt}}\vec j + \frac{{dz}} {{dt}}\vec k = v_x \vec i +
+v_y \vec j + v_z \vec k
+\]
+en donde hemos tenido en cuenta que los vectores unitarios son
+constantes y, por lo tanto, no varían con $t$.
+
+Y de nuevo, derivando con respecto a $t$ obtenemos la aceleración:
+
+\[
+\vec a(t) = \frac{{d\vec v}} {{dt}} = \frac{{dv_x }} {{dt}}\vec i
++ \frac{{dv_y }} {{dt}}\vec j + \frac{{dv_z }} {{dt}}\vec k = a_x
+\vec i + a_y \vec j + a_z \vec k
+\]
+
+\subsection*{Funciones vectoriales de variable vectorial}
+
+Una función vectorial $\vec f$ de variable vectorial, también
+llamada campo vectorial, es una asignación que a cada vector $\vec
+x$ en un dominio $D$ de $\mathbb{R}^n$, es decir $\vec
+x=(x_1,x_2,...,x_n)$, le asigna el vector $\vec f\left(\vec
+x\right)$ de $\mathbb{R}^m$ de $m$ componentes:
+\[
+\vec f\left( {\vec x} \right) = \left( {f_1 \left( {\vec x}
+\right),f_2 \left( {\vec x} \right),...,f_m \left( {\vec x}
+\right)} \right)
+\]
+donde $f_1,f_2,...,f_m$ son funciones reales de variable
+vectorial.
+
+Si $\vec f$ es una función de $\mathbb{R}^3$ en $\mathbb{R}^3$, se
+utiliza la notación:
+
+\[
+\vec f\left( {x,y,z} \right) = \left( {f_1 \left( {x,y,z}
+\right),f_2 \left( {x,y,z} \right),f_3 \left( {x,y,z} \right)}
+\right) = \left( {f_x \left( {x,y,z} \right),f_y \left( {x,y,z}
+\right),f_z \left( {x,y,z} \right)} \right)
+\]
+y la imagen de cada punto de $\mathbb{R}^3$ es también un vector
+de $\mathbb{R}^3$, que puede ilustrarse gráficamente de forma que
+en cada punto de coordenadas $(x,y,z)$ adherimos un vector cuyas
+coordenadas son $(f_x,f_y,f_z)$.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{campovec.eps}
+\caption{Gráfica de una función vectorial, con 3 componentes, de
+variable vectorial, con 3 componentes}
+\end{center}
+\end{figure}
+
+
+\subsection*{Operaciones con funciones vectoriales de variable
+vectorial}
+
+De nuevo, sin más que tener en cuenta que el resultado de la
+aplicación de una función vectorial sobre un vector es, a su vez,
+un vector, las operaciones con funciones vectoriales serán las
+mismas que las operaciones con vectores.
+
+Remitimos al punto de operaciones con funciones vectoriales de
+variable real, sin más que sustituir el escalar $t$ por el vector
+$\vec x$, para definir suma, producto por una función escalar,
+producto escalar y producto vectorial de las funciones de
+$\mathbb{R}^n$ en $\mathbb{R}^m$ $\vec f\left(\vec x\right)$ y $\vec
+g\left(\vec x\right)$, y la función real de variable real $h(t)$.
+
+
+
+\subsection*{Límites, continuidad y derivadas de funciones
+vectoriales de variable vectorial}
+
+Las definiciones de límite, continuidad y diferentes tipos de
+derivadas de funciones vectoriales de variable vectorial,
+constituyen una extensión de sus correspondientes definiciones en
+funciones reales de variable vectorial (funciones reales de
+múltiples variables que ya estudiamos en prácticas anteriores). Por
+lo tanto, si $\vec f\left(\vec x \right)$ es una función de
+$\mathbb{R}^n$ en $\mathbb{R}^m$, es decir, para todo $\vec
+x=(x_1,x_2,...,x_n)$ perteneciente al dominio de la función, le hace
+corresponder el vector  $\vec f\left( {\vec x} \right) = \left( {f_1
+\left( {\vec x} \right),f_2 \left( {\vec x} \right),...,f_m \left(
+{\vec x} \right)} \right)$, y $\vec a$ un punto de dicho dominio,
+entonces:
+
+\begin{itemize}
+
+\item Existe el límite en el punto $\vec a$ si existe el límite de
+cada una de las componentes en dicho punto, y se calcula mediante:
+
+\[
+\mathop {\lim }\limits_{\vec x \to \vec a} \vec f\left( {\vec x}
+\right) = \left( {\mathop {\lim }\limits_{\vec x \to \vec a} f_1
+\left( {\vec x} \right),\mathop {\lim }\limits_{\vec x \to \vec a}
+f_2 \left( {\vec x} \right),...,\mathop {\lim }\limits_{\vec x \to
+\vec a} f_m \left( {\vec x} \right)} \right)
+\]
+
+\item $\vec f\left(\vec x \right)$ será continua en $\vec a$ si lo
+son cada una de sus componentes.
+
+\item $\vec f\left(\vec x \right)$ tendrá derivadas parciales y
+direccionales en $\vec a$ si las tienen sus componentes, y se
+calculan respectivamente como:
+
+\[
+\frac{{\partial \vec f}} {{\partial x_i }}\left( {\vec a} \right)
+= \left( {\frac{{\partial f_1 }} {{\partial x_i }}\left( {\vec a}
+\right),\frac{{\partial f_2 }} {{\partial x_i }}\left( {\vec a}
+\right),...,\frac{{\partial f_m }} {{\partial x_i }}\left( {\vec
+a} \right)} \right)
+\]
+
+
+\[
+D_{\vec v} \vec f\left( {\vec a} \right) = \left( {D_{\vec v} f_1
+\left( {\vec a} \right),D_{\vec v} f_2 \left( {\vec a}
+\right),...,D_{\vec v} f_m \left( {\vec a} \right)} \right)
+\]
+
+La expresión matricial de todas las posibles derivadas parciales
+de una función vectorial de varias variables, recibe el nombre de
+Matriz Jacobiana de la función, y se nota como $J_{\vec f}$:
+
+
+\[
+\renewcommand{\arraystretch}{2.2}
+J_{\vec f}  = \left( {\begin{array}{cccc}
+   {\dfrac{{\partial f_1 }}
+{{\partial x_1 }}} & {\dfrac{{\partial f_1 }} {{\partial x_2 }}} &
+{...} & {\dfrac{{\partial f_1 }}
+{{\partial x_n }}}  \\
+   {\dfrac{{\partial f_2 }}
+{{\partial x_1 }}} & {\dfrac{{\partial f_2 }} {{\partial x_2 }}} &
+{...} & {\dfrac{{\partial f_2 }}
+{{\partial x_n }}}  \\
+   {\vdots} & {\vdots} & {\ddots} & {\vdots}  \\
+   {\dfrac{{\partial f_m }}
+{{\partial x_1 }}} & {\dfrac{{\partial f_m }} {{\partial x_2 }}} &
+{...} & {\dfrac{{\partial f_m }}
+{{\partial x_n }}}  \\
+
+ \end{array} } \right)
+\]
+
+Al determinante de esta matriz evaluado en un punto $\vec a$,
+$\left| {J_{\vec f} \left( {\vec a} \right)} \right|$, se le
+denomina Jacobiano de $\vec f$ en $\vec a$.
+
+\end{itemize}
+
+
+\subsection*{Divergencia y rotacional de una función vectorial de
+variable vectorial}
+
+Al igual que para las funciones reales de variable vectorial, en
+las que ya definimos el vector gradiente y vimos sus importantes
+aplicaciones matemáticas, que tendrán su reflejo en
+importantísimas aplicaciones físicas, también para las funciones
+vectoriales de variable vectorial pueden definirse toda una serie
+de expresiones matemáticas en las que aparecen las derivadas
+parciales de las componentes; todas estas expresiones, incluido el
+vector gradiente, reciben el nombre de Operadores Diferenciales.
+
+Entre los operadores diferenciales más importantes aplicados a
+funciones vectoriales de variable vectorial se encuentran la
+divergencia y el rotacional, para los que vamos a dar sus
+definiciones y una interpretación sencilla de su significado
+geométrico (demostrar las consecuencias matemáticas y físicas que
+tienen ambos operadores queda fuera del alcance del nivel de estas
+prácticas).
+
+Se define la Divergencia de una función $\vec
+f(x,y)=\left(f_1(x,y),f_2(x,y)\right)$ de $\mathbb{R}^2$ en
+$\mathbb{R}^2$, donde $x$ e $y$ son las coordenadas cartesianas de
+cualquier punto de $\mathbb{R}^2$, como el escalar que se obtiene
+mediante:
+
+
+\[
+\text{div}\,\vec f = \frac{{\partial f_1 }} {{\partial x}} +
+\frac{{\partial f_2 }} {{\partial y}}
+\]
+
+Para $\vec
+f(x,y,z)=\left(f_1(x,y,z),f_2(x,y,z),f_3(x,y,z)\right)$, función
+de $\mathbb{R}^3$ en $\mathbb{R}^3$, también en coordenadas
+cartesianas:
+
+
+\[
+\text{div}\,\vec f = \frac{{\partial f_1 }} {{\partial x}} +
+\frac{{\partial f_2 }} {{\partial y}} + \frac{{\partial f_3 }}
+{{\partial z}}
+\]
+
+Si tenemos en cuenta la definición dada en prácticas anteriores del
+operador nabla, $\vec \nabla$, en $\mathbb{R}^3$:
+
+\[
+\vec \nabla  = \left( {\dfrac{\partial } {{\partial
+x}},\dfrac{\partial } {{\partial y}},\dfrac{\partial } {{\partial
+z}}} \right)
+\]
+y de igual forma en $\mathbb{R}^2$, la divergencia de $\vec f$ puede
+expresarse simbólicamente como un producto escalar:
+
+\[
+\text{div}\,\vec f = \vec \nabla  \cdot \vec f
+\]
+
+Y con ello, la divergencia en un punto concreto $\vec x=\vec a$
+vale:
+
+\[
+\text{div}\,\vec f\left( {\vec a} \right) = \left( {\vec \nabla
+\cdot \vec f} \right)\left( {\vec a} \right)
+\]
+
+
+Por lo que respecta a la interpretación del valor de la
+divergencia de un campo vectorial en un punto, el mismo cuantifica
+el flujo neto por unidad de volumen del campo vectorial en dicho
+punto. En otras palabras, si la divergencia en un punto es
+positiva, quiere decir que se produce un flujo saliente del campo
+vectorial en dicho punto, y en términos más físicos se habla de la
+presencia de fuentes escalares del campo divergente (de ahí la
+palabra divergencia). Cuando la divergencia es negativa en un
+punto, quiere decir que se produce un flujo entrante hacia el
+punto, y se habla de la presencia de un sumidero del campo, que
+ahora sería convergente. Si la divergencia es nula en un punto,
+querrá decir que no hay flujo neto del campo en el mismo, ya sea
+porque no hay campo o porque el flujo entrante se compensa con el
+saliente.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{divergencia.eps}
+\caption{Distintos casos del valor de la divergencia en un punto}
+\end{center}
+\end{figure}
+
+
+
+En idénticas condiciones a las que han servido para definir la
+divergencia, para una función de $\mathbb{R}^3$ en $\mathbb{R}^3$
+en coordenadas cartesianas, se define el rotacional de la función
+mediante la expresión:
+
+
+\[
+\text{rot}\,\vec f = \left( {\left( {\frac{{\partial f_3 }}
+{{\partial y}} - \frac{{\partial f_2 }} {{\partial z}}}
+\right),\left( {\frac{{\partial f_1 }} {{\partial z}} -
+\frac{{\partial f_3 }} {{\partial x}}} \right),\left(
+{\frac{{\partial f_2 }} {{\partial x}} - \frac{{\partial f_1 }}
+{{\partial y}}} \right)} \right)
+\]
+o lo que es lo mismo:
+
+
+\[
+\text{rot}\,\vec f = \left( {\frac{{\partial f_3 }} {{\partial y}}
+- \frac{{\partial f_2 }} {{\partial z}}} \right)\vec i + \left(
+{\frac{{\partial f_1 }} {{\partial z}} - \frac{{\partial f_3 }}
+{{\partial x}}} \right)\vec j + \left( {\frac{{\partial f_2 }}
+{{\partial x}} - \frac{{\partial f_1 }} {{\partial y}}}
+\right)\vec k
+\]
+
+Si tenemos en cuenta la definición del operador nabla, la anterior
+definición puede escribirse simbólicamente como:
+
+
+\[
+\text{rot}\,\vec f = \vec \nabla  \times \vec f = \left|
+{\begin{array}{*{20}c}
+   {\vec i} & {\vec j} & {\vec k}  \\
+   {\dfrac{\partial }
+{{\partial x}}} & {\dfrac{\partial } {{\partial y}}} &
+{\dfrac{\partial }
+{{\partial z}}}  \\
+   {f_1 } & {f_2 } & {f_3 }  \\
+
+ \end{array} } \right|
+\]
+determinante (producto vectorial) que, desarrollado, nos conduce a
+la definición previa.
+
+De igual manera, el rotacional de $\vec f$ en el punto $\vec a$ es:
+
+\[
+\text{rot}\,\vec f\left( {\vec a} \right) = \left( {\vec \nabla
+\times \vec f} \right)\left( {\vec a} \right)
+\]
+
+El valor del rotacional en un punto cuantifica la ``circulación"
+(esta palabra tiene un sentido matemático preciso que queda lejos
+del nivel de la práctica que nos ocupa, pero para nuestras
+pretensiones será suficiente con hacernos una idea de lo que la
+misma quiere decir) por unidad de área del campo vectorial alrededor
+de dicho punto, de forma que un rotacional diferente de 0 significa
+que el campo se enrolla (circula) en torno al punto en el que
+calculamos el rotacional. Decimos entonces que el campo es
+solenoidal en el punto y que presenta fuentes vectoriales (el propio
+rotacional sería un vector en torno al que giraría el campo
+vectorial objeto de estudio).
+
+Para las funciones de $\mathbb{R}^2$ en $\mathbb{R}^2$ no podemos
+definir un rotacional.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{rotacional.eps}
+\caption{Campo vectorial con rotacional distinto de 0 en un punto}
+\end{center}
+\end{figure}
+
+
+
+\section*{Ejercicios Prácticos}
+
+\begin{enumerate}
+\item Sea la función vectorial de variable real:
+
+
+\[
+\vec f(t) = \left( {\cos ^3 t,\sen ^3 t} \right)
+\]
+
+\begin{enumerate}
+
+\item Definirla en Derive y calcular su valor en $\pi/2$ y en
+$\pi/6$.
+
+\begin{indicacion}
+{
+\begin{enumerate}
+
+\item Para definirla, tener en cuenta que se trata de una función
+vectorial, y por lo tanto se define como un vector:
+
+\[
+f(t):=[(\cos t)^3,(\sen t)^3]
+\]
+
+\item Y para calcular su valor en $\pi/2$ y $\pi/6$, una vez definida, tan sólo hay
+que pedir al programa el valor de $f(\pi/2)$ y $f(\pi/6)$.
+\end{enumerate}
+
+}
+\end{indicacion}
+
+
+\item Calcular su derivada con respecto al tiempo.
+
+\begin{indicacion}
+{Procedemos como se calcula la derivada de cualquier función real de
+variable real, mediante el botón \texttt{Hallar una derivada} y
+escogiendo como variable de derivación $t$. Únicamente una pequeña
+aclaración: el programa no opera adecuadamente cuando le pedimos que
+derive directamente la expresión en la que se ha introducido la
+definición de la función, pero no da ningún problema si le pedimos
+que derive $f(t)$ sin más.
+
+
+
+}
+\end{indicacion}
+
+\item Suponiendo que $\vec f(t)$ nos da el vector de posición de
+una partícula en el plano en el momento $t$, es decir:
+
+\[
+\vec f(t) = \vec r(t) = \left( {x(t),y(t)} \right) = \left( {\cos
+^3 t,\sen ^3 t} \right)
+\]
+de forma que la trayectoria, en ecuaciones paramétricas, vendría
+dada por:
+
+\[
+\begin{array}{*{20}c}
+   {x(t) = \cos ^3 t}  \\
+   {y(t) = \sen ^3 t}  \\
+
+ \end{array}
+\]
+dibujar dicha trayectoria, que recibe el nombre de hipocicloide de 4
+puntas.
+
+\begin{indicacion}
+{Para dibujar una curva de $\mathbb{R}^2$ en paramétricas mediante
+Derive, se procede de igual forma que con las funciones habituales
+de $\mathbb{R}$ en $\mathbb{R}$, mediante los botones
+\texttt{Ventana 2D} y \texttt{Representar Expresión}, dejando los
+valores por defecto que aparecen en el cuadro de diálogo
+\texttt{Gráficas en Paramétricas}.
+
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item Suponiendo que la siguiente función vectorial es el vector
+de posición de una partícula que se mueve en el plano:
+
+\[
+\vec r(t) = \left( {\cos \left( {4t} \right)\cos t,\cos \left(
+{4t} \right)\sen t} \right)
+\]
+
+
+\begin{enumerate}
+
+\item Dibujar la trayectoria, que en este caso recibe el nombre de
+rosa de 8 pétalos.
+
+\begin{indicacion}
+{Introducir la expresión (para evitar problemas con las derivadas de
+los apartados siguientes, podemos introducirla sin definirla), y
+proceder a dibujarla de la forma habitual, mediante los botones
+\texttt{Ventana 2D} y \texttt{Representar Expresión}, dejando los
+valores por defecto que aparecen en el cuadro de diálogo
+\texttt{Gráficas en Paramétricas}.
+
+
+}
+\end{indicacion}
+
+
+\item Calcular su velocidad para todo tiempo $t$.
+
+\begin{indicacion}
+{Tener en cuenta que la velocidad es la derivada del vector de
+posición con respecto al tiempo.
+
+}
+\end{indicacion}
+
+
+\item Calcular el módulo de la velocidad para todo tiempo $t$.
+
+\begin{indicacion}
+{Para calcular el módulo, una vez calculada la velocidad para todo
+tiempo $t$, aplicar la función $\operatorname{Abs}$ al vector
+velocidad.
+
+
+}
+\end{indicacion}
+
+\item Calcular la aceleración para todo tiempo $t$.
+
+\begin{indicacion}
+{Tener en cuenta que la aceleración se calcula como la derivada de
+la velocidad con respecto al tiempo, o la derivada segunda del
+vector de posición con respecto al tiempo.
+
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item Para el campo vectorial en coordenadas cartesianas dado por:
+
+\[
+\vec f(x,y,z) = e^{xy} z\,\vec i + 2xyz\,\vec j + \log (xz)\sqrt
+{xy} \,\vec k
+\]
+
+\begin{enumerate}
+\item Definir su expresión en Derive.
+
+\begin{indicacion}
+{Se define como cualquier otro vector teniendo cuidado de indicar la
+dependencia en las variables $x$, $y$ y $z$.
+
+}
+\end{indicacion}
+
+\item Calcular su divergencia.
+
+\begin{indicacion}
+{Utilizar la función $\operatorname{Div}$ aplicada a la función
+$f(x,y,z)$, indicando también las variables en las que se realizan
+las derivadas parciales:
+
+\[
+\operatorname{Div}(f(x,y,z), [x,y,z])
+\]
+
+}
+\end{indicacion}
+
+\item Calcular su rotacional.
+
+\begin{indicacion}
+{Utilizar la función $\operatorname{Curl}$ aplicada a la función
+$f(x,y,z)$ indicando las variables en las que se realizan las
+derivadas parciales:
+
+\[
+\operatorname{Curl}(f(x,y,z), [x,y,z])
+\]
+
+
+}
+\end{indicacion}
+
+\item Calcular su matriz jacobiana.
+
+\begin{indicacion}
+{Utilizar la función $\operatorname{Jacobian}$ aplicada a la función
+$f(x,y,z)$, pero indicando también las variables en las que se
+realizan las derivadas parciales de la matriz jacobiana:
+
+\[
+\operatorname{Jacobian}(f(x,y,z),[x,y,z])
+\]
+
+
+}
+\end{indicacion}
+
+\item Calcular su divergencia, rotacional y matriz jacobiana en el
+punto (1,1,2).
+
+\begin{indicacion}
+{Utilizar los apartados anteriores para definir las funciones de
+varias variables divergencia, rotacional y matriz jacobiana y
+sustituir las variables por sus respectivos valores $x=1$, $y=1$ y
+$z=2$.
+
+
+}
+\end{indicacion}
+
+\end{enumerate}
+
+\item Sea la siguiente función de $\mathbb{R}^4$ en
+$\mathbb{R}^4$:
+
+
+\[
+F(x,y,z,t) = \left( {\log _3 \left( {xyz\sqrt t }
+\right),z\,2^{xyt} ,\sqrt[4]{{xyt}}\cos (tz),\frac{{xy}} {{tz}}}
+\right)
+\]
+
+\begin{enumerate}
+
+\item Calcular su matriz jacobiana.
+
+\begin{indicacion}
+{Una vez definida como función de $x$, $y$, $z$ y $t$, aplicamos
+sobre la misma la función $\operatorname{Jacobian}$:
+
+\[
+\operatorname{Jacobian}(f(x,y,z,t),[x,y,z,t])
+\]
+
+
+}
+\end{indicacion}
+
+
+\item Calcular el jacobiano de $\vec F$.
+
+\begin{indicacion}
+{Tener en cuenta que el jacobiano es el determinante de la matriz
+jacobiana, obtenida en el apartado anterior.
+
+
+}
+\end{indicacion}
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\section*{Problemas}
+
+\begin{enumerate}
+
+\item La siguiente función representa el vector de posición de una
+partícula en función del tiempo $t$:
+
+\[
+\vec r(t) = a\,t^2 \,\vec i + (2a + 1)t\,\vec j + t^3 \,\vec k
+\]
+donde $a$ es una constante.
+
+\begin{enumerate}
+
+\item Calcular la velocidad y la aceleración para todo tiempo $t$.
+
+\item ¿Existe algún valor de $a$ de forma que tanto la velocidad
+como la aceleración de la partícula valgan $\vec 0$ en $t=0$.
+
+\end{enumerate}
+
+\item Dado el siguiente campo vectorial en coordenadas
+cartesianas:
+
+\[
+\vec F(x,y,z) = e^{xy} \,\vec i + z\ln y\,\vec j + zx\sqrt y
+\,\vec k
+\]
+
+\begin{enumerate}
+
+\item Calcular su rotacional.
+
+\item Comprobar que se cumple que la divergencia del rotacional es
+0: $ \vec \nabla  \cdot \left( {\vec \nabla  \times \vec F}
+\right) = 0$.
+
+\end{enumerate}
+
+\item Dado el siguiente campo vectorial en coordenadas
+cartesianas:
+
+
+\[
+\vec F(x,y,z) = exyz\,\vec i + \sqrt[3]{z}\ln (y + 1)\,\vec j +
+zx\,\vec k
+\]
+
+Calcular la matriz jacobiana, la divergencia y el rotacional,
+todos ellos en el punto (1,0,-1).
+
+
+\end{enumerate}
+\end{document}

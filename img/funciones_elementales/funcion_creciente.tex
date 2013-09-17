@@ -1,0 +1,14 @@
+\psset{unit=1.5, ticksize=-3pt 0, algebraic}
+\begin{pspicture*}(-1,-0.5)(3,2.5)
+\footnotesize
+\psaxes[arrows=<->,ticks=none,labels=none](0,0)(-0.5,-0.5)(2.5,2.5)
+\psplot[linecolor=blue]{0.5}{1.7}{x^1.5}
+\psline[linecolor=red,linestyle=dashed](1,0)(1,1)(0,1)
+\psline[linecolor=red,linestyle=dashed](1.5,0)(1.5,1.8371)(0,1.8371)
+\psxTick(1){x_1}
+\rput[t](1.25,-0.1){$<$}
+\psxTick(1.5){x_2}
+\psyTick(1){f(x_1)}
+\rput[r](-0.3,1.415){\rotateleft{$\leq$}}
+\psyTick(1.8371){f(x_2)}
+\end{pspicture*} 

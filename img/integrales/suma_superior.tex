@@ -1,0 +1,12 @@
+\psset{unit=0.6,ticksize=-3pt 0,plotpoints=200}
+\begin{pspicture}(-0.1,-1)(10,6)
+\psaxes[arrows=<->,ticks=none,labels=none]{<->}(0,0)(-1,-1)(10,6)
+\psStep[algebraic,linecolor=gray,StepType=supremun,fillstyle=solid,fillcolor=coral](1,9){8}{sqrt(x)*sin(x)+3}
+\psplot[algebraic,linecolor=blue]{0}{10}{sqrt(x)*sin(x)+3}
+\psxTick[ticksize=-4pt 0](1){a}
+\psxTick[ticksize=-4pt 0](2){x_1}
+\psxTick[ticksize=-4pt 0](8){x_{n-1}}
+\psxTick[ticksize=-4pt 0](9){b}
+\rput[t](5,-0.3){$\cdots$}
+\rput[r](10,5){$f(x)$}
+\end{pspicture}

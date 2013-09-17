@@ -1,0 +1,10 @@
+\psset{unit=1, algebraic}
+\begin{pspicture*}(-4,-1.5)(3.5,1.5)
+\footnotesize
+\psaxes[arrows=<->,ticks=none,labels=none](-3.5,0)(-4,-1.5)(3.5,1.5)
+\psplot[linecolor=blue,plotpoints=100]{-3.5}{4}{cos(2*x)}
+\psline[arrows=|-|,linecolor=red](-3.1415,1)(0,1)
+\rput[b](-1.55,1.1){Periodo}
+\psline[arrows=|-|,linecolor=red](0,0)(0,1)
+\rput[r](-0.1,0.5){\rotateleft{Amplitud}}
+\end{pspicture*}

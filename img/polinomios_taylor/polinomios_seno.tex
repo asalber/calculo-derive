@@ -1,0 +1,14 @@
+\psset{unit=1.5}
+\begin{pspicture*}(-3.5,-2)(3.5,2.1)
+\scriptsize
+\psaxes[arrows=<->,ticksize=1pt,labelsep=2pt](0,0)(-3,-2)(3,2)
+\normalsize
+\psplot[linecolor=blue]{-3}{3}{x 180 mul 3.1415 div sin}
+\rput[l](3.1,0.1){$f$}
+\psplot[linecolor=red]{-3}{3}{x}
+\rput[l](2.2,1.9){$p_{f,0}^1$}
+\psplot[linecolor=green]{-3}{3}{x x 3 exp 6 div sub}
+\rput[l](3.1,-1.6){$p_{f,0}^3$}
+\psplot[linecolor=orange]{-3}{3}{x x 3 exp 6 div sub x 5 exp 120 div add}
+\rput[l](3.1,0.5){$p_{f,0}^5$}
+\end{pspicture*}
