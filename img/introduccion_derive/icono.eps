@@ -1,2724 +1,970 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Title: (Microsoft PowerPoint - Presentaci\363n1)
-%%Version: 1 3
-%%Creator: (PScript5.dll Version 5.2)
-%%CreationDate: (D:20041213154430+01'00')
+%%Creator: (ImageMagick)
+%%Title: (icono.eps)
+%%CreationDate: (2013-09-23T05:46:36+02:00)
+%%BoundingBox: -0 -0 66 76
+%%HiResBoundingBox: 0 0 65.9931 76
 %%DocumentData: Clean7Bit
-%%LanguageLevel: 2
-%%BoundingBox: 241 544 329 646
-%%Pages: 0
-%%DocumentProcessColors: Cyan Magenta Yellow Black
-%%DocumentNeededResources: (atend)
-%%DocumentSuppliedResources:
-%%+ procset (Adobe Acrobat - PDF operators) 1.2 0
-%%+ procset (Adobe Acrobat - type operators) 1.2 0
-%%+ procset (Adobe Acrobat - general image support) 1.2 0
-%%+ procset (Adobe Acrobat - monochrome image support) 1.2 0
-%%+ procset (Adobe Acrobat - color image support) 1.2 0
-%%+ procset (Adobe Acrobat - indexed color image support) 1.2 0
+%%LanguageLevel: 1
+%%Pages: 1
 %%EndComments
-241 544 moveto 329 544 lineto 329 646 lineto 241 646 lineto closepath clip newpath
+
+%%BeginDefaults
+%%EndDefaults
+
 %%BeginProlog
+%
+% Display a color image.  The image is displayed in color on
+% Postscript viewers or printers that support color, otherwise
+% it is displayed as grayscale.
+%
+/DirectClassPacket
+{
+  %
+  % Get a DirectClass packet.
+  %
+  % Parameters:
+  %   red.
+  %   green.
+  %   blue.
+  %   length: number of pixels minus one of this color (optional).
+  %
+  currentfile color_packet readhexstring pop pop
+  compression 0 eq
+  {
+    /number_pixels 3 def
+  }
+  {
+    currentfile byte readhexstring pop 0 get
+    /number_pixels exch 1 add 3 mul def
+  } ifelse
+  0 3 number_pixels 1 sub
+  {
+    pixels exch color_packet putinterval
+  } for
+  pixels 0 number_pixels getinterval
+} bind def
+
+/DirectClassImage
+{
+  %
+  % Display a DirectClass image.
+  %
+  systemdict /colorimage known
+  {
+    columns rows 8
+    [
+      columns 0 0
+      rows neg 0 rows
+    ]
+    { DirectClassPacket } false 3 colorimage
+  }
+  {
+    %
+    % No colorimage operator;  convert to grayscale.
+    %
+    columns rows 8
+    [
+      columns 0 0
+      rows neg 0 rows
+    ]
+    { GrayDirectClassPacket } image
+  } ifelse
+} bind def
+
+/GrayDirectClassPacket
+{
+  %
+  % Get a DirectClass packet;  convert to grayscale.
+  %
+  % Parameters:
+  %   red
+  %   green
+  %   blue
+  %   length: number of pixels minus one of this color (optional).
+  %
+  currentfile color_packet readhexstring pop pop
+  color_packet 0 get 0.299 mul
+  color_packet 1 get 0.587 mul add
+  color_packet 2 get 0.114 mul add
+  cvi
+  /gray_packet exch def
+  compression 0 eq
+  {
+    /number_pixels 1 def
+  }
+  {
+    currentfile byte readhexstring pop 0 get
+    /number_pixels exch 1 add def
+  } ifelse
+  0 1 number_pixels 1 sub
+  {
+    pixels exch gray_packet put
+  } for
+  pixels 0 number_pixels getinterval
+} bind def
+
+/GrayPseudoClassPacket
+{
+  %
+  % Get a PseudoClass packet;  convert to grayscale.
+  %
+  % Parameters:
+  %   index: index into the colormap.
+  %   length: number of pixels minus one of this color (optional).
+  %
+  currentfile byte readhexstring pop 0 get
+  /offset exch 3 mul def
+  /color_packet colormap offset 3 getinterval def
+  color_packet 0 get 0.299 mul
+  color_packet 1 get 0.587 mul add
+  color_packet 2 get 0.114 mul add
+  cvi
+  /gray_packet exch def
+  compression 0 eq
+  {
+    /number_pixels 1 def
+  }
+  {
+    currentfile byte readhexstring pop 0 get
+    /number_pixels exch 1 add def
+  } ifelse
+  0 1 number_pixels 1 sub
+  {
+    pixels exch gray_packet put
+  } for
+  pixels 0 number_pixels getinterval
+} bind def
+
+/PseudoClassPacket
+{
+  %
+  % Get a PseudoClass packet.
+  %
+  % Parameters:
+  %   index: index into the colormap.
+  %   length: number of pixels minus one of this color (optional).
+  %
+  currentfile byte readhexstring pop 0 get
+  /offset exch 3 mul def
+  /color_packet colormap offset 3 getinterval def
+  compression 0 eq
+  {
+    /number_pixels 3 def
+  }
+  {
+    currentfile byte readhexstring pop 0 get
+    /number_pixels exch 1 add 3 mul def
+  } ifelse
+  0 3 number_pixels 1 sub
+  {
+    pixels exch color_packet putinterval
+  } for
+  pixels 0 number_pixels getinterval
+} bind def
+
+/PseudoClassImage
+{
+  %
+  % Display a PseudoClass image.
+  %
+  % Parameters:
+  %   class: 0-PseudoClass or 1-Grayscale.
+  %
+  currentfile buffer readline pop
+  token pop /class exch def pop
+  class 0 gt
+  {
+    currentfile buffer readline pop
+    token pop /depth exch def pop
+    /grays columns 8 add depth sub depth mul 8 idiv string def
+    columns rows depth
+    [
+      columns 0 0
+      rows neg 0 rows
+    ]
+    { currentfile grays readhexstring pop } image
+  }
+  {
+    %
+    % Parameters:
+    %   colors: number of colors in the colormap.
+    %   colormap: red, green, blue color packets.
+    %
+    currentfile buffer readline pop
+    token pop /colors exch def pop
+    /colors colors 3 mul def
+    /colormap colors string def
+    currentfile colormap readhexstring pop pop
+    systemdict /colorimage known
+    {
+      columns rows 8
+      [
+        columns 0 0
+        rows neg 0 rows
+      ]
+      { PseudoClassPacket } false 3 colorimage
+    }
+    {
+      %
+      % No colorimage operator;  convert to grayscale.
+      %
+      columns rows 8
+      [
+        columns 0 0
+        rows neg 0 rows
+      ]
+      { GrayPseudoClassPacket } image
+    } ifelse
+  } ifelse
+} bind def
+
+/DisplayImage
+{
+  %
+  % Display a DirectClass or PseudoClass image.
+  %
+  % Parameters:
+  %   x & y translation.
+  %   x & y scale.
+  %   label pointsize.
+  %   image label.
+  %   image columns & rows.
+  %   class: 0-DirectClass or 1-PseudoClass.
+  %   compression: 0-none or 1-RunlengthEncoded.
+  %   hex color packets.
+  %
+  gsave
+  /buffer 512 string def
+  /byte 1 string def
+  /color_packet 3 string def
+  /pixels 768 string def
+
+  currentfile buffer readline pop
+  token pop /x exch def
+  token pop /y exch def pop
+  x y translate
+  currentfile buffer readline pop
+  token pop /x exch def
+  token pop /y exch def pop
+  currentfile buffer readline pop
+  token pop /pointsize exch def pop
+  /Times-Roman findfont pointsize scalefont setfont
+  x y scale
+  currentfile buffer readline pop
+  token pop /columns exch def
+  token pop /rows exch def pop
+  currentfile buffer readline pop
+  token pop /class exch def pop
+  currentfile buffer readline pop
+  token pop /compression exch def pop
+  class 0 gt { PseudoClassImage } { DirectClassImage } ifelse
+  grestore
+} bind def
 %%EndProlog
-%%BeginSetup
-%%BeginResource: l2check
-%%Copyright: Copyright 1993 Adobe Systems Incorporated. All Rights Reserved.
-systemdict /languagelevel known
-{ systemdict /languagelevel get 1 eq }
-{ true }
-ifelse
-{
-initgraphics /Helvetica findfont 18 scalefont setfont
-72 600 moveto (Error: Your printer driver needs to be configured) dup show
-72 580 moveto (for printing to a PostScript Language Level 1 printer.) dup show
-exch = =
-/Helvetica-Bold findfont 16 scalefont setfont
-72 520 moveto (Windows and Unix) show
-/Times-Roman findfont 16 scalefont setfont
-72 500 moveto (Select \252Language Level 1\272 in the PostScript options section) show
-72 480 moveto (of the Acrobat print dialog.) show
-/Helvetica-Bold findfont 16 scalefont setfont
-72 440 moveto (Macintosh) show
-/Times-Roman findfont 16 scalefont setfont
-72 420 moveto (In the Chooser, select your printer driver.) show
-72 400 moveto (Then select your printer and click the Setup button.) show
-72 380 moveto (Follow any on-screen dialogs that may appear.) show
-showpage
-quit
-}
-if
-%%EndResource
-%%BeginResource: file Pscript_CFF PSVER
-userdict/ct_CffDict 6 dict put ct_CffDict begin/F0Subr{systemdict/internaldict
-known{1183615869 systemdict/internaldict get exec/FlxProc known{save true}{
-false}ifelse}{userdict/internaldict known not{userdict/internaldict{count 0 eq
-{/internaldict errordict/invalidaccess get exec}if dup type/integertype ne{
-/internaldict errordict/invalidaccess get exec}if dup 1183615869 eq{pop 0}{
-/internaldict errordict/invalidaccess get exec}ifelse}dup 14 get 1 25 dict put
-bind executeonly put}if 1183615869 userdict/internaldict get exec/FlxProc
-known{save true}{false}ifelse}ifelse[systemdict/internaldict known not{100
-dict/begin cvx/mtx matrix/def cvx}if systemdict/currentpacking known{
-currentpacking true setpacking}if{systemdict/internaldict known{1183615869
-systemdict/internaldict get exec dup/$FlxDict known not{dup dup length exch
-maxlength eq{pop userdict dup/$FlxDict known not{100 dict begin/mtx matrix def
-dup/$FlxDict currentdict put end}if}{100 dict begin/mtx matrix def dup
-/$FlxDict currentdict put end}ifelse}if/$FlxDict get begin}if grestore/exdef{
-exch def}def/dmin exch abs 100 div def/epX exdef/epY exdef/c4y2 exdef/c4x2
-exdef/c4y1 exdef/c4x1 exdef/c4y0 exdef/c4x0 exdef/c3y2 exdef/c3x2 exdef/c3y1
-exdef/c3x1 exdef/c3y0 exdef/c3x0 exdef/c1y2 exdef/c1x2 exdef/c2x2 c4x2 def
-/c2y2 c4y2 def/yflag c1y2 c3y2 sub abs c1x2 c3x2 sub abs gt def/PickCoords{{
-c1x0 c1y0 c1x1 c1y1 c1x2 c1y2 c2x0 c2y0 c2x1 c2y1 c2x2 c2y2}{c3x0 c3y0 c3x1
-c3y1 c3x2 c3y2 c4x0 c4y0 c4x1 c4y1 c4x2 c4y2}ifelse/y5 exdef/x5 exdef/y4 exdef
-/x4 exdef/y3 exdef/x3 exdef/y2 exdef/x2 exdef/y1 exdef/x1 exdef/y0 exdef/x0
-exdef}def mtx currentmatrix pop mtx 0 get abs 1e-05 lt mtx 3 get abs 1e-05 lt
-or{/flipXY -1 def}{mtx 1 get abs 1e-05 lt mtx 2 get abs 1e-05 lt or{/flipXY 1
-def}{/flipXY 0 def}ifelse}ifelse/erosion 1 def systemdict/internaldict known{
-1183615869 systemdict/internaldict get exec dup/erosion known{/erosion get
-/erosion exch def}{pop}ifelse}if yflag{flipXY 0 eq c3y2 c4y2 eq or{false
-PickCoords}{/shrink c3y2 c4y2 eq{0}{c1y2 c4y2 sub c3y2 c4y2 sub div abs}ifelse
-def/yshrink{c4y2 sub shrink mul c4y2 add}def/c1y0 c3y0 yshrink def/c1y1 c3y1
-yshrink def/c2y0 c4y0 yshrink def/c2y1 c4y1 yshrink def/c1x0 c3x0 def/c1x1
-c3x1 def/c2x0 c4x0 def/c2x1 c4x1 def/dY 0 c3y2 c1y2 sub round dtransform
-flipXY 1 eq{exch}if pop abs def dY dmin lt PickCoords y2 c1y2 sub abs .001 gt{
-c1x2 c1y2 transform flipXY 1 eq{exch}if/cx exch def/cy exch def/dY 0 y2 c1y2
-sub round dtransform flipXY 1 eq{exch}if pop def dY round dup 0 ne{/dY exdef}{
-pop dY 0 lt{-1}{1}ifelse/dY exdef}ifelse/erode PaintType 2 ne erosion .5 ge
-and def erode{/cy cy .5 sub def}if/ey cy dY add def/ey ey ceiling ey sub ey
-floor add def erode{/ey ey .5 add def}if ey cx flipXY 1 eq{exch}if itransform
-exch pop y2 sub/eShift exch def/y1 y1 eShift add def/y2 y2 eShift add def/y3
-y3 eShift add def}if}ifelse}{flipXY 0 eq c3x2 c4x2 eq or{false PickCoords}{
-/shrink c3x2 c4x2 eq{0}{c1x2 c4x2 sub c3x2 c4x2 sub div abs}ifelse def/xshrink
-{c4x2 sub shrink mul c4x2 add}def/c1x0 c3x0 xshrink def/c1x1 c3x1 xshrink def
-/c2x0 c4x0 xshrink def/c2x1 c4x1 xshrink def/c1y0 c3y0 def/c1y1 c3y1 def/c2y0
-c4y0 def/c2y1 c4y1 def/dX c3x2 c1x2 sub round 0 dtransform flipXY -1 eq{exch}
-if pop abs def dX dmin lt PickCoords x2 c1x2 sub abs .001 gt{c1x2 c1y2
-transform flipXY -1 eq{exch}if/cy exch def/cx exch def/dX x2 c1x2 sub round 0
-dtransform flipXY -1 eq{exch}if pop def dX round dup 0 ne{/dX exdef}{pop dX 0
-lt{-1}{1}ifelse/dX exdef}ifelse/erode PaintType 2 ne erosion .5 ge and def
-erode{/cx cx .5 sub def}if/ex cx dX add def/ex ex ceiling ex sub ex floor add
-def erode{/ex ex .5 add def}if ex cy flipXY -1 eq{exch}if itransform pop x2
-sub/eShift exch def/x1 x1 eShift add def/x2 x2 eShift add def/x3 x3 eShift add
-def}if}ifelse}ifelse x2 x5 eq y2 y5 eq or{x5 y5 lineto}{x0 y0 x1 y1 x2 y2
-curveto x3 y3 x4 y4 x5 y5 curveto}ifelse epY epX}systemdict/currentpacking
-known{exch setpacking}if/exec cvx/end cvx]cvx executeonly exch{pop true exch
-restore}{systemdict/internaldict known not{1183615869 userdict/internaldict
-get exec exch/FlxProc exch put true}{1183615869 systemdict/internaldict get
-exec dup length exch maxlength eq{false}{1183615869 systemdict/internaldict
-get exec exch/FlxProc exch put true}ifelse}ifelse}ifelse{systemdict
-/internaldict known{1183615869 systemdict/internaldict get exec/FlxProc get
-exec}{1183615869 userdict/internaldict get exec/FlxProc get exec}ifelse}if}
-executeonly def/F1Subr{gsave currentpoint newpath moveto}bind def/F2Subr{
-currentpoint grestore gsave currentpoint newpath moveto}bind def/HSSubr{
-systemdict/internaldict known not{pop 3}{1183615869 systemdict/internaldict
-get exec dup/startlock known{/startlock get exec}{dup/strtlck known{/strtlck
-get exec}{pop 3}ifelse}ifelse}ifelse}bind def end
-%%EndResource
-/currentpacking where{pop currentpacking true setpacking}if
-%%BeginResource: procset pdfvars
-%%Copyright: Copyright 1987-2001 Adobe Systems Incorporated. All Rights Reserved.
-%%Version: 5.0 6
-%%Title: definition of dictionary of variables used by PDF & PDFText procsets
-userdict /PDF 160 dict put
-userdict /PDFVars 89 dict dup begin put
-/docSetupDone false def
-/InitAll 0 def
-/TermAll 0 def
-/DocInitAll 0 def
-/DocTermAll 0 def
-/_pdfEncodings 2 array def
-/_pdf_str1 1 string def
-/_pdf_i 0 def
-/_pdf_na 0 def
-/_pdf_showproc 0 def
-/_italMtx [1 0 .212557 1 0 0] def
-/_italMtx_WMode1 [1 -.212557 0 1 0 0] def
-/_italMtxType0 [1 0 .1062785 1 0 0] def
-/_italMtx_WMode1Type0 [1 -.1062785 0 1 0 0] def
-/_basefont 0 def
-/_basefonto 0 def
-/_pdf_oldCIDInit null def
-/_pdf_FontDirectory 30 dict def
-/_categories 10 dict def
-/_sa? true def
-/_ColorSep5044? false def
-/nulldict 0 dict def
-/_processColors 0 def
-/overprintstack null def
-/_defaulttransfer currenttransfer def
-/_defaultflatness currentflat def
-/_defaulthalftone null def
-/_defaultcolortransfer null def
-/_defaultblackgeneration null def
-/_defaultundercolorremoval null def
-/_defaultcolortransfer null def
-PDF begin
-[/c/cs/cm/d/d0/f/h/i/j/J/l/m/M/n/q/Q/re/ri/S/sc/sh/Tf/w/W
-/applyInterpFunc/applystitchFunc/domainClip/encodeInput
-/initgs/int/limit/rangeClip
-/defineRes/findRes/setSA/pl
-%% to keep CoolType entries in GlyphDirProcs safe from collisions with Win PS driver
-/? /! /| /: /+ /GetGlyphDirectory
-/pdf_flushFilters /pdf_readstring /pdf_dictOp /pdf_image /pdf_maskedImage
-/pdf_shfill /pdf_sethalftone
-] {null def} bind forall
-end
-end
-%%EndResource
-PDFVars begin PDF begin
-%%BeginResource: procset pdfutil
-%%Copyright: Copyright 1993-1999 Adobe Systems Incorporated. All Rights Reserved.
-%%Version: 4.0 2
-%%Title: Basic utilities used by other PDF procsets
-/bd {bind def} bind def
-/ld {load def} bd
-/bld {
-dup length dict begin
-{ null def } forall
-bind
-end
-def
-} bd
-/dd { PDFVars 3 1 roll put } bd
-/xdd { exch dd } bd
-/Level2?
-systemdict /languagelevel known
-{ systemdict /languagelevel get 2 ge } { false } ifelse
-def
-/Level1? Level2? not def
-/Level3?
-systemdict /languagelevel known
-{systemdict /languagelevel get 3 eq } { false } ifelse
-def
-/getifknown {
-2 copy known { get true } { pop pop false } ifelse
-} bd
-/here {
-currentdict exch getifknown
-} bd
-/isdefined? { where { pop true } { false } ifelse } bd
-%%EndResource
-%%BeginResource: procset pdf
-%%Version: 5.0 6
-%%Copyright: Copyright 1998-2001 Adobe Systems Incorporated. All Rights Reserved.
-%%Title: General operators for PDF, common to all Language Levels.
-/cm { matrix astore concat } bd
-/d /setdash ld
-/f /fill ld
-/h /closepath ld
-/i {dup 0 eq {pop _defaultflatness} if setflat} bd
-/j /setlinejoin ld
-/J /setlinecap ld
-/M /setmiterlimit ld
-/n /newpath ld
-/S /stroke ld
-/w /setlinewidth ld
-/W /clip ld
-/initgs {
-0 setgray
-[] 0 d
-0 j
-0 J
-10 M
-1 w
-false setSA
-/_defaulttransfer load settransfer
-0 i
-/RelativeColorimetric ri
-newpath
-} bd
-/int {
-dup 2 index sub 3 index 5 index sub div 6 -2 roll sub mul
-exch pop add exch pop
-} bd
-/limit {
-dup 2 index le { exch } if pop
-dup 2 index ge { exch } if pop
-} bd
-/domainClip {
-Domain aload pop 3 2 roll
-limit
-} [/Domain] bld
-/applyInterpFunc {
-0 1 DimOut 1 sub
-{
-dup C0 exch get exch
-dup C1 exch get exch
-3 1 roll
-1 index sub
-3 index
-N exp mul add
-exch
-currentdict /Range_lo known
-{
-dup Range_lo exch get exch
-Range_hi exch get
-3 2 roll limit
-}
-{
-pop
-}
-ifelse
-exch
-} for
-pop
-} [/DimOut /C0 /C1 /N /Range_lo /Range_hi] bld
-/encodeInput {
-NumParts 1 sub
-0 1 2 index
-{
-dup Bounds exch get
-2 index gt
-{ exit }
-{ dup
-3 index eq
-{ exit }
-{ pop } ifelse
-} ifelse
-} for
-3 2 roll pop
-dup Bounds exch get exch
-dup 1 add Bounds exch get exch
-2 mul
-dup Encode exch get exch
-1 add Encode exch get
-int
-} [/NumParts /Bounds /Encode] bld
-/rangeClip {
-exch dup Range_lo exch get
-exch Range_hi exch get
-3 2 roll
-limit
-} [/Range_lo /Range_hi] bld
-/applyStitchFunc {
-Functions exch get exec
-currentdict /Range_lo known {
-0 1 DimOut 1 sub {
-DimOut 1 add -1 roll
-rangeClip
-} for
-} if
-} [/Functions /Range_lo /DimOut] bld
-/pdf_flushfilters
-{
-aload length
-{ dup status
-1 index currentfile ne and
-{ dup flushfile closefile }
-{ pop }
-ifelse
-} repeat
-} bd
-/pdf_readstring
-{
-1 index dup length 1 sub get
-exch readstring pop
-exch pdf_flushfilters
-} bind def
-/pdf_dictOp
-{
-3 2 roll
-10 dict copy
-begin
-_Filters dup length 1 sub get def
-currentdict exch exec
-_Filters pdf_flushfilters
-end
-} [/_Filters] bld
-/pdf_image {{image} /DataSource pdf_dictOp} bd
-/pdf_imagemask {{imagemask} /DataSource pdf_dictOp} bd
-/pdf_shfill {{sh} /DataSource pdf_dictOp} bd
-/pdf_sethalftone {{sethalftone} /Thresholds pdf_dictOp} bd
-/pdf_maskedImage
-{
-10 dict copy begin
-/miDict currentdict def
-/DataDict DataDict 10 dict copy def
-DataDict begin
-/DataSource
-_Filters dup length 1 sub get
-def
-miDict image
-_Filters pdf_flushfilters
-end
-end
-} [/miDict /DataDict /_Filters] bld
-%%EndResource
-%%BeginResource: procset pdflev2
-%%Version: 5.0 14
-%%Copyright: Copyright 1987-2001 Adobe Systems Incorporated. All Rights Reserved.
-%%LanguageLevel: 2
-%%Title: PDF operators, with code specific for Level 2
-/docinitialize {
-PDF begin
-/_defaulthalftone currenthalftone dd
-/_defaultblackgeneration currentblackgeneration dd
-/_defaultundercolorremoval currentundercolorremoval dd
-/_defaultcolortransfer [currentcolortransfer] dd
-/_defaulttransfer currenttransfer dd
-end
-PDFVars /docSetupDone true put
-} bd
-/initialize {
-PDFVars /docSetupDone get {
-_defaulthalftone sethalftone
-/_defaultblackgeneration load setblackgeneration
-/_defaultundercolorremoval load setundercolorremoval
-_defaultcolortransfer aload pop setcolortransfer
-} if
-false setoverprint
-} bd
-/terminate { } bd
-/c /curveto ld
-/cs /setcolorspace ld
-/l /lineto ld
-/m /moveto ld
-/q /gsave ld
-/Q /grestore ld
-/sc /setcolor ld
-/setSA/setstrokeadjust ld
-/re {
-4 2 roll m
-1 index 0 rlineto
-0 exch rlineto
-neg 0 rlineto
-h
-} bd
-/concattransferfuncs {
-[ 3 1 roll /exec load exch /exec load ] cvx
-} bd
-/concatandsettransfer {
-/_defaulttransfer load concattransferfuncs settransfer
-} bd
-/concatandsetcolortransfer {
-_defaultcolortransfer aload pop
-8 -1 roll 5 -1 roll concattransferfuncs 7 1 roll
-6 -1 roll 4 -1 roll concattransferfuncs 5 1 roll
-4 -1 roll 3 -1 roll concattransferfuncs 3 1 roll
-concattransferfuncs
-setcolortransfer
-} bd
-/defineRes/defineresource ld
-/findRes/findresource ld
-currentglobal
-true systemdict /setglobal get exec
-[/Function /ExtGState /Form /Shading /FunctionDictionary /MadePattern /PatternPrototype /DataSource /Image]
-{ /Generic /Category findresource dup length dict copy /Category defineresource pop }
-forall
-systemdict /setglobal get exec
-/ri
-{
-/findcolorrendering isdefined?
-{
-mark exch
-findcolorrendering
-counttomark 2 eq
-{ type /booleantype eq
-{ dup type /nametype eq
-{ dup /ColorRendering resourcestatus
-{ pop pop
-dup /DefaultColorRendering ne
-{
-/ColorRendering findresource
-setcolorrendering
-} if
-} if
-} if
-} if
-} if
-cleartomark
-}
-{ pop
-} ifelse
-} bd
-/knownColorants? {
-pop false
-} bd
-/getrampcolor {
-/indx exch def
-0 1 NumComp 1 sub {
-dup
-Samples exch get
-dup type /stringtype eq { indx get } if
-exch
-Scaling exch get aload pop
-3 1 roll
-mul add
-} for
-setcolor
-} bd
-/GenStrips {
-40 dict begin
-/background exch def
-/ext1 exch def
-/ext0 exch def
-/BBox exch def
-/y2 exch def
-/x2 exch def
-/y1 exch def
-/x1 exch def
-/rampdict exch def
-gsave
-BBox length 0 gt {
-BBox 0 get BBox 1 get
-BBox 2 get BBox 0 get sub
-BBox 3 get BBox 1 get sub
-rectclip
-} if
-x1 x2 eq
-{
-y1 y2 lt {/theta 90 def}{/theta 270 def} ifelse
-}
-{
-/slope y2 y1 sub x2 x1 sub div def
-/theta slope 1 atan def
-x2 x1 lt y2 y1 ge and { /theta theta 180 sub def} if
-x2 x1 lt y2 y1 le and { /theta theta 180 add def} if
-}
-ifelse
-gsave
-clippath
-x1 y1 translate
-theta rotate
-pathbbox
-/yMax exch def
-/xMax exch def
-/yMin exch def
-/xMin exch def
-grestore
-xMax xMin eq yMax yMin eq or
-{
-grestore
-end
-}
-{
-rampdict begin
-background length 0 gt { background aload pop setcolor gsave clippath fill grestore } if
-gsave
-x1 y1 translate
-theta rotate
-/xStart 0 def
-/xEnd x2 x1 sub dup mul y2 y1 sub dup mul add 0.5 exp def
-/ySpan yMax yMin sub def
-/numsteps NumSamples def
-/rampIndxInc 1 def
-/subsampling false def
-xStart 0 transform
-xEnd 0 transform
-3 -1 roll
-sub dup mul
-3 1 roll
-sub dup mul
-add 0.5 exp 72 div
-0 72 matrix defaultmatrix dtransform dup mul exch dup mul add sqrt
-72 0 matrix defaultmatrix dtransform dup mul exch dup mul add sqrt
-1 index 1 index lt { exch } if pop
-mul
-/numpix exch def
-numpix 0 ne
-{
-NumSamples numpix div 0.5 gt
-{
-/numsteps numpix 2 div round cvi dup 1 le { pop 2 } if def
-/rampIndxInc NumSamples 1 sub numsteps div def
-/subsampling true def
-} if
-} if
-ext0 {
-0 getrampcolor
-xMin xStart lt
-{ xMin yMin xMin neg ySpan rectfill } if
-} if
-/xInc xEnd xStart sub numsteps div def
-/x xStart def
-0
-numsteps
-{
-dup
-subsampling { round cvi } if
-getrampcolor
-x yMin xInc ySpan rectfill
-/x x xInc add def
-rampIndxInc add
-}
-repeat
-pop
-ext1 {
-xMax xEnd gt
-{ xEnd yMin xMax xEnd sub ySpan rectfill } if
-} if
-grestore
-grestore
-end
-end
-} ifelse
-} bd
-/RadialShade {
-40 dict begin
-/background exch def
-/ext1 exch def
-/ext0 exch def
-/BBox exch def
-/r2 exch def
-/c2y exch def
-/c2x exch def
-/r1 exch def
-/c1y exch def
-/c1x exch def
-/rampdict exch def
-gsave
-BBox length 0 gt {
-BBox 0 get BBox 1 get
-BBox 2 get BBox 0 get sub
-BBox 3 get BBox 1 get sub
-rectclip
-} if
-gsave
-clippath
-pathbbox
-/BByMax exch def
-/BBxMax exch def
-/BByMin exch def
-/BBxMin exch def
-grestore
-BBxMax BBxMin eq BByMax BByMin eq or
-{
-grestore
-end
-}
-{
-rampdict begin
-background length 0 gt { background aload pop setcolor gsave clippath fill grestore } if
-/areaOfConcern
-BBxMin BByMin BBxMax BByMax
-BBxMin BByMin
-BBxMax BBxMin sub 0
-0 BByMax BByMin sub
-BBxMin BBxMax sub 0
-12 packedarray
-< 0B 00 01 04 04 04 0A>
-2 packedarray
-def
-c1x c2x sub dup mul
-c1y c2y sub dup mul
-add 0.5 exp
-r1 add
-r2 sub
-abs
-0 dtransform
-dup mul exch dup mul add 0.5 exp 72 div
-0 72 matrix defaultmatrix dtransform dup mul exch dup mul add sqrt
-72 0 matrix defaultmatrix dtransform dup mul exch dup mul add sqrt
-1 index 1 index lt { exch } if pop
-/hires exch def
-hires mul
-/numpix exch def
-/numsteps NumSamples def
-/rampIndxInc 1 def
-/subsampling false def
-numpix 0 ne
-{
-NumSamples numpix div 0.5 gt
-{
-/numsteps numpix 2 div round cvi dup 1 le { pop 2 } if def
-/rampIndxInc NumSamples 1 sub numsteps div def
-/subsampling true def
-} if
-} if
-/xInc c2x c1x sub numsteps div def
-/yInc c2y c1y sub numsteps div def
-/rInc r2 r1 sub numsteps div def
-ext0 {
-0 getrampcolor
-r1 r2 eq c1x c2x eq and c1y c2y eq and
-{
-c1x c1y r1 0 360 arc fill
-}
-{
-r1 r2 lt
-{
-/backsteps r1 rInc div floor def
-/cx c1x xInc backsteps mul sub def
-/cy c1y yInc backsteps mul sub def
-/radius r1 rInc backsteps mul sub def
-newpath
-{
-cx cy radius 0 360 arc
-fill
-radius r1 ge { exit} if
-/radius radius rInc add def
-/cx cx xInc add def
-/cy cy yInc add def
-} loop
-}
-{
-/cx c1x def
-/cy c1y def
-/radius r1 def
-newpath
-{
-cx cy radius 360 0 arcn
-/cx cx xInc sub def
-/cy cy yInc sub def
-/radius radius rInc sub def
-cx cy radius 0 360 arc
-areaOfConcern ineofill not { exit } if
-eofill
-} loop
-} ifelse
-} ifelse
-} if
-/cx c1x def
-/cy c1y def
-/radius r1 def
-newpath
-xInc 0 eq yInc 0 eq rInc 0 eq and and
-{
-0 getrampcolor
-cx cy radius 0 360 arc
-stroke
-NumSamples 1 sub getrampcolor
-cx cy radius 72 hires div add 0 360 arc
-0 setlinewidth
-stroke
-}
-{
-0
-numsteps
-{
-dup
-subsampling { round cvi } if
-getrampcolor
-cx cy radius 0 360 arc
-/cx cx xInc add def
-/cy cy yInc add def
-/radius radius rInc add def
-cx cy radius 360 0 arcn
-eofill
-rampIndxInc add
-}
-repeat
-pop
-} ifelse
-ext1 {
-r2 r1 le
-{
-r2 r1 eq c1x c2x eq and c1y c2y eq and
-{
-c1x c1y r1 0 360 arc
-areaOfConcern uappend
-eofill
-}
-{
-{
-cx cy radius 0 360 arc
-areaOfConcern infill not { exit } if
-fill
-/radius radius rInc add def
-/cx cx xInc add def
-/cy cy yInc add def
-} loop
-} ifelse
-}
-{
-{
-cx cy radius 0 360 arc
-/cx cx xInc add def
-/cy cy yInc add def
-/radius radius rInc add def
-cx cy radius 360 0 arcn
-areaOfConcern ineofill not { exit } if
-eofill
-} loop
-} ifelse
-} if
-grestore
-end
-end
-} ifelse
-} bd
-%%EndResource
-%%BeginResource: procset pdftext
-%%Version: 5.0 5
-%%Copyright: Copyright 1987-2001 Adobe Systems Incorporated. All Rights Reserved.
-%%Title: Text operators for PDF
-PDF /PDFText 78 dict dup begin put
-/docinitialize
-{
-/resourcestatus where {
-pop
-/CIDParams /ProcSet resourcestatus {
-pop pop
-false /CIDParams /ProcSet findresource /SetBuildCompatible get exec
-} if
-} if
-PDF begin
-PDFText /_pdfDefineIdentity-H known
-{ PDFText /_pdfDefineIdentity-H get exec}
-if
-end
-} bd
-/initialize {
-PDFText begin
-} bd
-/terminate { end } bd
-Level2?
-{
-/_safeput
-{
-3 -1 roll load 3 1 roll put
-}
-bd
-}
-{
-/_safeput
-{
-2 index load dup dup length exch maxlength ge
-{ dup length 5 add dict copy
-3 index xdd
-}
-{ pop }
-ifelse
-3 -1 roll load 3 1 roll put
-}
-bd
-}
-ifelse
-/pdf_has_composefont? systemdict /composefont known def
-/CopyFont {
-{
-1 index /FID ne 2 index /UniqueID ne and
-{ def } { pop pop } ifelse
-} forall
-} bd
-/Type0CopyFont
-{
-exch
-dup length dict
-begin
-CopyFont
-[
-exch
-FDepVector
-{
-dup /FontType get 0 eq
-{
-1 index Type0CopyFont
-/_pdfType0 exch definefont
-}
-{
-/_pdfBaseFont exch
-2 index exec
-}
-ifelse
-exch
-}
-forall
-pop
-]
-/FDepVector exch def
-currentdict
-end
-} bd
-Level2? {currentglobal true setglobal} if
-/cHexEncoding
-[/c00/c01/c02/c03/c04/c05/c06/c07/c08/c09/c0A/c0B/c0C/c0D/c0E/c0F/c10/c11/c12
-/c13/c14/c15/c16/c17/c18/c19/c1A/c1B/c1C/c1D/c1E/c1F/c20/c21/c22/c23/c24/c25
-/c26/c27/c28/c29/c2A/c2B/c2C/c2D/c2E/c2F/c30/c31/c32/c33/c34/c35/c36/c37/c38
-/c39/c3A/c3B/c3C/c3D/c3E/c3F/c40/c41/c42/c43/c44/c45/c46/c47/c48/c49/c4A/c4B
-/c4C/c4D/c4E/c4F/c50/c51/c52/c53/c54/c55/c56/c57/c58/c59/c5A/c5B/c5C/c5D/c5E
-/c5F/c60/c61/c62/c63/c64/c65/c66/c67/c68/c69/c6A/c6B/c6C/c6D/c6E/c6F/c70/c71
-/c72/c73/c74/c75/c76/c77/c78/c79/c7A/c7B/c7C/c7D/c7E/c7F/c80/c81/c82/c83/c84
-/c85/c86/c87/c88/c89/c8A/c8B/c8C/c8D/c8E/c8F/c90/c91/c92/c93/c94/c95/c96/c97
-/c98/c99/c9A/c9B/c9C/c9D/c9E/c9F/cA0/cA1/cA2/cA3/cA4/cA5/cA6/cA7/cA8/cA9/cAA
-/cAB/cAC/cAD/cAE/cAF/cB0/cB1/cB2/cB3/cB4/cB5/cB6/cB7/cB8/cB9/cBA/cBB/cBC/cBD
-/cBE/cBF/cC0/cC1/cC2/cC3/cC4/cC5/cC6/cC7/cC8/cC9/cCA/cCB/cCC/cCD/cCE/cCF/cD0
-/cD1/cD2/cD3/cD4/cD5/cD6/cD7/cD8/cD9/cDA/cDB/cDC/cDD/cDE/cDF/cE0/cE1/cE2/cE3
-/cE4/cE5/cE6/cE7/cE8/cE9/cEA/cEB/cEC/cED/cEE/cEF/cF0/cF1/cF2/cF3/cF4/cF5/cF6
-/cF7/cF8/cF9/cFA/cFB/cFC/cFD/cFE/cFF] def
-Level2? {setglobal} if
-/modEnc {
-/_enc xdd
-/_icode 0 dd
-counttomark 1 sub -1 0
-{
-index
-dup type /nametype eq
-{
-_enc _icode 3 -1 roll put
-_icode 1 add
-}
-if
-/_icode xdd
-} for
-cleartomark
-_enc
-} bd
-/trEnc {
-/_enc xdd
-255 -1 0 {
-exch dup -1 eq
-{ pop /.notdef }
-{ Encoding exch get }
-ifelse
-_enc 3 1 roll put
-} for
-pop
-_enc
-} bd
-/TE {
-/_i xdd
-StandardEncoding 256 array copy modEnc
-_pdfEncodings exch _i exch put
-} bd
-/TZ
-{
-/_usePDFEncoding xdd
-findfont
-dup length 6 add dict
-begin
-{
-1 index /FID ne { def } { pop pop } ifelse
-} forall
-/pdf_origFontName FontName def
-/FontName exch def
-currentdict /PaintType known
-{ PaintType 2 eq {/PaintType 0 def} if }
-if
-_usePDFEncoding 0 ge
-{
-/Encoding _pdfEncodings _usePDFEncoding get def
-pop
-}
-{
-_usePDFEncoding -1 eq
-{
-counttomark 0 eq
-{ pop }
-{
-Encoding 256 array copy
-modEnc /Encoding exch def
-}
-ifelse
-}
-{
-256 array
-trEnc /Encoding exch def
-}
-ifelse
-}
-ifelse
-pdf_EuroProcSet pdf_origFontName known
-{
-pdf_origFontName pdf_AddEuroGlyphProc
-} if
-Level2?
-{
-currentdict /pdf_origFontName undef
-} if
-FontName currentdict
-end
-definefont pop
-}
-bd
-Level2?
-{
-/TZG
-{
-currentglobal true setglobal
-2 index _pdfFontStatus
-{
-2 index findfont
-false setglobal
-3 index findfont
-true setglobal
-ne
-{
-2 index findfont dup rcheck
-{
-dup length dict begin
-{
-1 index /FID ne { def } { pop pop } ifelse
-} forall
-currentdict end
-}
-if
-3 index exch definefont pop
-}
-if
-} if
-setglobal
-TZ
-} bd
-}
-{
-/TZG {TZ} bd
-} ifelse
-Level2?
-{
-currentglobal false setglobal
-userdict /pdftext_data 5 dict put
-pdftext_data
-begin
-/saveStacks
-{
-pdftext_data
-begin
-/vmmode currentglobal def
-false setglobal
-count array astore /os exch def
-end
-countdictstack array dictstack pdftext_data exch /ds exch put
-cleardictstack pdftext_data /dscount countdictstack put
-pdftext_data /vmmode get setglobal
-} bind def
-/restoreStacks
-{
-pdftext_data /vmmode currentglobal put false setglobal
-clear cleardictstack
-pdftext_data /ds get dup
-pdftext_data /dscount get 1 2 index length 1 sub
-{ get begin dup } for
-pop pop
-pdftext_data /os get aload pop
-pdftext_data /vmmode get setglobal
-} bind def
-/testForClonePrinterBug
-{
-currentglobal true setglobal
-/undefinedCategory /Generic /Category findresource
-dup length dict copy /Category defineresource pop
-setglobal
-pdftext_data /saveStacks get exec
-pdftext_data /vmmode currentglobal put false setglobal
-/undefined /undefinedCategory { resourcestatus } stopped
-pdftext_data exch /bugFound exch put
-pdftext_data /vmmode get setglobal
-pdftext_data /restoreStacks get exec
-pdftext_data /bugFound get
-} bind def
-end
-setglobal
-/pdf_resourcestatus
-pdftext_data /testForClonePrinterBug get exec
-{
-{
-pdftext_data /saveStacks get exec
-pdftext_data /os get dup dup length 1 sub
-dup 1 sub dup 0 lt { pop 0 } if
-exch 1 exch { get exch dup } for
-pop pop
-{ resourcestatus }
-stopped
-{
-clear cleardictstack pdftext_data /restoreStacks get exec
-{ pop pop } stopped pop false
-}
-{
-count array astore pdftext_data exch /results exch put
-pdftext_data /restoreStacks get exec pop pop
-pdftext_data /results get aload pop
-}
-ifelse
-}
-}
-{ { resourcestatus } }
-ifelse
-bd
-}
-if
-Level2?
-{
-/_pdfUndefineResource
-{
-currentglobal 3 1 roll
-_pdf_FontDirectory 2 index 2 copy known
-{undef}
-{pop pop}
-ifelse
-1 index (pdf) exch _pdfConcatNames 1 index
-1 index 1 _pdfConcatNames 1 index
-5 index 1 _pdfConcatNames 1 index
-4
-{
-2 copy pdf_resourcestatus
-{
-pop 2 lt
-{2 copy findresource gcheck setglobal undefineresource}
-{pop pop}
-ifelse
-}
-{ pop pop}
-ifelse
-} repeat
-setglobal
-} bd
-}
-{
-/_pdfUndefineResource { pop pop} bd
-}
-ifelse
-Level2?
-{
-/_pdfFontStatus
-{
-currentglobal exch
-/Font pdf_resourcestatus
-{pop pop true}
-{false}
-ifelse
-exch setglobal
-} bd
-}
-{
-/_pdfFontStatusString 50 string def
-_pdfFontStatusString 0 (fonts/) putinterval
-/_pdfFontStatus
-{
-FontDirectory 1 index known
-{ pop true }
-{
-_pdfFontStatusString 6 42 getinterval
-cvs length 6 add
-_pdfFontStatusString exch 0 exch getinterval
-{ status } stopped
-{pop false}
-{
-{ pop pop pop pop true}
-{ false }
-ifelse
-}
-ifelse
-}
-ifelse
-} bd
-}
-ifelse
-Level2?
-{
-/_pdfCIDFontStatus
-{
-/CIDFont /Category pdf_resourcestatus
-{
-pop pop
-/CIDFont pdf_resourcestatus
-{pop pop true}
-{false}
-ifelse
-}
-{ pop false }
-ifelse
-} bd
-}
-if
-/_pdfString100 100 string def
-/_pdfComposeFontName
-{
-dup length 1 eq
-{
-0 get
-1 index
-type /nametype eq
-{
-_pdfString100 cvs
-length dup dup _pdfString100 exch (-) putinterval
-_pdfString100 exch 1 add dup _pdfString100 length exch sub getinterval
-2 index exch cvs length
-add 1 add _pdfString100 exch 0 exch getinterval
-exch pop
-true
-}
-{
-pop pop
-false
-}
-ifelse
-}
-{
-false
-}
-ifelse
-dup {exch cvn exch} if
-} bd
-/_pdfConcatNames
-{
-exch
-_pdfString100 cvs
-length dup dup _pdfString100 exch (-) putinterval
-_pdfString100 exch 1 add dup _pdfString100 length exch sub getinterval
-3 -1 roll exch cvs length
-add 1 add _pdfString100 exch 0 exch getinterval
-cvn
-} bind def
-/_pdfTextTempString 50 string def
-/_pdfRegOrderingArray [(Adobe-Japan1) (Adobe-CNS1) (Adobe-Korea1) (Adobe-GB1)] def
-/_pdf_CheckCIDSystemInfo
-{
-1 index _pdfTextTempString cvs
-(Identity) anchorsearch
-{
-pop pop pop pop true
-}
-{
-false
-_pdfRegOrderingArray
-{
-2 index exch
-anchorsearch
-{ pop pop pop true exit}
-{ pop }
-ifelse
-}
-forall
-exch pop
-exch /CIDFont findresource
-/CIDSystemInfo get
-3 -1 roll /CMap findresource
-/CIDSystemInfo get
-exch
-3 -1 roll
-{
-2 copy
-/Supplement get
-exch
-dup type /dicttype eq
-{/Supplement get}
-{pop 0 }
-ifelse
-ge
-}
-{ true }
-ifelse
-{
-dup /Registry get
-2 index /Registry get eq
-{
-/Ordering get
-exch /Ordering get
-dup type /arraytype eq
-{
-1 index type /arraytype eq
-{
-true
-1 index length 1 sub -1 0
-{
-dup 2 index exch get exch 3 index exch get ne
-{ pop false exit}
-if
-} for
-exch pop exch pop
-}
-{ pop pop false }
-ifelse
-}
-{
-eq
-}
-ifelse
-}
-{ pop pop false }
-ifelse
-}
-{ pop pop false }
-ifelse
-}
-ifelse
-} bind def
-pdf_has_composefont?
-{
-/_pdfComposeFont
-{
-2 copy _pdfComposeFontName not
-{
-2 index
-}
-if
-(pdf) exch _pdfConcatNames
-dup _pdfFontStatus
-{ dup findfont 5 2 roll pop pop pop true}
-{
-4 1 roll
-1 index /CMap pdf_resourcestatus
-{
-pop pop
-true
-}
-{false}
-ifelse
-1 index true exch
-{
-_pdfCIDFontStatus not
-{pop false exit}
-if
-}
-forall
-and
-{
-1 index 1 index 0 get _pdf_CheckCIDSystemInfo
-{
-3 -1 roll pop
-2 index 3 1 roll
-composefont true
-}
-{
-pop pop exch pop false
-}
-ifelse
-}
-{
-_pdfComposeFontName
-{
-dup _pdfFontStatus
-{
-exch pop
-1 index exch
-findfont definefont true
-}
-{
-pop exch pop
-false
-}
-ifelse
-}
-{
-exch pop
-false
-}
-ifelse
-}
-ifelse
-{ true }
-{
-dup _pdfFontStatus
-{ dup findfont true }
-{ pop false }
-ifelse
-}
-ifelse
-}
-ifelse
-} bd
-}
-{
-/_pdfComposeFont
-{
-_pdfComposeFontName not
-{
-dup
-}
-if
-dup
-_pdfFontStatus
-{exch pop dup findfont true}
-{
-1 index
-dup type /nametype eq
-{pop}
-{cvn}
-ifelse
-eq
-{pop false}
-{
-dup _pdfFontStatus
-{dup findfont true}
-{pop false}
-ifelse
-}
-ifelse
-}
-ifelse
-} bd
-}
-ifelse
-/_pdfStyleDicts 4 dict dup begin
-/Adobe-Japan1 4 dict dup begin
-Level2?
-{
-/Serif
-/HeiseiMin-W3-83pv-RKSJ-H _pdfFontStatus
-{/HeiseiMin-W3}
-{
-/HeiseiMin-W3 _pdfCIDFontStatus
-{/HeiseiMin-W3}
-{/Ryumin-Light}
-ifelse
-}
-ifelse
-def
-/SansSerif
-/HeiseiKakuGo-W5-83pv-RKSJ-H _pdfFontStatus
-{/HeiseiKakuGo-W5}
-{
-/HeiseiKakuGo-W5 _pdfCIDFontStatus
-{/HeiseiKakuGo-W5}
-{/GothicBBB-Medium}
-ifelse
-}
-ifelse
-def
-/HeiseiMaruGo-W4-83pv-RKSJ-H _pdfFontStatus
-{/HeiseiMaruGo-W4}
-{
-/HeiseiMaruGo-W4 _pdfCIDFontStatus
-{/HeiseiMaruGo-W4}
-{
-/Jun101-Light-RKSJ-H _pdfFontStatus
-{ /Jun101-Light }
-{ SansSerif }
-ifelse
-}
-ifelse
-}
-ifelse
-/RoundSansSerif exch def
-/Default Serif def
-}
-{
-/Serif /Ryumin-Light def
-/SansSerif /GothicBBB-Medium def
-{
-(fonts/Jun101-Light-83pv-RKSJ-H) status
-}stopped
-{pop}{
-{ pop pop pop pop /Jun101-Light }
-{ SansSerif }
-ifelse
-/RoundSansSerif exch def
-}ifelse
-/Default Serif def
-}
-ifelse
-end
-def
-/Adobe-Korea1 4 dict dup begin
-/Serif /HYSMyeongJo-Medium def
-/SansSerif /HYGoThic-Medium def
-/RoundSansSerif SansSerif def
-/Default Serif def
-end
-def
-/Adobe-GB1 4 dict dup begin
-/Serif /STSong-Light def
-/SansSerif /STHeiti-Regular def
-/RoundSansSerif SansSerif def
-/Default Serif def
-end
-def
-/Adobe-CNS1 4 dict dup begin
-/Serif /MKai-Medium def
-/SansSerif /MHei-Medium def
-/RoundSansSerif SansSerif def
-/Default Serif def
-end
-def
-end
-def
-/TZzero
-{
-/_wmode xdd
-/_styleArr xdd
-/_regOrdering xdd
-3 copy
-_pdfComposeFont
-{
-5 2 roll pop pop pop
-}
-{
-[
-0 1 _styleArr length 1 sub
-{
-_styleArr exch get
-_pdfStyleDicts _regOrdering 2 copy known
-{
-get
-exch 2 copy known not
-{ pop /Default }
-if
-get
-}
-{
-pop pop pop /Unknown
-}
-ifelse
-}
-for
-]
-exch pop
-2 index 3 1 roll
-_pdfComposeFont
-{3 -1 roll pop}
-{
-findfont dup /FontName get exch
-}
-ifelse
-}
-ifelse
-dup /WMode 2 copy known
-{ get _wmode ne }
-{ pop pop _wmode 1 eq}
-ifelse
-{
-exch _wmode _pdfConcatNames
-dup _pdfFontStatus
-{ exch pop dup findfont false}
-{ exch true }
-ifelse
-}
-{
-dup /FontType get 0 ne
-}
-ifelse
-{
-dup /FontType get 3 eq _wmode 1 eq and
-{
-_pdfVerticalRomanT3Font dup length 10 add dict copy
-begin
-/_basefont exch
-dup length 3 add dict
-begin
-{1 index /FID ne {def}{pop pop} ifelse }
-forall
-/Encoding Encoding dup length array copy
-dup 16#27 /quotesingle put
-dup 16#60 /grave put
-_regOrdering /Adobe-Japan1 eq
-{dup 16#5c /yen put dup 16#a5 /yen put dup 16#b4 /yen put}
-if
-def
-FontName
-currentdict
-end
-definefont
-def
-/Encoding _basefont /Encoding get def
-/_fauxfont true def
-}
-{
-dup length 3 add dict
-begin
-{1 index /FID ne {def}{pop pop} ifelse }
-forall
-FontType 0 ne
-{
-/Encoding Encoding dup length array copy
-dup 16#27 /quotesingle put
-dup 16#60 /grave put
-_regOrdering /Adobe-Japan1 eq
-{dup 16#5c /yen put}
-if
-def
-/_fauxfont true def
-} if
-} ifelse
-/WMode _wmode def
-dup dup /FontName exch def
-currentdict
-end
-definefont pop
-}
-{
-pop
-}
-ifelse
-/_pdf_FontDirectory 3 1 roll _safeput
-}
-bd
-Level2?
-{
-/Tf {
-_pdf_FontDirectory 2 index 2 copy known
-{get exch 3 -1 roll pop}
-{pop pop}
-ifelse
-selectfont
-} bd
-}
-{
-/Tf {
-_pdf_FontDirectory 2 index 2 copy known
-{get exch 3 -1 roll pop}
-{pop pop}
-ifelse
-exch findfont exch
-dup type /arraytype eq
-{makefont}
-{scalefont}
-ifelse
-setfont
-} bd
-}
-ifelse
-/cshow where
-{
-pop /pdf_cshow /cshow load dd
-/pdf_remove2 {pop pop} dd
-}
-{
-/pdf_cshow {exch forall} dd
-/pdf_remove2 {} dd
-} ifelse
-/pdf_xshow
-{
-/_pdf_na xdd
-/_pdf_i 0 dd
-currentpoint
-/_pdf_y xdd
-/_pdf_x xdd
-{
-pdf_remove2
-_pdf_str1 exch 0 exch put
-_pdf_str1 /_pdf_showproc load exec
-{_pdf_na _pdf_i get} stopped
-{ pop pop }
-{
-_pdf_x _pdf_y moveto
-0
-rmoveto
-}
-ifelse
-_pdf_i 1 add /_pdf_i xdd
-currentpoint
-/_pdf_y xdd
-/_pdf_x xdd
-}
-exch
-pdf_cshow
-} bd
-/pdf_yshow
-{
-/_pdf_na xdd
-/_pdf_i 0 dd
-currentpoint
-/_pdf_y xdd
-/_pdf_x xdd
-{
-pdf_remove2
-_pdf_str1 exch 0 exch put
-_pdf_str1 /_pdf_showproc load exec
-{_pdf_na _pdf_i get} stopped
-{ pop pop }
-{
-_pdf_x _pdf_y moveto
-0 exch
-rmoveto
-}
-ifelse
-_pdf_i 1 add /_pdf_i xdd
-currentpoint
-/_pdf_y xdd
-/_pdf_x xdd
-}
-exch
-pdf_cshow
-} bd
-/pdf_xyshow
-{
-/_pdf_na xdd
-/_pdf_i 0 dd
-currentpoint
-/_pdf_y xdd
-/_pdf_x xdd
-{
-pdf_remove2
-_pdf_str1 exch 0 exch put
-_pdf_str1 /_pdf_showproc load exec
-{_pdf_na _pdf_i get} stopped
-{ pop pop }
-{
-{_pdf_na _pdf_i 1 add get} stopped
-{ pop pop pop}
-{
-_pdf_x _pdf_y moveto
-rmoveto
-}
-ifelse
-}
-ifelse
-_pdf_i 2 add /_pdf_i xdd
-currentpoint
-/_pdf_y xdd
-/_pdf_x xdd
-}
-exch
-pdf_cshow
-} bd
-/pdfl1xs {/_pdf_showproc /show load dd pdf_xshow} bd
-/pdfl1ys {/_pdf_showproc /show load dd pdf_yshow} bd
-/pdfl1xys {/_pdf_showproc /show load dd pdf_xyshow} bd
-Level2? _ColorSep5044? not and
-{
-/pdfxs {{xshow} stopped {pdfl1xs} if} bd
-/pdfys {{yshow} stopped {pdfl1ys} if} bd
-/pdfxys {{xyshow} stopped {pdfl1xys} if} bd
-}
-{
-/pdfxs /pdfl1xs load dd
-/pdfys /pdfl1ys load dd
-/pdfxys /pdfl1xys load dd
-} ifelse
-/pdf_charpath {false charpath} bd
-/pdf_xcharpath {/_pdf_showproc /pdf_charpath load dd pdf_xshow} bd
-/pdf_ycharpath {/_pdf_showproc /pdf_charpath load dd pdf_yshow} bd
-/pdf_xycharpath {/_pdf_showproc /pdf_charpath load dd pdf_xyshow} bd
-/pdf_strokepath
-{
-{
-pdf_remove2
-_pdf_str1 exch 0 exch put
-_pdf_str1 false charpath
-currentpoint S moveto
-} bind
-exch pdf_cshow
-} bd
-/pdf_xstrokepath {/_pdf_showproc {pdf_charpath S} dd pdf_xshow} bd
-/pdf_ystrokepath {/_pdf_showproc {pdf_charpath S} dd pdf_yshow} bd
-/pdf_xystrokepath {/_pdf_showproc {pdf_charpath S} load dd pdf_xyshow} bd
-Level2? {currentglobal true setglobal} if
-/d0/setcharwidth ld
-/nND {{/.notdef} repeat} bd
-/T3Defs {
-/BuildChar
-{
-1 index /Encoding get exch get
-1 index /BuildGlyph get exec
-}
-def
-/BuildGlyph {
-exch begin
-GlyphProcs exch get exec
-end
-} def
-/_pdfT3Font true def
-} bd
-/_pdfBoldRomanWidthProc
-{
-stringwidth 1 index 0 ne { exch .03 add exch }if setcharwidth
+%%Page:  1 1
+%%PageBoundingBox: 0 0 66 76
+userdict begin
+DisplayImage
 0 0
-} bd
-/_pdfType0WidthProc
-{
-dup stringwidth 0 0 moveto
-2 index true charpath pathbbox
-0 -1
-7 index 2 div .88
-setcachedevice2
-pop
-0 0
-} bd
-/_pdfType0WMode1WidthProc
-{
-dup stringwidth
-pop 2 div neg -0.88
-2 copy
-moveto
-0 -1
-5 -1 roll true charpath pathbbox
-setcachedevice
-} bd
-/_pdfBoldBaseFont
-11 dict begin
-/FontType 3 def
-/FontMatrix[1 0 0 1 0 0]def
-/FontBBox[0 0 1 1]def
-/Encoding cHexEncoding def
-/_setwidthProc /_pdfBoldRomanWidthProc load def
-/_bcstr1 1 string def
-/BuildChar
-{
-exch begin
-_basefont setfont
-_bcstr1 dup 0 4 -1 roll put
-dup
-_setwidthProc
-3 copy
-moveto
-show
-_basefonto setfont
-moveto
-show
-end
-}bd
-currentdict
-end
-def
-pdf_has_composefont?
-{
-/_pdfBoldBaseCIDFont
-11 dict begin
-/CIDFontType 1 def
-/CIDFontName /_pdfBoldBaseCIDFont def
-/FontMatrix[1 0 0 1 0 0]def
-/FontBBox[0 0 1 1]def
-/_setwidthProc /_pdfType0WidthProc load def
-/_bcstr2 2 string def
-/BuildGlyph
-{
-exch begin
-_basefont setfont
-_bcstr2 1 2 index 256 mod put
-_bcstr2 0 3 -1 roll 256 idiv put
-_bcstr2 dup _setwidthProc
-3 copy
-moveto
-show
-_basefonto setfont
-moveto
-show
-end
-}bd
-currentdict
-end
-def
-/_pdfDefineIdentity-H
-{
-/Identity-H /CMap PDFText /pdf_resourcestatus get exec
-{
-pop pop
-}
-{
-/CIDInit/ProcSet findresource begin 12 dict begin
-begincmap
-/CIDSystemInfo
-3 dict begin
-/Registry (Adobe) def
-/Ordering (Identity) def
-/Supplement 0 def
-currentdict
-end
-def
-/CMapName /Identity-H def
-/CMapVersion 1 def
-/CMapType 1 def
-1 begincodespacerange
-<0000> <ffff>
-endcodespacerange
-1 begincidrange
-<0000> <ffff> 0
-endcidrange
-endcmap
-CMapName currentdict/CMap defineresource pop
-end
-end
-} ifelse
-} def
-} if
-/_pdfVerticalRomanT3Font
-10 dict begin
-/FontType 3 def
-/FontMatrix[1 0 0 1 0 0]def
-/FontBBox[0 0 1 1]def
-/_bcstr1 1 string def
-/BuildChar
-{
-exch begin
-_basefont setfont
-_bcstr1 dup 0 4 -1 roll put
-dup
-_pdfType0WidthProc
-moveto
-show
-end
-}bd
-currentdict
-end
-def
-Level2? {setglobal} if
-/MakeBoldFont
-{
-dup /ct_SyntheticBold known
-{
-dup length 3 add dict begin
-CopyFont
-/ct_StrokeWidth .03 0 FontMatrix idtransform pop def
-/ct_SyntheticBold true def
-currentdict
-end
-definefont
-}
-{
-dup dup length 3 add dict
-begin
-CopyFont
-/PaintType 2 def
-/StrokeWidth .03 0 FontMatrix idtransform pop def
-/dummybold currentdict
-end
-definefont
-dup /FontType get dup 9 ge exch 11 le and
-{
-_pdfBoldBaseCIDFont
-dup length 3 add dict copy begin
-dup /CIDSystemInfo get /CIDSystemInfo exch def
-/_Type0Identity /Identity-H 3 -1 roll [ exch ] composefont
-/_basefont exch def
-/_Type0Identity /Identity-H 3 -1 roll [ exch ] composefont
-/_basefonto exch def
-currentdict
-end
-/CIDFont defineresource
-}
-{
-_pdfBoldBaseFont
-dup length 3 add dict copy begin
-/_basefont exch def
-/_basefonto exch def
-currentdict
-end
-definefont
-}
-ifelse
-}
-ifelse
-} bd
-/MakeBold {
-1 index
-_pdf_FontDirectory 2 index 2 copy known
-{get}
-{exch pop}
-ifelse
-findfont
-dup
-/FontType get 0 eq
-{
-dup /WMode known {dup /WMode get 1 eq }{false} ifelse
-version length 4 ge
-and
-{version 0 4 getinterval cvi 2015 ge }
-{true}
-ifelse
-{/_pdfType0WidthProc}
-{/_pdfType0WMode1WidthProc}
-ifelse
-_pdfBoldBaseFont /_setwidthProc 3 -1 roll load put
-{MakeBoldFont} Type0CopyFont definefont
-}
-{
-dup /_fauxfont known not 1 index /SubstMaster known not and
-{
-_pdfBoldBaseFont /_setwidthProc /_pdfBoldRomanWidthProc load put
-MakeBoldFont
-}
-{
-2 index 2 index eq
-{ exch pop }
-{
-dup length dict begin
-CopyFont
-currentdict
-end
-definefont
-}
-ifelse
-}
-ifelse
-}
-ifelse
-pop pop
-dup /dummybold ne
-{/_pdf_FontDirectory exch dup _safeput }
-{ pop }
-ifelse
-}bd
-/MakeItalic {
-_pdf_FontDirectory exch 2 copy known
-{get}
-{exch pop}
-ifelse
-dup findfont
-dup /FontInfo 2 copy known
-{
-get
-/ItalicAngle 2 copy known
-{get 0 eq }
-{ pop pop true}
-ifelse
-}
-{ pop pop true}
-ifelse
-{
-exch pop
-dup /FontType get 0 eq Level2? not and
-{ dup /FMapType get 6 eq }
-{ false }
-ifelse
-{
-dup /WMode 2 copy known
-{
-get 1 eq
-{ _italMtx_WMode1Type0 }
-{ _italMtxType0 }
-ifelse
-}
-{ pop pop _italMtxType0 }
-ifelse
-}
-{
-dup /WMode 2 copy known
-{
-get 1 eq
-{ _italMtx_WMode1 }
-{ _italMtx }
-ifelse
-}
-{ pop pop _italMtx }
-ifelse
-}
-ifelse
-makefont
-dup /FontType get 42 eq Level2? not or
-{
-dup length dict begin
-CopyFont
-currentdict
-end
-}
-if
-1 index exch
-definefont pop
-/_pdf_FontDirectory exch dup _safeput
-}
-{
-pop
-2 copy ne
-{
-/_pdf_FontDirectory 3 1 roll _safeput
-}
-{ pop pop }
-ifelse
-}
-ifelse
-}bd
-/MakeBoldItalic {
-/dummybold exch
-MakeBold
-/dummybold
-MakeItalic
-}bd
-Level2?
-{
-/pdf_CopyDict
-{1 index length add dict copy}
-def
-}
-{
-/pdf_CopyDict
-{
-1 index length add dict
-1 index wcheck
-{ copy }
-{ begin
-{def} forall
-currentdict
-end
-}
-ifelse
-}
-def
-}
-ifelse
-/pdf_AddEuroGlyphProc
-{
-currentdict /CharStrings known
-{
-CharStrings /Euro known not
-{
-dup
-/CharStrings
-CharStrings 1 pdf_CopyDict
-begin
-/Euro pdf_EuroProcSet 4 -1 roll get def
-currentdict
-end
-def
-/pdf_PSBuildGlyph /pdf_PSBuildGlyph load def
-/pdf_PathOps /pdf_PathOps load def
-/Symbol eq
-{
-/Encoding Encoding dup length array copy
-dup 160 /Euro put def
-}
-if
-}
-{ pop
-}
-ifelse
-}
-{ pop
-}
-ifelse
-}
-def
-Level2? {currentglobal true setglobal} if
-/pdf_PathOps 4 dict dup begin
-/m {moveto} def
-/l {lineto} def
-/c {curveto} def
-/cp {closepath} def
-end
-def
-/pdf_PSBuildGlyph
-{
-gsave
-8 -1 roll pop
-7 1 roll
-currentdict /PaintType 2 copy known {get 2 eq}{pop pop false} ifelse
-dup 9 1 roll
-{
-currentdict /StrokeWidth 2 copy known
-{
-get 2 div
-5 1 roll
-4 -1 roll 4 index sub
-4 1 roll
-3 -1 roll 4 index sub
-3 1 roll
-exch 4 index add exch
-4 index add
-5 -1 roll pop
-}
-{
-pop pop
-}
-ifelse
-}
-if
-setcachedevice
-pdf_PathOps begin
-exec
-end
-{
-currentdict /StrokeWidth 2 copy known
-{ get }
-{ pop pop 0 }
-ifelse
-setlinewidth stroke
-}
-{
-fill
-}
-ifelse
-grestore
-} def
-/pdf_EuroProcSet 13 dict def
-pdf_EuroProcSet
-begin
-/Courier-Bold
-{
-600 0 6 -12 585 612
-{
-385 274 m
-180 274 l
-179 283 179 293 179 303 c
-179 310 179 316 180 323 c
-398 323 l
-423 404 l
-197 404 l
-219 477 273 520 357 520 c
-409 520 466 490 487 454 c
-487 389 l
-579 389 l
-579 612 l
-487 612 l
-487 560 l
-449 595 394 612 349 612 c
-222 612 130 529 98 404 c
-31 404 l
-6 323 l
-86 323 l
-86 304 l
-86 294 86 284 87 274 c
-31 274 l
-6 193 l
-99 193 l
-129 77 211 -12 359 -12 c
-398 -12 509 8 585 77 c
-529 145 l
-497 123 436 80 356 80 c
-285 80 227 122 198 193 c
-360 193 l
-cp
-600 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Courier-BoldOblique /Courier-Bold load def
-/Courier
-{
-600 0 17 -12 578 584
-{
-17 204 m
-97 204 l
-126 81 214 -12 361 -12 c
-440 -12 517 17 578 62 c
-554 109 l
-501 70 434 43 366 43 c
-266 43 184 101 154 204 c
-380 204 l
-400 259 l
-144 259 l
-144 270 143 281 143 292 c
-143 299 143 307 144 314 c
-418 314 l
-438 369 l
-153 369 l
-177 464 249 529 345 529 c
-415 529 484 503 522 463 c
-522 391 l
-576 391 l
-576 584 l
-522 584 l
-522 531 l
-473 566 420 584 348 584 c
-216 584 122 490 95 369 c
-37 369 l
-17 314 l
-87 314 l
-87 297 l
-87 284 88 272 89 259 c
-37 259 l
-cp
-600 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Courier-Oblique /Courier load def
-/Helvetica
-{
-556 0 24 -19 541 703
-{
-541 628 m
-510 669 442 703 354 703 c
-201 703 117 607 101 444 c
-50 444 l
-25 372 l
-97 372 l
-97 301 l
-49 301 l
-24 229 l
-103 229 l
-124 67 209 -19 350 -19 c
-435 -19 501 25 509 32 c
-509 131 l
-492 105 417 60 343 60 c
-267 60 204 127 197 229 c
-406 229 l
-430 301 l
-191 301 l
-191 372 l
-455 372 l
-479 444 l
-194 444 l
-201 531 245 624 348 624 c
-433 624 484 583 509 534 c
-cp
-556 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Helvetica-Oblique /Helvetica load def
-/Helvetica-Bold
-{
-556 0 12 -19 563 710
-{
-563 621 m
-537 659 463 710 363 710 c
-216 710 125 620 101 462 c
-51 462 l
-12 367 l
-92 367 l
-92 346 l
-92 337 93 328 93 319 c
-52 319 l
-12 224 l
-102 224 l
-131 58 228 -19 363 -19 c
-417 -19 471 -12 517 18 c
-517 146 l
-481 115 426 93 363 93 c
-283 93 254 166 246 224 c
-398 224 l
-438 319 l
-236 319 l
-236 367 l
-457 367 l
-497 462 l
-244 462 l
-259 552 298 598 363 598 c
-425 598 464 570 486 547 c
-507 526 513 517 517 509 c
-cp
-556 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Helvetica-BoldOblique /Helvetica-Bold load def
-/Symbol
-{
-750 0 20 -12 714 685
-{
-714 581 m
-650 645 560 685 465 685 c
-304 685 165 580 128 432 c
-50 432 l
-20 369 l
-116 369 l
-115 356 115 347 115 337 c
-115 328 115 319 116 306 c
-50 306 l
-20 243 l
-128 243 l
-165 97 300 -12 465 -12 c
-560 -12 635 25 685 65 c
-685 155 l
-633 91 551 51 465 51 c
-340 51 238 131 199 243 c
-555 243 l
-585 306 l
-184 306 l
-183 317 182 326 182 336 c
-182 346 183 356 184 369 c
-614 369 l 644 432 l
-199 432 l
-233 540 340 622 465 622 c
-555 622 636 580 685 520 c
-cp
-750 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Times-Bold
-{
-500 0 16 -14 478 700
-{
-367 308 m
-224 308 l
-224 368 l
-375 368 l
-380 414 l
-225 414 l
-230 589 257 653 315 653 c
-402 653 431 521 444 457 c
-473 457 l
-473 698 l
-444 697 l
-441 679 437 662 418 662 c
-393 662 365 700 310 700 c
-211 700 97 597 73 414 c
-21 414 l
-16 368 l
-69 368 l
-69 359 68 350 68 341 c
-68 330 68 319 69 308 c
-21 308 l
-16 262 l
-73 262 l
-91 119 161 -14 301 -14 c
-380 -14 443 50 478 116 c
-448 136 l
-415 84 382 40 323 40 c
-262 40 231 77 225 262 c
-362 262 l
-cp
-500 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Times-BoldItalic
-{
-500 0 9 -20 542 686
-{
-542 686 m
-518 686 l
-513 673 507 660 495 660 c
-475 660 457 683 384 683 c
-285 683 170 584 122 430 c
-58 430 l
-34 369 l
-105 369 l
-101 354 92 328 90 312 c
-34 312 l
-9 251 l
-86 251 l
-85 238 84 223 84 207 c
-84 112 117 -14 272 -14 c
-326 -14 349 9 381 9 c
-393 9 393 -10 394 -20 c
-420 -20 l
-461 148 l
-429 148 l
-416 109 362 15 292 15 c
-227 15 197 55 197 128 c
-197 162 204 203 216 251 c
-378 251 l
-402 312 l
-227 312 l
-229 325 236 356 241 369 c
-425 369 l
-450 430 l
-255 430 l
-257 435 264 458 274 488 c
-298 561 337 654 394 654 c
-437 654 484 621 484 530 c
-484 516 l
-516 516 l
-cp
-500 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Times-Italic
-{
-500 0 23 -10 595 692
-{
-399 317 m
-196 317 l
-199 340 203 363 209 386 c
-429 386 l
-444 424 l
-219 424 l
-246 514 307 648 418 648 c
-448 648 471 638 492 616 c
-529 576 524 529 527 479 c
-549 475 l
-595 687 l
-570 687 l
-562 674 558 664 542 664 c
-518 664 474 692 423 692 c
-275 692 162 551 116 424 c
-67 424 l
-53 386 l
-104 386 l
-98 363 93 340 90 317 c
-37 317 l
-23 279 l
-86 279 l
-85 266 85 253 85 240 c
-85 118 137 -10 277 -10 c
-370 -10 436 58 488 128 c
-466 149 l
-424 101 375 48 307 48 c
-212 48 190 160 190 234 c
-190 249 191 264 192 279 c
-384 279 l
-cp
-500 0 m
-}
-pdf_PSBuildGlyph
-} def
-/Times-Roman
-{
-500 0 10 -12 484 692
-{
-347 298 m
-171 298 l
-170 310 170 322 170 335 c
-170 362 l
-362 362 l
-374 403 l
-172 403 l
-184 580 244 642 308 642 c
-380 642 434 574 457 457 c
-481 462 l
-474 691 l
-449 691 l
-433 670 429 657 410 657 c
-394 657 360 692 299 692 c
-204 692 94 604 73 403 c
-22 403 l
-10 362 l
-70 362 l
-69 352 69 341 69 330 c
-69 319 69 308 70 298 c
-22 298 l
-10 257 l
-73 257 l
-97 57 216 -12 295 -12 c
-364 -12 427 25 484 123 c
-458 142 l
-425 101 384 37 316 37 c
-256 37 189 84 173 257 c
-335 257 l
-cp
-500 0 m
-}
-pdf_PSBuildGlyph
-} def
-end
-Level2? {setglobal} if
-currentdict readonly pop end
-%%EndResource
-PDFText begin
-[userdict /pdf_svglb currentglobal put true setglobal
-39/quotesingle 96/grave 128/Adieresis/Aring/Ccedilla/Eacute/Ntilde/Odieresis
-/Udieresis/aacute/agrave/acircumflex/adieresis/atilde/aring/ccedilla/eacute
-/egrave/ecircumflex/edieresis/iacute/igrave/icircumflex/idieresis/ntilde
-/oacute/ograve/ocircumflex/odieresis/otilde/uacute/ugrave/ucircumflex
-/udieresis/dagger/degree/cent/sterling/section/bullet/paragraph/germandbls
-/registered/copyright/trademark/acute/dieresis/.notdef/AE/Oslash
-/.notdef/plusminus/.notdef/.notdef/yen/mu/.notdef/.notdef
-/.notdef/.notdef/.notdef/ordfeminine/ordmasculine/.notdef/ae/oslash
-/questiondown/exclamdown/logicalnot/.notdef/florin/.notdef/.notdef
-/guillemotleft/guillemotright/ellipsis/space/Agrave/Atilde/Otilde/OE/oe
-/endash/emdash/quotedblleft/quotedblright/quoteleft/quoteright/divide
-/.notdef/ydieresis/Ydieresis/fraction/currency/guilsinglleft/guilsinglright
-/fi/fl/daggerdbl/periodcentered/quotesinglbase/quotedblbase/perthousand
-/Acircumflex/Ecircumflex/Aacute/Edieresis/Egrave/Iacute/Icircumflex
-/Idieresis/Igrave/Oacute/Ocircumflex/.notdef/Ograve/Uacute/Ucircumflex
-/Ugrave/dotlessi/circumflex/tilde/macron/breve/dotaccent/ring/cedilla
-/hungarumlaut/ogonek/caron
-0 TE
-[1/dotlessi/caron 39/quotesingle 96/grave 
-127/bullet/Euro/bullet/quotesinglbase/florin/quotedblbase/ellipsis
-/dagger/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE
-/bullet/Zcaron/bullet/bullet/quoteleft/quoteright/quotedblleft
-/quotedblright/bullet/endash/emdash/tilde/trademark/scaron
-/guilsinglright/oe/bullet/zcaron/Ydieresis/space/exclamdown/cent/sterling
-/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine
-/guillemotleft/logicalnot/hyphen/registered/macron/degree/plusminus
-/twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla
-/onesuperior/ordmasculine/guillemotright/onequarter/onehalf/threequarters
-/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
-/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
-/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash
-/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls/agrave
-/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave/eacute
-/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde
-/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute
-/ucircumflex/udieresis/yacute/thorn/ydieresis
-1 TE
-end
+65.9931 76.492
+12
+88 102
+0
+0
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCC0101CC0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101212328212328212227212227FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCC0101CC0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101212328212328212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFEE0101EE0101EE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCC7C7C7C7C7C7BABABABABABAADADADADADADACACACACACACB2B2B2B2B2B2B9B9B9B9B9B9
+C1C1C1C1C1C1C7C7C7C7C7C7CACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101EE0101
+EE0101212328212328212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101
+EE0101EE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC7C7C7C7C7C7
+BABABABABABAADADADADADADACACACACACACB2B2B2B2B2B2B9B9B9B9B9B9C1C1C1C1C1C1C7C7C7
+C7C7C7CACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101EE0101EE0101212328212328
+212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBBBBBBBBBBBB656262656262825656
+8256568F6E6E8F6E6E847C7C847C7C898585898585939393939393A4A4A4A4A4A4B5B5B5B5B5B5
+C4C4C4C4C4C4CBCBCBCBCBCBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101212328212328212227212227FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBBBBBBBBBBBB6562626562628256568256568F6E6E8F6E6E
+847C7C847C7C898585898585939393939393A4A4A4A4A4A4B5B5B5B5B5B5C4C4C4C4C4C4CBCBCB
+CBCBCBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCEE0101EE0101EE0101EE0101212328212328212227212227FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCB6B6B6B6B6B62D23232D23239F01019F0101D10505D10505C52020C52020A34141
+A34141895E5E895E5E8075758075758484848484849B9B9B9B9B9BB3B3B3B3B3B3C2C2C2C2C2C2
+CACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101
+EE0101EE010122242A22242A232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+EE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCB6B6B6
+B6B6B62D23232D23239F01019F0101D10505D10505C52020C52020A34141A34141895E5E895E5E
+8075758075758484848484849B9B9B9B9B9BB3B3B3B3B3B3C2C2C2C2C2C2CACACACACACACCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122242A
+22242A232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101
+EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBEBEBEBEBEBE646363646363
+3A29293A29292F0F0F2F0F0F480101480101750101750101BE0101BE0101DD1E1EDD1E1EC25050
+C25050927171927171818181818181939393939393B2B2B2B2B2B2C3C3C3C3C3C3CBCBCBCBCBCB
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122242A22242A232429232429
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBEBEBEBEBEBE6463636463633A29293A29292F0F0F
+2F0F0F480101480101750101750101BE0101BE0101DD1E1EDD1E1EC25050C25050927171927171
+818181818181939393939393B2B2B2B2B2B2C3C3C3C3C3C3CBCBCBCBCBCBCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCEE0101EE0101EE0101EE010122242A22242A232429232429FFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCC9C9C9C9C9C9BDBDBDBDBDBDA9A9A9A9A9A99696969696967D7B7B7D7B7B
+464343464343241717241717530303530303C90101C90101F21E1EF21E1EDE5656DE5656A57777
+A57777818080818080969696969696B8B8B8B8B8B8C8C8C8C8C8C8CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101
+EE0101EE0101EE010122242A22242A232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C9C9C9C9C9C9BDBDBDBDBDBDA9A9A9A9A9A99696969696967D7B7B7D7B7B464343464343241717
+241717530303530303C90101C90101F21E1EF21E1EDE5656DE5656A57777A57777818080818080
+969696969696B8B8B8B8B8B8C8C8C8C8C8C8CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101
+22242A22242A232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101
+EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCB
+CBCBCBCACACACACACAC9C9C9C9C9C9C3C3C3C3C3C3B8B8B8B8B8B8A0A0A0A0A0A05C5C5C5C5C5C
+1F11111F11116F01016F0101F20101F20101FD3838FD3838D66868D66868937979937979818181
+818181ACACACACACACC5C5C5C5C5C5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122242A22242A232429
+232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCBCACACACACACA
+C9C9C9C9C9C9C3C3C3C3C3C3B8B8B8B8B8B8A0A0A0A0A0A05C5C5C5C5C5C1F11111F11116F0101
+6F0101F20101F20101FD3838FD3838D66868D66868937979937979818181818181ACACACACACAC
+C5C5C5C5C5C5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122242A22242A232429232429FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCC9C9C9C9C9C9BBBBBBBBBBBB8C8C8C8C8C8C2E2D2D2E2D2D490202490202
+D60101D60101FE2525FE2525F55959F55959A96E6EA96E6E777474777474A5A5A5A5A5A5C4C4C4
+C4C4C4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+EE0101EE0101EE0101EE010122232A22232A232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C9C9C9C9C9C9BBBBBBBBBBBB8C8C8C8C8C8C2E2D2D2E2D2D490202490202D60101D60101FE2525
+FE2525F55959F55959A96E6EA96E6E777474777474A5A5A5A5A5A5C4C4C4C4C4C4CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101
+EE010122232A22232A232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101
+EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCB
+CBCBCBC4C4C4C4C4C4ACACACACACAC3B3B3B3B3B3B490101490101D60101D60101FE1E1EFE1E1E
+FC4E4EFC4E4EB56161B561616E6A6A6E6A6AA6A6A6A6A6A6C6C6C6C6C6C6CCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122232A22232A
+232429232429FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCBC4C4C4C4C4C4
+ACACACACACAC3B3B3B3B3B3B490101490101D60101D60101FE1E1EFE1E1EFC4E4EFC4E4EB56161
+B561616E6A6A6E6A6AA6A6A6A6A6A6C6C6C6C6C6C6CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122232A22232A232429232429FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC7C7C7C7C7C7A9A9A9
+A9A9A9262222262222760101760101E20101E20101FE2020FE2020FC4646FC4646A75353A75353
+6B69696B6969B0B0B0B0B0B0CACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCEE0101EE0101EE0101EE010122222922222922222A22222AFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC7C7C7C7C7C7A9A9A9A9A9A9262222262222
+760101760101E20101E20101FE2020FE2020FC4646FC4646A75353A753536B69696B6969B0B0B0
+B0B0B0CACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101
+EE0101EE010122222922222922222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+EE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCC7C7C7C7C7C7A9A9A9A9A9A9262222262222760101760101E20101
+E20101FE2020FE2020FC4646FC4646A75353A753536B69696B6969B0B0B0B0B0B0CACACACACACA
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101222229
+22222922222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101
+EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCBCBCBCBCBCBC2C2C2C2C2C27E7E7E7E7E7E290909290909B40101B40101F50101F50101
+FE2626FE2626F13E3EF13E3E7D44447D44447F7F7F7F7F7FBFBFBFBFBFBFCBCBCBCBCBCBCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010121222921222922222A22222A
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCB
+C2C2C2C2C2C27E7E7E7E7E7E290909290909B40101B40101F50101F50101FE2626FE2626F13E3E
+F13E3E7D44447D44447F7F7F7F7F7FBFBFBFBFBFBFCBCBCBCBCBCBCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCEE0101EE0101EE0101EE010121222921222922222A22222AFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCB
+C8C8C8C8C8C8C0C0C0C0C0C0B9B9B9B9B9B9B3B3B3B3B3B3ADADADADADADB9B9B9B9B9B9B1B1B1
+B1B1B1383636383636710101710101D80101D80101FE0A0AFE0A0AFE2929FE2929CB3232CB3232
+524646524646A3A3A3A3A3A3C9C9C9C9C9C9CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101
+EE0101EE0101EE010121222921222922222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCBC8C8C8C8C8C8C0C0C0
+C0C0C0B9B9B9B9B9B9B3B3B3B3B3B3ADADADADADADB9B9B9B9B9B9B1B1B1B1B1B1383636383636
+710101710101D80101D80101FE0A0AFE0A0AFE2929FE2929CB3232CB3232524646524646A3A3A3
+A3A3A3C9C9C9C9C9C9CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101
+21222921222922222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101
+EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCBCBCBCBCBCBC6C6C6C6C6C6BABABABABABAA5A5A5A5A5A59393939393938D8A8A8D8A8A
+8C7E7E8C7E7E726464726464898989898989BDBDBDBDBDBD7B7B7B7B7B7B340303340303C80101
+C80101F50101F50101FE1616FE1616F92323F923237723237723237A7A7A7A7A7AC2C2C2C2C2C2
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122232A22232A22222A
+22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCB
+C6C6C6C6C6C6BABABABABABAA5A5A5A5A5A59393939393938D8A8A8D8A8A8C7E7E8C7E7E726464
+726464898989898989BDBDBDBDBDBD7B7B7B7B7B7B340303340303C80101C80101F50101F50101
+FE1616FE1616F92323F923237723237723237A7A7A7A7A7AC2C2C2C2C2C2CCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122232A22232A22222A22222AFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBCBCBCBCBCBC2C2C2C2C2C2A5A5A5A5A5A5858585
+858585968484968484C08585C08585D77777D77777DF5353DF53536525256525257F7F7F7F7F7F
+C2C2C2C2C2C29E9E9E9E9E9E281515281515B40101B40101E90101E90101FE0808FE0808FE1616
+FE1616AC1313AC1313524B4B524B4BBABABABABABACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+EE0101EE0101EE0101EE010122232922232922222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCBCBCBCBCBCBC2C2C2C2C2C2A5A5A5A5A5A5858585858585968484968484
+C08585C08585D77777D77777DF5353DF53536525256525257F7F7F7F7F7FC2C2C2C2C2C29E9E9E
+9E9E9E281515281515B40101B40101E90101E90101FE0808FE0808FE1616FE1616AC1313AC1313
+524B4B524B4BBABABABABABACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101
+EE010122232922232922222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101
+EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C3C3C3C3C3C39B9B9B9B9B9B767070767070C17777C17777EC7070EC7070FE5656FE5656FE2929
+FE2929F50101F501013C13133C1313969696969696C7C7C7C7C7C7AEAEAEAEAEAE3E35353E3535
+940101940101E30101E30101FE0101FE0101FE0C0CFE0C0CE00808E00808452323452323B2B2B2
+B2B2B2CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101222229222229
+22222A22222AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC3C3C3C3C3C39B9B9B
+9B9B9B767070767070C17777C17777EC7070EC7070FE5656FE5656FE2929FE2929F50101F50101
+3C13133C1313969696969696C7C7C7C7C7C7AEAEAEAEAEAE3E35353E3535940101940101E30101
+E30101FE0101FE0101FE0C0CFE0C0CE00808E00808452323452323B2B2B2B2B2B2CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE010122222922222922222A22222AFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC9C9C9C9C9C9A9A9A9A9A9A9645C5C645C5CC25858C25858
+FE5454FE5454FE3838FE3838FE0505FE0505C30101C30101540101540101444141444141B4B4B4
+B4B4B4CBCBCBCBCBCBBDBDBDBDBDBD575454575454800101800101E30101E30101FB0101FB0101
+FE0505FE0505FE0101FE0101500F0F500F0FACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCEE0101EE0101EE0101EE0101212228212228212227212227FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCC9C9C9C9C9C9A9A9A9A9A9A9645C5C645C5CC25858C25858FE5454FE5454FE3838
+FE3838FE0505FE0505C30101C30101540101540101444141444141B4B4B4B4B4B4CBCBCBCBCBCB
+BDBDBDBDBDBD575454575454800101800101E30101E30101FB0101FB0101FE0505FE0505FE0101
+FE0101500F0F500F0FACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101
+EE0101EE0101212228212228212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+EE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0C0C0
+C0C0C0747474747474843535843535FE3939FE3939FE2929FE2929FD0101FD0101C00101C00101
+4002024002023E3C3C3E3C3CA3A3A3A3A3A3C6C6C6C6C6C6CCCCCCCCCCCCC2C2C2C2C2C26B6B6B
+6B6B6B5F01015F0101E50101E50101F90101F90101FE0101FE0101F50101F50101600202600202
+A7A7A7A7A7A7CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101212228
+212228212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101
+EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0C0C0C0C0C0747474747474
+843535843535FE3939FE3939FE2929FE2929FD0101FD0101C00101C001014002024002023E3C3C
+3E3C3CA3A3A3A3A3A3C6C6C6C6C6C6CCCCCCCCCCCCC2C2C2C2C2C26B6B6B6B6B6B5F01015F0101
+E50101E50101F90101F90101FE0101FE0101F50101F50101600202600202A7A7A7A7A7A7CCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101212228212228212227212227
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCB6B6B6B6B6B6413939413939CF1A1ACF1A1AFE1C1C
+FE1C1CFE0808FE0808DC0101DC01016F01016F0101333030333030A6A6A6A6A6A6C6C6C6C6C6C6
+CCCCCCCCCCCCCCCCCCCCCCCCC5C5C5C5C5C57F7E7E7F7E7E5C01015C0101E80101E80101F80101
+F80101F80101F80101EA0101EA01016F01016F0101A6A6A6A6A6A6CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCEE0101EE0101EE0101EE0101212228212228212227212227FFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCB6B6B6B6B6B6413939413939CF1A1ACF1A1AFE1C1CFE1C1CFE0808FE0808
+DC0101DC01016F01016F0101333030333030A6A6A6A6A6A6C6C6C6C6C6C6CCCCCCCCCCCCCCCCCC
+CCCCCCC5C5C5C5C5C57F7E7E7F7E7E5C01015C0101E80101E80101F80101F80101F80101F80101
+EA0101EA01016F01016F0101A6A6A6A6A6A6CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101
+EE0101EE0101EE0101212228212228212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+AEAEAEAEAEAE311515311515FC0303FC0303FE0808FE0808F80101F80101D30101D301014E0505
+4E0505676767676767BFBFBFBFBFBFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6C6C6C6C6C6
+8781818781815E01015E0101EA0101EA0101F60101F60101F20101F20101E00101E00101620202
+620202A7A7A7A7A7A7CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101
+212228212228212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101
+EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAEAEAEAEAEAE311515
+311515FC0303FC0303FE0808FE0808F80101F80101D30101D301014E05054E0505676767676767
+BFBFBFBFBFBFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6C6C6C6C6C68781818781815E0101
+5E0101EA0101EA0101F60101F60101F20101F20101E00101E00101620202620202A7A7A7A7A7A7
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101212228212228212227
+212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAA510606510606ED0101ED0101
+FA0101FA0101F40101F40101D60101D601014B12124B1212818181818181C5C5C5C5C5C5CCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6C6C6C6C6C6878080878080600101600101EC0101EC0101
+F40101F40101E90101E90101D20101D20101410A0A410A0AAAAAAAAAAAAACCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101212228212228212227212227FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEE0101EE0101EE0101EE0101CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAA510606510606ED0101ED0101FA0101FA0101F40101
+F40101D60101D601014B12124B1212818181818181C5C5C5C5C5C5CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCC6C6C6C6C6C6878080878080600101600101EC0101EC0101F40101F40101E90101
+E90101D20101D20101410A0A410A0AAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+EE0101EE0101EE0101EE0101212228212228212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFF808080808080808080808080808080808080808080808080808080808080808080
+808080808080808080808080808080808080808080808080808080000000000000E40101E40101
+511717511717888888888888C6C6C6C6C6C6CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6C6C6
+C6C6C6888181888181620101620101EE0101EE0101EF0101EF0101DB0101DB0101B90101B90101
+3C19193C1919AFAFAFAFAFAFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101
+EE0101212228212228212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080
+808080808080808080808080808080808080808080808080808080808080808080808080808080
+808080808080808080808080808080808080000000000000E40101E40101511717511717888888
+888888C6C6C6C6C6C6CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6C6C6C6C6C6888181888181
+620101620101EE0101EE0101EF0101EF0101DB0101DB0101B90101B901013C19193C1919AFAFAF
+AFAFAFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101212228212228
+212227212227FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFE000000000000F50101F50101600F0F600F0F7C7C7C7C7C7CC4C4C4C4C4C4
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6C6C6C6C6C6868282868282640101640101F10101
+F10101E40101E40101C50101C501017B01017B0101403838403838B8B8B8B8B8B8CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101202028202028202028202028FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+000000000000F50101F50101600F0F600F0F7C7C7C7C7C7CC4C4C4C4C4C4CCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCC6C6C6C6C6C6868282868282640101640101F10101F10101E40101E40101
+C50101C501017B01017B0101403838403838B8B8B8B8B8B8CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCEE0101EE0101EE0101EE0101202028202028202028202028FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000
+000000000000000000000000000000000000FEFEFEFEFEFEFEFEFEFEFEFE000000000000FE0101
+FE0101820909820909696969696969C0C0C0C0C0C0CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C1C1C1C1C1C16E6E6E6E6E6E7F01017F0101EF0101EF0101CE0101CE0101A40101A401013A0606
+3A06066B6B6B6B6B6BC2C2C2C2C2C2CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101
+EE0101EE0101202028202028202028202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000000000000000000000
+000000000000000000FEFEFEFEFEFEFEFEFEFEFEFE000000000000FE0101FE0101820909820909
+696969696969C0C0C0C0C0C0CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC1C1C1C1C1C16E6E6E
+6E6E6E7F01017F0101EF0101EF0101CE0101CE0101A40101A401013A06063A06066B6B6B6B6B6B
+C2C2C2C2C2C2CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101202028
+202028202028202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000000000000000000000000000
+FEFEFEFEFEFEFEFEFEFEFEFE000000000000F10101F10101A41212A41212585757585757B6B6B6
+B6B6B6CBCBCBCBCBCBCCCCCCCCCCCCCBCBCBCBCBCBB3B3B3B3B3B3534C4C534C4CAA0404AA0404
+DB0101DB0101A80101A801015A01015A0101332D2D332D2DA6A6A6A6A6A6C9C9C9C9C9C9CCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101202028202028202028202028
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFE000000000000000000000000000000000000FEFEFEFEFEFEFEFEFE
+FEFEFE000000000000F10101F10101A41212A41212585757585757B6B6B6B6B6B6CBCBCBCBCBCB
+CCCCCCCCCCCCCBCBCBCBCBCBB3B3B3B3B3B3534C4C534C4CAA0404AA0404DB0101DB0101A80101
+A801015A01015A0101332D2D332D2DA6A6A6A6A6A6C9C9C9C9C9C9CCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCEE0101EE0101EE0101EE0101202028202028202028202028FFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000
+000000000000000000000000000000000000000000FEFEFEFEFEFEFEFEFEFEFEFE000000000000
+C00101C00101D90101D90101543232543232898989898989B9B9B9B9B9B9C3C3C3C3C3C3BDBDBD
+BDBDBD939393939393452929452929D50101D50101AB0101AB01015F01015F01011F14141F1414
+848484848484C2C2C2C2C2C2CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101
+EE0101EE0101EE0101202028202028202028202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000000000000000
+000000000000000000000000FEFEFEFEFEFEFEFEFEFEFEFE000000000000C00101C00101D90101
+D90101543232543232898989898989B9B9B9B9B9B9C3C3C3C3C3C3BDBDBDBDBDBD939393939393
+452929452929D50101D50101AB0101AB01015F01015F01011F14141F1414848484848484C2C2C2
+C2C2C2CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101
+202028202028202028202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080
+FEFEFEFEFEFEFEFEFEFEFEFE000000000000000000000000000000000000FEFEFEFEFEFE000000
+000000FEFEFEFEFEFEFEFEFEFEFEFE000000000000750101750101B30101B30101AF0101AF0101
+4D39394D39397777777777778F8F8F8F8F8F7F7F7F7F7F7F443E3E443E3E940101940101A70101
+A701015201015201011D10101D1010727272727272BDBDBDBDBDBDCBCBCBCBCBCBCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101202028202028202028
+202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFE
+FEFEFE000000000000000000000000000000000000FEFEFEFEFEFE000000000000FEFEFEFEFEFE
+FEFEFEFEFEFE000000000000750101750101B30101B30101AF0101AF01014D39394D3939777777
+7777778F8F8F8F8F8F7F7F7F7F7F7F443E3E443E3E940101940101A70101A70101520101520101
+1D10101D1010727272727272BDBDBDBDBDBDCBCBCBCBCBCBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101202028202028202028202028FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFE000000000000
+000000000000FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000
+000000180B0B180B0B370101370101800101800101A20101A201017D04047D0404670D0D670D0D
+7306067306069301019301017301017301012802022802022B27272B2727838383838383BDBDBD
+BDBDBDCACACACACACACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+EE0101EE0101EE0101EE0101202028202028202028202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFE000000000000000000000000FEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000180B0B180B0B
+370101370101800101800101A20101A201017D04047D0404670D0D670D0D730606730606930101
+9301017301017301012802022802022B27272B2727838383838383BDBDBDBDBDBDCACACACACACA
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101
+EE0101202028202028202028202028FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080
+808080FEFEFEFEFEFEFEFEFEFEFEFE000000000000FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE0000000000008D8D8D8D8D8D5655555655552E2929
+2E29292214142214142706062706062B04042B0404270505270505231818231818373333373333
+686868686868A6A6A6A6A6A6C2C2C2C2C2C2CBCBCBCBCBCBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE01011D1D261D1D26
+1E1E261E1E26FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFE
+FEFEFEFEFEFE000000000000FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFE0000000000008D8D8D8D8D8D5655555655552E29292E2929221414221414
+2706062706062B04042B0404270505270505231818231818373333373333686868686868A6A6A6
+A6A6A6C2C2C2C2C2C2CBCBCBCBCBCBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE01011D1D261D1D261E1E261E1E26FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFE000000000000FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+000000000000C6C6C6C6C6C6BEBEBEBEBEBEB4B4B4B4B4B4AEAEAEAEAEAEAAAAAAAAAAAAA7A7A7
+A7A7A7AAAAAAAAAAAAAEAEAEAEAEAEB6B6B6B6B6B6C1C1C1C1C1C1C9C9C9C9C9C9CCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101
+EE0101EE0101EE0101EE0101EE01011E1E271E1E271E1E261E1E26FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000C6C6C6
+C6C6C6BEBEBEBEBEBEB4B4B4B4B4B4AEAEAEAEAEAEAAAAAAAAAAAAA7A7A7A7A7A7AAAAAAAAAAAA
+AEAEAEAEAEAEB6B6B6B6B6B6C1C1C1C1C1C1C9C9C9C9C9C9CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCEE0101EE0101EE0101EE0101
+EE0101EE01011E1E271E1E271E1E261E1E26FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+808080808080FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE000000000000EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE01011E1E27
+1E1E271E1E261E1E26FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF808080808080FEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE
+FEFEFEFEFEFEFEFEFEFEFEFE000000000000EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101
+EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE0101EE01011E1E271E1E271E1E261E1E26
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF000000
+000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFF
+FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFF
+000000000000FFFFFF000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFF000000FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000000000000000
+000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFFFFFFFF000000000000000000FFFFFFFFFFFF000000000000000000
+FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFF000000000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000000000FFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000000000000000
+000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFF
+FFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFF000000000000FFFFFF
+FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000
+000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000000000000000000000FFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFF
+FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFF
+FFFFFFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFF000000000000FFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000000
+000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000
+000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
-userdict /pdf_svglb get setglobal
-currentdict readonly pop
-end end
-/currentpacking where {pop setpacking}if
-PDFVars/DocInitAll{[PDF PDFText]{/docinitialize get exec}forall }put
-PDFVars/InitAll{[PDF PDFText]{/initialize get exec}forall initgs}put
-PDFVars/TermAll{[PDFText PDF]{/terminate get exec}forall}put
-PDFVars begin PDF begin
-PDFVars/DocInitAll get exec PDFVars/InitAll get exec
-%%IncludeResource Helvetica
-[/N12/Helvetica 1 TZ
-PDFVars/TermAll get exec end end
-
-%%EndSetup
- PDF /docinitialize get exec
-PDFVars begin PDF begin PDFVars/InitAll get exec
-241 544 88 102 rectclip
-/N11 [/CIEBasedABC  9 dict 
-dup /CreationDate (19980209064900) put
-dup /RenderingIntent (RelativeColorimetric) put
-dup /Description (sRGB IEC61966-2.1) put
-dup /ColorSpace (RGB ) put
-dup /Copyright (Copyright (c) 1998 Hewlett-Packard Company) put
-dup /DecodeLMN [
-
-{{0.0000 0.0003 0.0006 0.0009 0.0012 0.0015 0.0018 0.0021 0.0024 0.0027 0.0030 0.0034 0.0037 0.0040 0.0044 0.0048 
-0.0052 0.0056 0.0060 0.0065 0.0070 0.0075 0.0080 0.0086 0.0091 0.0097 0.0103 0.0110 0.0116 0.0123 0.0130 0.0137 
-0.0144 0.0152 0.0160 0.0168 0.0176 0.0185 0.0194 0.0203 0.0212 0.0222 0.0232 0.0242 0.0252 0.0262 0.0273 0.0284 
-0.0296 0.0307 0.0319 0.0331 0.0343 0.0356 0.0369 0.0382 0.0395 0.0409 0.0423 0.0437 0.0452 0.0467 0.0482 0.0497 
-0.0513 0.0529 0.0545 0.0561 0.0578 0.0595 0.0612 0.0630 0.0648 0.0666 0.0685 0.0704 0.0723 0.0742 0.0762 0.0782 
-0.0802 0.0823 0.0844 0.0865 0.0886 0.0908 0.0931 0.0953 0.0976 0.0999 0.1022 0.1046 0.1070 0.1095 0.1119 0.1144 
-0.1170 0.1195 0.1221 0.1248 0.1274 0.1301 0.1329 0.1356 0.1384 0.1413 0.1441 0.1470 0.1500 0.1529 0.1559 0.1590 
-0.1620 0.1651 0.1683 0.1714 0.1746 0.1779 0.1812 0.1845 0.1878 0.1912 0.1946 0.1981 0.2016 0.2051 0.2086 0.2122 
-0.2159 0.2195 0.2232 0.2270 0.2307 0.2346 0.2384 0.2423 0.2462 0.2502 0.2542 0.2582 0.2622 0.2664 0.2705 0.2747 
-0.2789 0.2832 0.2874 0.2918 0.2961 0.3005 0.3050 0.3095 0.3140 0.3185 0.3231 0.3278 0.3325 0.3372 0.3419 0.3467 
-0.3515 0.3564 0.3613 0.3663 0.3712 0.3763 0.3813 0.3864 0.3916 0.3967 0.4020 0.4072 0.4125 0.4179 0.4233 0.4287 
-0.4342 0.4397 0.4452 0.4508 0.4564 0.4621 0.4678 0.4735 0.4793 0.4851 0.4910 0.4969 0.5029 0.5089 0.5149 0.5210 
-0.5271 0.5333 0.5395 0.5457 0.5520 0.5583 0.5647 0.5711 0.5776 0.5841 0.5906 0.5972 0.6038 0.6105 0.6172 0.6240 
-0.6308 0.6376 0.6445 0.6514 0.6584 0.6654 0.6724 0.6795 0.6867 0.6939 0.7011 0.7084 0.7157 0.7231 0.7305 0.7379 
-0.7454 0.7529 0.7605 0.7682 0.7758 0.7835 0.7913 0.7991 0.8069 0.8148 0.8228 0.8308 0.8388 0.8469 0.8550 0.8632 
-0.8714 0.8796 0.8879 0.8963 0.9047 0.9131 0.9216 0.9301 0.9387 0.9473 0.9560 0.9647 0.9734 0.9822 0.9911 1.0000 }
-dup 3 -1 roll 0.0000 1.0000 3 copy 3 -1 roll exch ge
-{pop pop pop pop pop 255 get}
-{pop 3 copy pop le{pop pop pop pop 0 get}{exch dup 4 -1 roll exch sub 3 1 roll sub div 255 mul dup floor dup 3 1 roll sub exch cvi dup 1 add 4 -1 roll exch get 4 -1 roll 3 -1 roll get dup 4 1 roll sub mul add}
-ifelse}ifelse}bind
-{{0.0000 0.0003 0.0006 0.0009 0.0012 0.0015 0.0018 0.0021 0.0024 0.0027 0.0030 0.0034 0.0037 0.0040 0.0044 0.0048 
-0.0052 0.0056 0.0060 0.0065 0.0070 0.0075 0.0080 0.0086 0.0091 0.0097 0.0103 0.0110 0.0116 0.0123 0.0130 0.0137 
-0.0144 0.0152 0.0160 0.0168 0.0176 0.0185 0.0194 0.0203 0.0212 0.0222 0.0232 0.0242 0.0252 0.0262 0.0273 0.0284 
-0.0296 0.0307 0.0319 0.0331 0.0343 0.0356 0.0369 0.0382 0.0395 0.0409 0.0423 0.0437 0.0452 0.0467 0.0482 0.0497 
-0.0513 0.0529 0.0545 0.0561 0.0578 0.0595 0.0612 0.0630 0.0648 0.0666 0.0685 0.0704 0.0723 0.0742 0.0762 0.0782 
-0.0802 0.0823 0.0844 0.0865 0.0886 0.0908 0.0931 0.0953 0.0976 0.0999 0.1022 0.1046 0.1070 0.1095 0.1119 0.1144 
-0.1170 0.1195 0.1221 0.1248 0.1274 0.1301 0.1329 0.1356 0.1384 0.1413 0.1441 0.1470 0.1500 0.1529 0.1559 0.1590 
-0.1620 0.1651 0.1683 0.1714 0.1746 0.1779 0.1812 0.1845 0.1878 0.1912 0.1946 0.1981 0.2016 0.2051 0.2086 0.2122 
-0.2159 0.2195 0.2232 0.2270 0.2307 0.2346 0.2384 0.2423 0.2462 0.2502 0.2542 0.2582 0.2622 0.2664 0.2705 0.2747 
-0.2789 0.2832 0.2874 0.2918 0.2961 0.3005 0.3050 0.3095 0.3140 0.3185 0.3231 0.3278 0.3325 0.3372 0.3419 0.3467 
-0.3515 0.3564 0.3613 0.3663 0.3712 0.3763 0.3813 0.3864 0.3916 0.3967 0.4020 0.4072 0.4125 0.4179 0.4233 0.4287 
-0.4342 0.4397 0.4452 0.4508 0.4564 0.4621 0.4678 0.4735 0.4793 0.4851 0.4910 0.4969 0.5029 0.5089 0.5149 0.5210 
-0.5271 0.5333 0.5395 0.5457 0.5520 0.5583 0.5647 0.5711 0.5776 0.5841 0.5906 0.5972 0.6038 0.6105 0.6172 0.6240 
-0.6308 0.6376 0.6445 0.6514 0.6584 0.6654 0.6724 0.6795 0.6867 0.6939 0.7011 0.7084 0.7157 0.7231 0.7305 0.7379 
-0.7454 0.7529 0.7605 0.7682 0.7758 0.7835 0.7913 0.7991 0.8069 0.8148 0.8228 0.8308 0.8388 0.8469 0.8550 0.8632 
-0.8714 0.8796 0.8879 0.8963 0.9047 0.9131 0.9216 0.9301 0.9387 0.9473 0.9560 0.9647 0.9734 0.9822 0.9911 1.0000 }
-dup 3 -1 roll 0.0000 1.0000 3 copy 3 -1 roll exch ge
-{pop pop pop pop pop 255 get}
-{pop 3 copy pop le{pop pop pop pop 0 get}{exch dup 4 -1 roll exch sub 3 1 roll sub div 255 mul dup floor dup 3 1 roll sub exch cvi dup 1 add 4 -1 roll exch get 4 -1 roll 3 -1 roll get dup 4 1 roll sub mul add}
-ifelse}ifelse}bind
-{{0.0000 0.0003 0.0006 0.0009 0.0012 0.0015 0.0018 0.0021 0.0024 0.0027 0.0030 0.0034 0.0037 0.0040 0.0044 0.0048 
-0.0052 0.0056 0.0060 0.0065 0.0070 0.0075 0.0080 0.0086 0.0091 0.0097 0.0103 0.0110 0.0116 0.0123 0.0130 0.0137 
-0.0144 0.0152 0.0160 0.0168 0.0176 0.0185 0.0194 0.0203 0.0212 0.0222 0.0232 0.0242 0.0252 0.0262 0.0273 0.0284 
-0.0296 0.0307 0.0319 0.0331 0.0343 0.0356 0.0369 0.0382 0.0395 0.0409 0.0423 0.0437 0.0452 0.0467 0.0482 0.0497 
-0.0513 0.0529 0.0545 0.0561 0.0578 0.0595 0.0612 0.0630 0.0648 0.0666 0.0685 0.0704 0.0723 0.0742 0.0762 0.0782 
-0.0802 0.0823 0.0844 0.0865 0.0886 0.0908 0.0931 0.0953 0.0976 0.0999 0.1022 0.1046 0.1070 0.1095 0.1119 0.1144 
-0.1170 0.1195 0.1221 0.1248 0.1274 0.1301 0.1329 0.1356 0.1384 0.1413 0.1441 0.1470 0.1500 0.1529 0.1559 0.1590 
-0.1620 0.1651 0.1683 0.1714 0.1746 0.1779 0.1812 0.1845 0.1878 0.1912 0.1946 0.1981 0.2016 0.2051 0.2086 0.2122 
-0.2159 0.2195 0.2232 0.2270 0.2307 0.2346 0.2384 0.2423 0.2462 0.2502 0.2542 0.2582 0.2622 0.2664 0.2705 0.2747 
-0.2789 0.2832 0.2874 0.2918 0.2961 0.3005 0.3050 0.3095 0.3140 0.3185 0.3231 0.3278 0.3325 0.3372 0.3419 0.3467 
-0.3515 0.3564 0.3613 0.3663 0.3712 0.3763 0.3813 0.3864 0.3916 0.3967 0.4020 0.4072 0.4125 0.4179 0.4233 0.4287 
-0.4342 0.4397 0.4452 0.4508 0.4564 0.4621 0.4678 0.4735 0.4793 0.4851 0.4910 0.4969 0.5029 0.5089 0.5149 0.5210 
-0.5271 0.5333 0.5395 0.5457 0.5520 0.5583 0.5647 0.5711 0.5776 0.5841 0.5906 0.5972 0.6038 0.6105 0.6172 0.6240 
-0.6308 0.6376 0.6445 0.6514 0.6584 0.6654 0.6724 0.6795 0.6867 0.6939 0.7011 0.7084 0.7157 0.7231 0.7305 0.7379 
-0.7454 0.7529 0.7605 0.7682 0.7758 0.7835 0.7913 0.7991 0.8069 0.8148 0.8228 0.8308 0.8388 0.8469 0.8550 0.8632 
-0.8714 0.8796 0.8879 0.8963 0.9047 0.9131 0.9216 0.9301 0.9387 0.9473 0.9560 0.9647 0.9734 0.9822 0.9911 1.0000 }
-dup 3 -1 roll 0.0000 1.0000 3 copy 3 -1 roll exch ge
-{pop pop pop pop pop 255 get}
-{pop 3 copy pop le{pop pop pop pop 0 get}{exch dup 4 -1 roll exch sub 3 1 roll sub div 255 mul dup floor dup 3 1 roll sub exch cvi dup 1 add 4 -1 roll exch get 4 -1 roll 3 -1 roll get dup 4 1 roll sub mul add}
-ifelse}ifelse}bind] put
-dup /MatrixLMN [0.4361 0.2225 0.0139 0.3851 0.7169 0.0971 0.1431 0.0606 0.7141] put
-dup /WhitePoint [0.9642 1.0000 0.8249] put]
-/ColorSpace defineRes pop
-
-q
-n
-9.60001 758.08 540 -720 re
-eoclip
-n
-false setSA
-n
-9.60001 758.08 540 -720 re
-[/CIEBasedABC  9 dict 
-dup /CreationDate (19980209064900) put
-dup /RenderingIntent (RelativeColorimetric) put
-dup /Description (sRGB IEC61966-2.1) put
-dup /ColorSpace (RGB ) put
-dup /Copyright (Copyright (c) 1998 Hewlett-Packard Company) put
-dup /DecodeLMN [
-
-{{0.0000 0.0003 0.0006 0.0009 0.0012 0.0015 0.0018 0.0021 0.0024 0.0027 0.0030 0.0034 0.0037 0.0040 0.0044 0.0048 
-0.0052 0.0056 0.0060 0.0065 0.0070 0.0075 0.0080 0.0086 0.0091 0.0097 0.0103 0.0110 0.0116 0.0123 0.0130 0.0137 
-0.0144 0.0152 0.0160 0.0168 0.0176 0.0185 0.0194 0.0203 0.0212 0.0222 0.0232 0.0242 0.0252 0.0262 0.0273 0.0284 
-0.0296 0.0307 0.0319 0.0331 0.0343 0.0356 0.0369 0.0382 0.0395 0.0409 0.0423 0.0437 0.0452 0.0467 0.0482 0.0497 
-0.0513 0.0529 0.0545 0.0561 0.0578 0.0595 0.0612 0.0630 0.0648 0.0666 0.0685 0.0704 0.0723 0.0742 0.0762 0.0782 
-0.0802 0.0823 0.0844 0.0865 0.0886 0.0908 0.0931 0.0953 0.0976 0.0999 0.1022 0.1046 0.1070 0.1095 0.1119 0.1144 
-0.1170 0.1195 0.1221 0.1248 0.1274 0.1301 0.1329 0.1356 0.1384 0.1413 0.1441 0.1470 0.1500 0.1529 0.1559 0.1590 
-0.1620 0.1651 0.1683 0.1714 0.1746 0.1779 0.1812 0.1845 0.1878 0.1912 0.1946 0.1981 0.2016 0.2051 0.2086 0.2122 
-0.2159 0.2195 0.2232 0.2270 0.2307 0.2346 0.2384 0.2423 0.2462 0.2502 0.2542 0.2582 0.2622 0.2664 0.2705 0.2747 
-0.2789 0.2832 0.2874 0.2918 0.2961 0.3005 0.3050 0.3095 0.3140 0.3185 0.3231 0.3278 0.3325 0.3372 0.3419 0.3467 
-0.3515 0.3564 0.3613 0.3663 0.3712 0.3763 0.3813 0.3864 0.3916 0.3967 0.4020 0.4072 0.4125 0.4179 0.4233 0.4287 
-0.4342 0.4397 0.4452 0.4508 0.4564 0.4621 0.4678 0.4735 0.4793 0.4851 0.4910 0.4969 0.5029 0.5089 0.5149 0.5210 
-0.5271 0.5333 0.5395 0.5457 0.5520 0.5583 0.5647 0.5711 0.5776 0.5841 0.5906 0.5972 0.6038 0.6105 0.6172 0.6240 
-0.6308 0.6376 0.6445 0.6514 0.6584 0.6654 0.6724 0.6795 0.6867 0.6939 0.7011 0.7084 0.7157 0.7231 0.7305 0.7379 
-0.7454 0.7529 0.7605 0.7682 0.7758 0.7835 0.7913 0.7991 0.8069 0.8148 0.8228 0.8308 0.8388 0.8469 0.8550 0.8632 
-0.8714 0.8796 0.8879 0.8963 0.9047 0.9131 0.9216 0.9301 0.9387 0.9473 0.9560 0.9647 0.9734 0.9822 0.9911 1.0000 }
-dup 3 -1 roll 0.0000 1.0000 3 copy 3 -1 roll exch ge
-{pop pop pop pop pop 255 get}
-{pop 3 copy pop le{pop pop pop pop 0 get}{exch dup 4 -1 roll exch sub 3 1 roll sub div 255 mul dup floor dup 3 1 roll sub exch cvi dup 1 add 4 -1 roll exch get 4 -1 roll 3 -1 roll get dup 4 1 roll sub mul add}
-ifelse}ifelse}bind
-{{0.0000 0.0003 0.0006 0.0009 0.0012 0.0015 0.0018 0.0021 0.0024 0.0027 0.0030 0.0034 0.0037 0.0040 0.0044 0.0048 
-0.0052 0.0056 0.0060 0.0065 0.0070 0.0075 0.0080 0.0086 0.0091 0.0097 0.0103 0.0110 0.0116 0.0123 0.0130 0.0137 
-0.0144 0.0152 0.0160 0.0168 0.0176 0.0185 0.0194 0.0203 0.0212 0.0222 0.0232 0.0242 0.0252 0.0262 0.0273 0.0284 
-0.0296 0.0307 0.0319 0.0331 0.0343 0.0356 0.0369 0.0382 0.0395 0.0409 0.0423 0.0437 0.0452 0.0467 0.0482 0.0497 
-0.0513 0.0529 0.0545 0.0561 0.0578 0.0595 0.0612 0.0630 0.0648 0.0666 0.0685 0.0704 0.0723 0.0742 0.0762 0.0782 
-0.0802 0.0823 0.0844 0.0865 0.0886 0.0908 0.0931 0.0953 0.0976 0.0999 0.1022 0.1046 0.1070 0.1095 0.1119 0.1144 
-0.1170 0.1195 0.1221 0.1248 0.1274 0.1301 0.1329 0.1356 0.1384 0.1413 0.1441 0.1470 0.1500 0.1529 0.1559 0.1590 
-0.1620 0.1651 0.1683 0.1714 0.1746 0.1779 0.1812 0.1845 0.1878 0.1912 0.1946 0.1981 0.2016 0.2051 0.2086 0.2122 
-0.2159 0.2195 0.2232 0.2270 0.2307 0.2346 0.2384 0.2423 0.2462 0.2502 0.2542 0.2582 0.2622 0.2664 0.2705 0.2747 
-0.2789 0.2832 0.2874 0.2918 0.2961 0.3005 0.3050 0.3095 0.3140 0.3185 0.3231 0.3278 0.3325 0.3372 0.3419 0.3467 
-0.3515 0.3564 0.3613 0.3663 0.3712 0.3763 0.3813 0.3864 0.3916 0.3967 0.4020 0.4072 0.4125 0.4179 0.4233 0.4287 
-0.4342 0.4397 0.4452 0.4508 0.4564 0.4621 0.4678 0.4735 0.4793 0.4851 0.4910 0.4969 0.5029 0.5089 0.5149 0.5210 
-0.5271 0.5333 0.5395 0.5457 0.5520 0.5583 0.5647 0.5711 0.5776 0.5841 0.5906 0.5972 0.6038 0.6105 0.6172 0.6240 
-0.6308 0.6376 0.6445 0.6514 0.6584 0.6654 0.6724 0.6795 0.6867 0.6939 0.7011 0.7084 0.7157 0.7231 0.7305 0.7379 
-0.7454 0.7529 0.7605 0.7682 0.7758 0.7835 0.7913 0.7991 0.8069 0.8148 0.8228 0.8308 0.8388 0.8469 0.8550 0.8632 
-0.8714 0.8796 0.8879 0.8963 0.9047 0.9131 0.9216 0.9301 0.9387 0.9473 0.9560 0.9647 0.9734 0.9822 0.9911 1.0000 }
-dup 3 -1 roll 0.0000 1.0000 3 copy 3 -1 roll exch ge
-{pop pop pop pop pop 255 get}
-{pop 3 copy pop le{pop pop pop pop 0 get}{exch dup 4 -1 roll exch sub 3 1 roll sub div 255 mul dup floor dup 3 1 roll sub exch cvi dup 1 add 4 -1 roll exch get 4 -1 roll 3 -1 roll get dup 4 1 roll sub mul add}
-ifelse}ifelse}bind
-{{0.0000 0.0003 0.0006 0.0009 0.0012 0.0015 0.0018 0.0021 0.0024 0.0027 0.0030 0.0034 0.0037 0.0040 0.0044 0.0048 
-0.0052 0.0056 0.0060 0.0065 0.0070 0.0075 0.0080 0.0086 0.0091 0.0097 0.0103 0.0110 0.0116 0.0123 0.0130 0.0137 
-0.0144 0.0152 0.0160 0.0168 0.0176 0.0185 0.0194 0.0203 0.0212 0.0222 0.0232 0.0242 0.0252 0.0262 0.0273 0.0284 
-0.0296 0.0307 0.0319 0.0331 0.0343 0.0356 0.0369 0.0382 0.0395 0.0409 0.0423 0.0437 0.0452 0.0467 0.0482 0.0497 
-0.0513 0.0529 0.0545 0.0561 0.0578 0.0595 0.0612 0.0630 0.0648 0.0666 0.0685 0.0704 0.0723 0.0742 0.0762 0.0782 
-0.0802 0.0823 0.0844 0.0865 0.0886 0.0908 0.0931 0.0953 0.0976 0.0999 0.1022 0.1046 0.1070 0.1095 0.1119 0.1144 
-0.1170 0.1195 0.1221 0.1248 0.1274 0.1301 0.1329 0.1356 0.1384 0.1413 0.1441 0.1470 0.1500 0.1529 0.1559 0.1590 
-0.1620 0.1651 0.1683 0.1714 0.1746 0.1779 0.1812 0.1845 0.1878 0.1912 0.1946 0.1981 0.2016 0.2051 0.2086 0.2122 
-0.2159 0.2195 0.2232 0.2270 0.2307 0.2346 0.2384 0.2423 0.2462 0.2502 0.2542 0.2582 0.2622 0.2664 0.2705 0.2747 
-0.2789 0.2832 0.2874 0.2918 0.2961 0.3005 0.3050 0.3095 0.3140 0.3185 0.3231 0.3278 0.3325 0.3372 0.3419 0.3467 
-0.3515 0.3564 0.3613 0.3663 0.3712 0.3763 0.3813 0.3864 0.3916 0.3967 0.4020 0.4072 0.4125 0.4179 0.4233 0.4287 
-0.4342 0.4397 0.4452 0.4508 0.4564 0.4621 0.4678 0.4735 0.4793 0.4851 0.4910 0.4969 0.5029 0.5089 0.5149 0.5210 
-0.5271 0.5333 0.5395 0.5457 0.5520 0.5583 0.5647 0.5711 0.5776 0.5841 0.5906 0.5972 0.6038 0.6105 0.6172 0.6240 
-0.6308 0.6376 0.6445 0.6514 0.6584 0.6654 0.6724 0.6795 0.6867 0.6939 0.7011 0.7084 0.7157 0.7231 0.7305 0.7379 
-0.7454 0.7529 0.7605 0.7682 0.7758 0.7835 0.7913 0.7991 0.8069 0.8148 0.8228 0.8308 0.8388 0.8469 0.8550 0.8632 
-0.8714 0.8796 0.8879 0.8963 0.9047 0.9131 0.9216 0.9301 0.9387 0.9473 0.9560 0.9647 0.9734 0.9822 0.9911 1.0000 }
-dup 3 -1 roll 0.0000 1.0000 3 copy 3 -1 roll exch ge
-{pop pop pop pop pop 255 get}
-{pop 3 copy pop le{pop pop pop pop 0 get}{exch dup 4 -1 roll exch sub 3 1 roll sub div 255 mul dup floor dup 3 1 roll sub exch cvi dup 1 add 4 -1 roll exch get 4 -1 roll 3 -1 roll get dup 4 1 roll sub mul add}
-ifelse}ifelse}bind] put
-dup /MatrixLMN [0.4361 0.2225 0.0139 0.3851 0.7169 0.0971 0.1431 0.0606 0.7141] put
-dup /WhitePoint [0.9642 1.0000 0.8249] put]
-/E1 exch /ColorSpace defineRes
-
-cs 1 1 1 sc
-f
-Q
-false setSA
-/E1 /ColorSpace findRes cs 0 0 0 sc
-249.36 555.04 m
-/N12 19.92 Tf
-(Derive 6)
-[14.4099 11.1035 6.66117 4.55946 9.84056 11.0397 5.51982 11.1035 ] pdfxs
-q
-68.16 0 0 61.44 251.28 579.52 cm
-q
-n
-0 0 1 1 re
-q
-W
-/E1 /ColorSpace findRes cs 
-<<
-/ImageType 1
-/Width 34
-/Height 30
-/ImageMatrix [34 0 0 -30 0 30] 
-/BitsPerComponent 8
-/Decode [0 1 0 1 0 1 ] 
-/_Filters [currentfile /ASCII85Decode filter dup /LZWDecode filter dup 
-] >>
-pdf_image J270J(N^,p"G9$L&@ah\'b5sci_^Pg67ik'LdY^'#`)7m!4*qK3?'#5\s+^V9$(Pb
->e-4UAl<5&.W$H$:1mM9jGlMEN^ofWfb3_3AMG$`7:NPbghoG#%u?H"'dm'\<`ZW:
--$>P]U0)51kZ%[G+,*ftf!/nI7\>7=5bM.+J3]kPOAR=`nc7rt6=<`:24bP:LRU'#
-Ge#(b6mNKQ`.FEu&Ug!$(sHK`8>KQ&#Eg3B=;q#?h%'aX708'3ic.6MC?[a!abR@/
-ZLO/QG!dR?[*]aR2=D8Ya%LGKVmG%nL-lRW_W<Hg%?gm>C0T3,.GX?B5Ti'9A]L'u
-kM=Fm\K%2A`OWqVffO@!Q#NDo(I(4TLd^+d+D9nW*#c^[cq09Cb@3`5KjflE]dk9B
-a1[K7(C7NG)N7saOQ]pbKq_*@!?0#sr"=[\W3Rt>.X:AB%YZHEY*b8C*"g&kF>0;q
-0r,^.a9"s=&qDA$;LSqhEG@1d,B2-i'[hht.C!m*Eo=uS@VFee+YZ:r%`fO,'/%>`
-N$B%rR&2a#,=u<&Yq$2%&Hsrb<?4^cHG7:a6hL9jJKRNtJY',#9G8Hjn9dEUJft(`
-Qh62VSg"I,l4He^`-0qKk!=PoV?P-M=f"Q(6<Mb=^har"-lK9'!C0N[cC&+&A1:46
-*H_*TM_+*S:D;-B.@A4CFVtmqR2SL+6tH3U%"f]:Bt1#*Qp$1aWKBM8^p#A;Xi%a*
-4^=34HO7_."Z2r41Za^uOJK2a?n/%c]Pl%^/5\ouoAMi^K`J&%6%C=V9EYA$ot4<,
-@$m`9M0:c%K7lN20207K)sG,%A$FlN(bY@3O.XR+Ae`Ub#^M0;Bq\h!LV]p(8g%ad
-9bRPX@DRU&X)i'5TQ:#b@&GZB\2$9<&?m]-_P!iW5\KZM@A%)("sP]HVR5.4U;!-_
-AuHUA'/!qg"t2;>DL__^WX@.4VmQ8N(_23GA:Fh-c;&h]Ac`/Z6t,S0*`kcNLlp#9
-?PG/dB.=+5k26_I0LTJ:/[auH5)>^\A[$g"RGcFKIfk5[rIc,G)u]hl@=Vc7Ph\<>
-#FM:ar%9+)63_g]BGo@N+FT#!&T-=W8XG^YNWael]f6V\!%+-=-SAmnX[nfCjbQ:4
-,56J9T$RH=E$/X,/'Fi4YDLM0C!frTMBFS]G+`Kr#'rgR(mYI0:g[o0P*h"e+b5-(
-a6l4F0EE([$m;SehC>*9DEKUJ$:.cG"lPaJK0t`OKbL7++To"t9+XK1&B$njGlo!r
-$s\lJGQpFSYD,kAZb\Bp%H55cLJ[CZ_4UehblL]QLsc83@1493&7cnn`.>b?!\m4_
-HZ/*Vq_kbH$6m,@LP,FF7G,9a@+/]f+pgN3d*g^+iA)5r4?!N9#7<^%c6-SXJV0l]
-ie(FsI3^9m`KS1TiQPVdZ%)gB^]Gr,i)g?F?-]E)6uH!A;[J"/<<,8j$GZqG+CSr7
-K/>j[($']bEV'eDLp[a='S;F+p]-;>Wi_SSM,YkMC7?o7B1Aj&'k@cn!"_<t!24rT
-Om&C!#tZS@r&U)tL)\%p#\a8EZQN_iJV;VFGD!DdRnN5p.&LYX76(GW6jsQV!$E8Z
-6Ih4I(-Y>mr#d71cB&\h%0:tp!l;DLC]FT8&2<u-K/a;@U!<B>1'S`>(aqd[X:p2*
-#=I(BE@c/LG=l"6%O[M4OFfBN"^n>F6#iFu;ZIKG+BKk?3HG=2?jm-VAdm$?BQa^Q
-FeqtM#=.K"2'A?GcThM#U^S/DL0S(CTkO!>H^5B84leWUeL47N+>k:5S^Z;D4Q5fQ
-X$gF"&R)b6.\/XD+9~>
-
-Q
-n
-Q
-Q
-PDFVars/TermAll get exec end end
+end
 %%PageTrailer
-%%EndPage
 %%Trailer
-%%DocumentNeededResources:
-%%+ font Helvetica
 %%EOF

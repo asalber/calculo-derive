@@ -1,22 +1,16 @@
 \documentclass[a4paper,dvips,openright,twoside]{report}
-\usepackage{svn-multi}
-% Version control information:
-\svnidlong
-{$HeadURL: https://practicas-derive.googlecode.com/svn/trunk/practicas_derive.tex $}
-{$LastChangedDate: 2009-11-16 16:11:46 +0100 (lun, 16 nov 2009) $}
-{$LastChangedRevision: 5 $}
-{$LastChangedBy: asalber $}
-%\svnid{$Id: practicas_derive.tex 5 2009-11-16 15:11:46Z asalber $}
-\pdfinfo{/CreationDate (D:\svnpdfdate)}
-\svnRegisterAuthor{asalber}{Alfredo S\'anchez Alberca}
-
+%=======================================================
+% GENERAL PACKAGES
 \usepackage[spanish]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{type1cm}
 \usepackage{amsmath}
+\usepackage{ntheorem} % For theorems environments
 \usepackage{macros}
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage{pst-all,pstricks-add}
+\usepackage{pst-solides3d}
+%\usepackage{pst-3dplot}
 \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -26,6 +20,8 @@
 \usepackage{url}
 \usepackage[margin=20pt, font=small, labelfont=bf, labelsep=endash]{caption}
 \usepackage[top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}
+
+% HEADINGS AND FOOTERS
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
@@ -36,7 +32,7 @@
 \renewcommand{\floatpagefraction}{.8}
 \renewcommand{\textfraction}{.1} 
 
-% Formato del título de las prácticas
+% TÍTULO DE LAS PRÁCTICAS
 \usepackage[rigidchapters,explicit]{titlesec}
 \setlength{\fboxsep}{5pt}
 \setlength{\titulolength}{\textwidth}
@@ -59,10 +55,38 @@
 \def\es@listquot{\protect\savees@listquot}
 \makeatletter
 
+% COLORS
 \definecolor{coral}{rgb}{1,0.5,0.31}
 \definecolor{royalblue1}{rgb}{0.28,0.46,1}
 
+% THEOREMS 
+\theoremstyle{plain}
+\theorembodyfont{\normalfont}
+%\theoremsymbol{\ensuremath{\square}} Requires  [thmmarks] as option of ntheorem package.
+\theorempostskip{4mm}
+\newtheorem{definicion}{Definición}[chapter]
+
+\theoremstyle{plain}
+\theorembodyfont{\slshape}
+\newtheorem{teorema}{Teorema}[chapter]
+
+
+% COMMANDS FOR INDICATIONS
+\usepackage{menukeys}
+\renewmenumacro{\menu}[>]{hyphenatepaths}
+%\newmenustylesimple*{botonstyle}{\textbf{\CurrentMenuElement}}
+%\renewmenumacro{\keys}{botonstyle}
+%\newcommand{\boton}[1]{\textsf{#1}}
+%\newcommand{\opcion}[1]{\textsf{#1}}
+%\newcommand{\campo}[1]{\textsf{#1}}
+%\newcommand{\comando}[1]{\verb|#1|}
+%\newcommand{\variable}[1]{\textsf{#1}}
+\newcommand{\resultado}[1]{\texttt{#1}}
+\newcommand{\flecha}{ > }
+
+% OTHERS
 \newcommand{\resetcounters}{\setcounter{page}{1} \setcounter{section}{0} \setcounter{footnote}{0} \setcounter{figure}{0} \setcounter{table}{0}}
+
 
 \begin{document}
 \begin{titlepage}
@@ -72,25 +96,18 @@
 \vspace{0.5cm}
 {\large \noindent \textbf{Autores}: \\
 Santiago Angulo Díaz-Parreño (\url{sangulo@ceu.es})\\
+Euardo López Ramírez (\url{elopez@ceu.es})\\
 José Rojo Montijano (\url{jrojo.eps@ceu.es})\\
 Anselmo Romero Limón (\url{arlimon@ceu.es})\\
 Alfredo Sánchez Alberca (\url{asalber@ceu.es})
 }
 
 \vspace{0.5cm}
-{\large Curso 2012-2013}
+{\large Curso 2013-2014}
 
 \vspace{1cm}
  \includegraphics[scale=0.3]{img/logo_uspceu_01}
 \end{center}
-%  \vfill
-%  \flushleft\sffamily
-%  Version control information:\\
-%  Head URL: \url{\svnmainurl}\\
-%  Last changed date: \svndate\\
-%  Last changes revision: \svnrev\\
-%  Version: \svnFullRevision*{\svnrev}\\
-%  Last changed by: \svnFullAuthor*{\svnauthor}\\
 \end{titlepage}
 
 \include{licencia}
@@ -99,17 +116,16 @@ Alfredo Sánchez Alberca (\url{asalber@ceu.es})
 \newpage
 
 \resetcounters
-\include{introduccion_derive}
+\include{introduccion_derive} 
 \include{funciones_elementales}
 \include{limites_continuidad}
-%\include{derivadas}
-%\resetcounters
-\include{derivadas_aplicaciones_parciales}
+\include{derivadas_una_variable}
+\include{derivadas_n_variables}
 \include{polinomios_taylor}
 %\include{derivadas_implicitas_parametricas}
 \include{integrales}
 %\include{primitivas}
 %\include{integral_riemann}
 \include{ecuaciones_diferenciales}
-%\include{limites_varias_variables}
+%\include{limites_varias_variables} 
 \end{document}

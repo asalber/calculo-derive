@@ -1,9 +1,3 @@
-%$HeadURL: https://practicas-derive.googlecode.com/svn/trunk/introduccion_derive.tex $
-%$LastChangedDate: 2008-12-08 17:44:27 +0100 (lun, 08 dic 2008) $
-%$LastChangedRevision: 4 $
-%$LastChangedBy: asalber $
-%$Id: introduccion_derive.tex 4 2008-12-08 16:44:27Z asalber $
-
 \chapter{Introducción a Derive}
 
 \section{Introducción}
@@ -25,9 +19,8 @@ frente a otros programas habituales de cálculo como Mathematica,
 Mapple o MATLAB, radica en su sencillez y simplicidad de uso, lo
 cual lo hace idóneo para la enseñanza de las matemáticas.
 
-
 \begin{center}
-  \includegraphics[scale=0.6]{img/introduccion_derive/introduccion}
+\includegraphics[scale=0.6]{img/introduccion_derive/introduccion}
 \end{center}
 
 
@@ -40,11 +33,11 @@ básicas más habituales.
 \subsection*{Arranque}
 Como cualquier otra aplicación de Windows, para arrancar el programa
 hay que pulsar sobre la opción correspondiente del menú
-\texttt{Inicio->Programas}, o bien sobre el icono de escritorio
+\menu{Inicio>Programas}, o bien sobre el icono de escritorio
 
 
 \begin{center}
-  \includegraphics[scale=0.4]{img/introduccion_derive/icono}
+\includegraphics[scale=0.4]{img/introduccion_derive/icono}
 \end{center}
 
 Cuando el programa arranca, en la pantalla aparece la ventana
@@ -53,8 +46,8 @@ principal del programa que se conoce como \emph{ventana de Álgebra}
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/principal}
-\caption{Ventana principal de Derive.} \label{g:principal}
+\includegraphics[scale=0.6]{img/introduccion_derive/principal}
+\caption{Ventana principal de Derive.} \label{g:principal} 
 \end{center}
 \end{figure}
 
@@ -78,9 +71,9 @@ Para introducir una expresión se utiliza el editor de expresiones
 baja de la ventana de Álgebra.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/authorexpression}
-\caption{Editor de expresiones.} \label{g:editor}
-\end{center}
+\includegraphics[scale=0.6]{img/introduccion_derive/authorexpression}
+\caption{Editor de expresiones.} \label{g:editor} 
+\end{center} 
 \end{figure}
 
 El editor de expresiones está compuesto por una línea de edición,
@@ -158,11 +151,11 @@ seleccionada en el editor de expresiones.
 \subsubsection*{Modificación de expresiones}
 Una vez introducida una expresión, podemos volver a editarla para
 realizar cualquier corrección o cambio mediante el menú
-\texttt{Editar->Expresión} y aparecerá la ventana del editor de
+\menu{Editar>Expresión} y aparecerá la ventana del editor de
 expresiones con la expresión seleccionada.
 \subsubsection*{Eliminación de expresiones}
 Para eliminar una expresión de la ventana de Algebra, basta con
-seleccionarla y utilizar el menú \texttt{Editar->Borrar} y la
+seleccionarla y utilizar el menú \menu{Editar>Borrar} y la
 expresión seleccionada desaparecerá automáticamente, mientras que el
 resto de las expresiones se renumeran automáticamente. También es
 posible eliminar bloques completos de expresiones consecutivas
@@ -170,7 +163,7 @@ seleccionando previamente el bloque de expresiones a eliminar.
 
 \textbf{¡Importante!}: Si hemos eliminado alguna expresión por
 equivocación, es posible recuperarla mediante el menú
-\texttt{Editar->Recuperar}.
+\menu{Editar>Recuperar}.
 
 \subsubsection*{Reordenación de expresiones}
 Es posible cambiar la posición que ocupa una expresión en la ventana
@@ -185,7 +178,7 @@ secuencia de expresiones. La primera consiste en utilizar la línea
 de edición escribiendo el texto del comentario entre comillas, y,
 si procedemos de esta manera, el comentario aparecerá como una
 expresión más, con su correspondiente etiqueta de ordenación. La
-segunda es mediante el menú \texttt{Insertar->Objeto de Texto}, y
+segunda es mediante el menú \menu{Insertar>Objeto de Texto}, y
 de esta forma el comentario aparece sin etiqueta de ordenación ya
 que se trata de un objeto más insertado en el archivo, como
 también lo sería una gráfica, un dibujo, una fotografía o una hoja
@@ -201,8 +194,8 @@ interpretará que queremos trabajar con la función coseno tanto si
 introducimos en la línea de edición $\cos(x)$ como si introducimos
 $\cos(X)$. No obstante, es posible hacer que el programa utilice
 variables con más de una letra y distinga entre mayúsculas y
-minúsculas mediante el menú \texttt{Opciones->Ajustes de
-Modo->Introducción}.
+minúsculas mediante el menú \menu{Opciones>Ajustes de
+Modo>Introducción}.
 
 \subsubsection*{Definición de constantes y funciones}
 Es posible definir constantes y funciones mediante el operador de
@@ -254,7 +247,7 @@ introducido en la línea de edición es la constante de Euler, base
 de los logaritmos naturales.
 
 Para conocer todas las funciones predefinidas de Derive lo mejor es
-utilizar el menú \texttt{Ayuda->En Línea} y visitar la sección
+utilizar el menú \menu{Ayuda>En Línea} y visitar la sección
 \texttt{Funciones y Constantes Internas}.
 \begin{table}[h!]
   \centering
@@ -303,7 +296,7 @@ $\operatorname {Cos}(x)$, o $\operatorname {COS}(x)$.
 
 \subsubsection*{Vectores y matrices}
 Derive también permite la manipulación de vectores y matrices. Para
-crear un vector se utiliza el menú \texttt{Introducir->Vector}. Al
+crear un vector se utiliza el menú \menu{Introducir>Vector}. Al
 seleccionar este menú aparece un cuadro de diálogo donde debemos
 introducir el número de elementos del vector, y tras pulsar
 \texttt{Sí} aparece otro cuadro de diálogo donde deben introducirse
@@ -314,7 +307,7 @@ introduciendo entre corchetes las componentes del vector separadas
 por comas. Por ejemplo, para introducir el vector $(x,y,z)$
 escribiríamos \texttt{[x,y,z]} (ver figura~\ref{g:expresiones}).
 
-Para crear matrices se utiliza el menú \texttt{Introducir->Matriz}.
+Para crear matrices se utiliza el menú \menu{Introducir>Matriz}.
 Con este menú aparece un cuadro de diálogo donde debemos introducir
 las filas y las columnas de nuestra matriz, y tras pulsar
 \texttt{Sí}, aparece otro cuadro de diálogo donde deben introducirse
@@ -339,13 +332,13 @@ figura~\ref{g:expresiones}).
 \subsubsection*{Anotaciones}
 Es posible asociar a cada expresión una pequeña anotación, o nota.
 Para ello se selecciona la expresión y se utiliza el menú
-\texttt{Editar->Anotacion}. Dicha anotación aparecerá en la barra de
+\menu{Editar>Anotacion}. Dicha anotación aparecerá en la barra de
 estado cada vez que seleccionemos la expresión y también es posible
 imprimirlo junto a la expresión.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/expresiones}
+\includegraphics[scale=0.6]{img/introduccion_derive/expresiones}
 \caption{Ventana de Algebra con distintos tipos de expresiones.}
 \label{g:expresiones}
 \end{center}
@@ -358,24 +351,24 @@ Las expresiones y los cálculos realizados dentro de la ventana de
 
 \subsubsection*{Guardar un archivo}
 Para crear un archivo donde se guarden las expresiones de la ventana
-de Álgebra se utiliza el menú \texttt{Archivo->Guardar}, y en el
+de Álgebra se utiliza el menú \menu{Archivo>Guardar}, y en el
 cuadro de diálogo que aparece se le da nombre al archivo y se
 selecciona la carpeta donde queremos guardarlo. Derive le pone
 automáticamente la extensión \texttt{*.dfw} a sus archivos. Una vez
 creado el archivo, su nombre aparecerá en la barra de título de la
 ventana de Derive. Posteriormente, para guardar cambios en una
 ventana de Álgebra, bastará con seleccionar de nuevo el menú
-\texttt{Archivo->Guardar}, de manera que el archivo se actualizará.
+\menu{Archivo>Guardar}, de manera que el archivo se actualizará.
 
 \subsubsection*{Recuperar un archivo}
 Para recuperar en una ventana de Álgebra el contenido de un archivo
-se utiliza el menú \texttt{Archivo->Abrir}, y en en cuadro de
+se utiliza el menú \menu{Archivo>Abrir}, y en en cuadro de
 diálogo que aparece se selecciona el archivo deseado.
 Automáticamente el contenido del archivo aparece en una ventana
 nueva de Álgebra.
 
 Otra forma de abrir archivos es mediante el menú
-\texttt{Archivo->Leer->Math}, que se utiliza para almacenar en
+\menu{Archivo>Leer>Math}, que se utiliza para almacenar en
 memoria la definición de nuevas funciones, presentes en los archivos
 con extensión *.mth, que expanden el potencial de cálculo del núcleo
 del programa, el cual queda operativo nada más arrancar Derive. Al
@@ -384,7 +377,7 @@ seleccionar el archivo que queremos abrir, sólo que ahora, el
 contenido del archivo no aparece en una nueva ventana de Álgebra,
 sino que se añade en la ventana de Álgebra activa, a continuación de
 las expresiones existentes. Otra forma de proceder con igual
-resultado es mediante el menú \texttt{Archivo->Leer->Utilidades},
+resultado es mediante el menú \menu{Archivo>Leer>Utilidades},
 que también permite acceder hasta, y cargar en memoria, los archivos
 con extensión *.mth, pero en este caso el conjunto de expresiones
 que componen dichos archivos no aparece en la pantalla, aunque sí
@@ -394,10 +387,10 @@ operativas.
 \subsubsection*{Cerrar y abrir nuevas ventanas de Álgebra}
 Cuando terminemos una sesión de trabajo, podemos cerrar la ventana
 de Álgebra correspondiente mediante el menú
-\texttt{Archivo->Cerrar}. Por otro lado, en cualquier momento de una
+\menu{Archivo>Cerrar}. Por otro lado, en cualquier momento de una
 sesión de trabajo podemos abrir, añadidas a la que aparece por
 defecto, tantas ventanas de Álgebra como estimemos oportunas
-mediante el menú \texttt{Archivo->Nuevo}. El programa trabaja con
+mediante el menú \menu{Archivo>Nuevo}. El programa trabaja con
 cada una de las ventanas de Álgebra activas de forma completamente
 independiente, lo cual implica, entre otras cosas, que podremos
 utilizar los mismos nombres de variables en todas las ventanas
@@ -405,46 +398,46 @@ abiertas sin interferencia entre las mismas.
 
 \subsubsection*{Impresión}
 Para imprimir el contenido de una ventana de Álgebra, o bien una
-gráfica, se utiliza el menú \texttt{Archivo->Imprimir}. En el caso
+gráfica, se utiliza el menú \menu{Archivo>Imprimir}. En el caso
 de una ventana de Álgebra aparecerá un cuadro de diálogo donde se
 puede seleccionar \texttt{Todo}, para imprimir todo el contenido de
 la ventana, \texttt{Páginas} para imprimir un rango de páginas o
 \texttt{Selección} para imprimir la zona previamente seleccionada de
 la ventana. No obstante, antes de imprimir, conviene utilizar el
-menú \texttt{Archivo->Vista Previa} para ver por pantalla cómo
+menú \menu{Archivo>Vista Previa} para ver por pantalla cómo
 quedaría la hoja impresa. Si todo está bien, bastaría con pulsar el
 botón \texttt{Imprimir} para que aparezca el cuadro de diálogo de
 impresión y desde ahí enviarlo a la impresora. La orientación y los
-márgenes pueden cambiarse con el menú \texttt{Archivo->Configurar
+márgenes pueden cambiarse con el menú \menu{Archivo>Configurar
 Página}, mientras que otras opciones como el tipo de letra, o el
 encabezado y pie de página se controlan mediante el menú
-\texttt{Opciones->Impresión->Cabecera y Pie}.
+\menu{Opciones>Impresión>Cabecera y Pie}.
 
 \subsection*{Simplificación de expresiones}
 Derive incorpora varios sistemas de simplificación de expresiones.
 El más sencillo es la simplificación básica, que puede realizarse
-mediante el menú \texttt{Simplificar->Normal}. Este menú permite
+mediante el menú \menu{Simplificar>Normal}. Este menú permite
 realizar simplificaciones simples como por ejemplo convertir la
 expresión $x+x$ en la expresión $2x$. Sin embargo, no permite pasar
 de un binomio como $(x+1)^2$ a su desarrollo $x^2+2x+1$, ya que no
 está claro cuál de las dos expresiones es más simple. Para obtener
 el desarrollo de este binomio se utiliza el menú
-\texttt{Simplificar->Expandir} que permite expandir una expresión
+\menu{Simplificar>Expandir} que permite expandir una expresión
 con respecto sus variables. Por el contrario, si lo que queremos es
 pasar del desarrollo a la forma del binomio, se utiliza el menú
-\texttt{Simplificar->Factorizar} que permite factorizar una
+\menu{Simplificar>Factorizar} que permite factorizar una
 expresión con respecto a sus variables.
 
 En cualquiera de estas simplificaciones, Derive trabaja por defecto
 en modo exacto y por eso devuelve expresiones fraccionarias. Para
 obtener el valor de una expresión en modo aproximado, con decimales,
-se utiliza el menú \texttt{Simplificar->Aproximar}. Con este menú
+se utiliza el menú \menu{Simplificar>Aproximar}. Con este menú
 aparece un cuadro de diálogo donde debemos introducir el número de
 decimales que queremos para la aproximación.
 
 Por último, es posible sustituir cualquier variable de una expresión
 por un valor u otra expresión mediante el menú
-\texttt{Simplificar->Sustituir Variable}. En el cuadro de diálogo
+\menu{Simplificar>Sustituir Variable}. En el cuadro de diálogo
 que aparece se elige la variable a sustituir y se introduce la
 expresión o el valor de sustitución en \texttt{Nuevo Valor}.
 
@@ -453,46 +446,46 @@ Derive permite representar gráficamente funciones en 2 y 3
 dimensiones.
 \subsubsection*{Gráficas en 2 dimensiones}
 Para representar una función o expresión de una variable, se
-selecciona la expresión y se utiliza el menú \texttt{Ventana->Nueva
+selecciona la expresión y se utiliza el menú \menu{Ventana>Nueva
 Ventana 2D}. Automáticamente aparece una ventana de gráficas en 2
 dimensiones con unos ejes cartesianos, y para que aparezca la
 gráfica de la función, basta con pulsar el menú
-\texttt{Insertar->Gráfica} de esta ventana, o pulsar en su
+\menu{Insertar>Gráfica} de esta ventana, o pulsar en su
 correspondiente botón de la barra de botones. En la
 figura~\ref{g:2d-plot} se muestra un ejemplo de gráfica en 2
 dimensiones.
 
 Si queremos que la gráfica, una vez obtenida, también aparezca en la
 ventana de Álgebra como un objeto más de la misma, desde la ventana
-2D, utilizamos el menú \texttt{Archivo->Incrustar}.
+2D, utilizamos el menú \menu{Archivo>Incrustar}.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/2d-plot}
+\includegraphics[scale=0.6]{img/introduccion_derive/2d-plot}
 \caption{Ventana de gráficas en 2 dimensiones.} \label{g:2d-plot}
 \end{center}
 \end{figure}
 
 Es posible representar más de una función en una misma gráfica,
 seleccionando la nueva expresión en la ventana de Álgebra, y
-pulsando de nuevo el menú \texttt{Insertar->Gráfica} en la ventana
+pulsando de nuevo el menú \menu{Insertar>Gráfica} en la ventana
 de gráficos en 2 dimensiones en que queramos que aparezca la
 representación gráfica de la expresión seleccionada. Cuando se
 quieren representar varias funciones, a veces resulta más cómodo
 mostrar al mismo tiempo la ventana de Álgebra y la de gráficas
-mediante el menú \texttt{Ventana->Mosaico Vertical}, tal y como se
+mediante el menú \menu{Ventana>Mosaico Vertical}, tal y como se
 muestra en la figura~\ref{g:expresionesygraficas}.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/expresionesygraficas}
+\includegraphics[scale=0.6]{img/introduccion_derive/expresionesygraficas}
 \caption{Ventana de Álgebra y de gráficas en 2 dimensiones en una
 misma pantalla.} \label{g:expresionesygraficas}
 \end{center}
 \end{figure}
 
 También es posible borrar gráficas mediante el menú
-\texttt{Editar->Borrar Gráfica}. Si se elige la opción
+\menu{Editar>Borrar Gráfica}. Si se elige la opción
 \texttt{Primera} se borra la primera gráfica dibujada, si se elige
 la opción \texttt{Última} se borra la última, y si se elige la
 opción \texttt{Anteriores} borra todas las gráficas excepto la
@@ -501,11 +494,11 @@ opción \texttt{Anteriores} borra todas las gráficas excepto la
 En la ventana de gráficas en 2 dimensiones existen distintos menús
 que permiten cambiar el aspecto de la gráfica representada. Una
 posibilidad muy interesante es cambiar la escala de los ejes
-mediante el menú \texttt{Seleccionar->Relación de Aspecto}.
+mediante el menú \menu{Seleccionar>Relación de Aspecto}.
 
 También es posible ampliar la representación gráfica de una
 determinada zona del gráfico mediante el menú
-\texttt{Seleccionar->Rango de la Gráfica}, introduciendo las
+\menu{Seleccionar>Rango de la Gráfica}, introduciendo las
 coordenadas de la zona que queremos ampliar, aunque es más práctico
 utilizar el botón \texttt{Seleccionar el rango}, y después utilizar
 el ratón para delimitar la zona que queremos ampliar.
@@ -521,31 +514,31 @@ como se muestra en la figura~\ref{g:modotraza}.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/modotraza}
+\includegraphics[scale=0.6]{img/introduccion_derive/modotraza}
 \caption{Ventana de gráficas en 2 dimensiones en modo de traza con
 una gráfica ampliada.} \label{g:modotraza}
 \end{center}
 \end{figure}
 
 Es posible centrar la gráfica de una función en cualquier punto
-mediante el menú \texttt{Seleccionar->Rango de la
-Gráfica->Longitud/Centro}, aunque, de nuevo, tal vez sea más
+mediante el menú \menu{Seleccionar>Rango de la
+Gráfica>Longitud/Centro}, aunque, de nuevo, tal vez sea más
 operativo hacerlo mediante los botones \texttt{Centrar en el cursor}
 y \texttt{Centrar en el origen}.
 
 \subsubsection*{Gráficas en 3 dimensiones}
 Para representar una función o expresión de dos variables, se
-selecciona la expresión y se utiliza el menú \texttt{Ventana->Nueva
+selecciona la expresión y se utiliza el menú \menu{Ventana>Nueva
 Ventana 3D}. Automáticamente aparece una ventana de gráficas en 3
 dimensiones con unos ejes cartesianos, y para que aparezca la
 gráfica de la función, basta con pulsar el menú
-\texttt{Insertar->Gráfica} de esta ventana. En la
+\menu{Insertar>Gráfica} de esta ventana. En la
 figura~\ref{g:3d-plot} se muestra un ejemplo de gráfica en 3
 dimensiones.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.9]{img/introduccion_derive/3d-plot}
+\includegraphics[scale=0.6]{img/introduccion_derive/3d-plot}
 \caption{Ventana de gráficas en 3 dimensiones.} \label{g:3d-plot}
 \end{center}
 \end{figure}
@@ -553,7 +546,7 @@ dimensiones.
 Al igual que en el caso de las gráficas de 2 dimensiones, existen
 distintos menús que permiten cambiar el aspecto de la gráfica
 representada. De todos ellos, sólo comentaremos el menú
-\texttt{Editar->Gráfica->Número de Paneles} que permite cambiar la
-resolución del gráfico, y el menú \texttt{Seleccionar->Posición de
+\menu{Editar>Gráfica>Número de Paneles} que permite cambiar la
+resolución del gráfico, y el menú \menu{Seleccionar>Posición de
 Ojo} que permite cambiar la posición desde donde se mira la gráfica.
 
