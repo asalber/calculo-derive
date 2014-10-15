@@ -1,8 +1,4 @@
-%$HeadURL: https://practicas-derive.googlecode.com/svn/trunk/funciones_elementales.tex $
-%$LastChangedDate: 2009-11-16 16:11:46 +0100 (lun, 16 nov 2009) $
-%$LastChangedRevision: 5 $
-%$LastChangedBy: asalber $
-
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \chapter{Funciones Elementales}
 
 \section{Fundamentos teóricos}
@@ -119,7 +115,7 @@ En una función periódica, por ejemplo $f(x)=A\sen(wt)$, se denomina \emph{ampl
 
 \begin{figure}[h!]
 \centering
-\scalebox{1}{\input{img/funciones_elementales/funcion_periodica}}
+\scalebox{0.8}{\input{img/funciones_elementales/funcion_periodica}}
 \caption{Periodo y amplitud de una función periódica.}
 \label{g:periodoyamplitud}
 \end{figure}
@@ -131,203 +127,115 @@ En una función periódica, por ejemplo $f(x)=A\sen(wt)$, se denomina \emph{ampl
 
 \begin{enumerate}[leftmargin=*]
 \item Se considera la función
-
 \[
-\ f(t)=\frac{t^{4} +19\cdot t^{2} - 5}{t^{4} +9\cdot t^{2} - 10}.
+f(t)=\frac{t^{4} +19\cdot t^{2} - 5}{t^{4} +9\cdot t^{2} - 10}.
 \]
 
-Representarla gráficamente y determinar a partir de dicha representación:
-
+Se pide: 
+\begin{enumerate}
+\item Representarla gráficamente y determinar a partir de dicha representación:
 
 \begin{enumerate}
-
 \item  Dominio.
-
 \begin{indicacion}
-{
 \begin{enumerate}
-
-\item Para representarla, podemos definir la función en la línea
-de editor (o introducirla directamente, sin generar una
-definición), y posteriormente utilizamos el botón \texttt{Ventana
-2D} para pasar a la ventana de gráficas 2D, y allí pinchamos en el
-botón \texttt{Representar Expresión}).
-
-\item Una vez en la Ventana 2D, y ya que vamos a trabajar con la
-gráfica de la función durante todo el ejercicio, probablemente
-convenga el Modo de Traza, en el que el cursor se desplaza a lo
-largo de la gráfica. Para ello pinchar en el botón \texttt{Trazar
-las Gráficas}.
-
-\item Para determinar el dominio tan sólo hay que determinar los
-valores de $x$ en los que existe la función.
-
-\item Recordar que, tanto para éste como para el resto de los
-apartados del ejercicio, pretendemos llegar a conclusiones
-aproximadas que tan sólo sacamos del análisis de la gráfica.
-
+\item Para representarla, podemos definir la función en la línea de editor (o introducirla directamente, sin generar una definición), y
+posteriormente utilizamos el botón \texttt{Ventana 2D} para pasar a la ventana de gráficas 2D, y allí pinchamos en el botón
+\texttt{Representar Expresión}).
+\item Una vez en la Ventana 2D, y ya que vamos a trabajar con la gráfica de la función durante todo el ejercicio, probablemente convenga el
+Modo de Traza, en el que el cursor se desplaza a lo largo de la gráfica. Para ello pinchar en el botón \texttt{Trazar las Gráficas}.
+\item Para determinar el dominio tan sólo hay que determinar los valores de $x$ en los que existe la función.
+\item Recordar que, tanto para éste como para el resto de los apartados del ejercicio, pretendemos llegar a conclusiones aproximadas que tan
+sólo sacamos del análisis de la gráfica.
 \end{enumerate}
-
-}
 \end{indicacion}
-
 
 \item  Imagen.
-
 \begin{indicacion}
-{Fijarse en los valores de la variable $y$ hasta los que llega la
-función.}
+Fijarse en los valores de la variable $y$ hasta los que llega la función.
 \end{indicacion}
 
-
 \item  Asíntotas.
-
 \begin{indicacion}
-{Son las líneas rectas, ya sea horizontales, verticales u
-oblicuas, hacia las que tiende la función.}
+Son las líneas rectas, ya sea horizontales, verticales u oblicuas, hacia las que tiende la función.
 \end{indicacion}
 
 \item  Raíces.
-
-
-
 \begin{indicacion}
-{Son los valores de la variable $x$, si los hay, en los que la
-función vale 0.}
-
+Son los valores de la variable $x$, si los hay, en los que la función vale 0.
 \end{indicacion}
 
-\item  Signo.
-
+\item Signo.
 \begin{indicacion}
-{Hay que determinar, aproximadamente, por un lado los intervalos
-de variable $x$ en los que la función es positiva, y por el otro
-aquellos en los que es negativa. }
+Hay que determinar, aproximadamente, por un lado los intervalos de variable $x$ en los que la función es positiva, y por el otro aquellos en
+los que es negativa.
 \end{indicacion}
 
 \item  Intervalos de crecimiento y decrecimiento.
-
 \begin{indicacion}
-{De nuevo, por un lado hay que determinar los intervalos de
-variable $x$ en los que a medida que crece $x$ también lo hace
-$y$, que serían los intervalos de crecimiento, y también aquellos
-otros en los que a medida que crece $x$ decrece $y$, que serían
-los intervalos de decremimiento. }
+De nuevo, por un lado hay que determinar los intervalos de variable $x$ en los que a medida que crece $x$ también lo hace $y$, que serían
+los intervalos de crecimiento, y también aquellos otros en los que a medida que crece $x$ decrece $y$, que serían los intervalos de
+decremimiento.
 \end{indicacion}
 
 \item Intervalos de concavidad y convexidad.
-
 \begin{indicacion}
-{Para los intervalos de concavidad y convexidad, nos fijamos en el
-segmento de línea recta que une dos puntos cualquiera del
-intervalo. Si dicho segmento queda por encima de la gráfica,
-entonces la función es cóncava en el intervalo, mientras que si
-queda por debajo, entonces es convexa en el mismo. }
+Para los intervalos de concavidad y convexidad, nos fijamos en el segmento de línea recta que une dos puntos cualquiera del intervalo. Si
+dicho segmento queda por encima de la gráfica, entonces la función es cóncava en el intervalo, mientras que si queda por debajo, entonces es
+convexa en el mismo.
 \end{indicacion}
 
 \item Extremos relativos.
-
 \begin{indicacion}
-{Determinamos, aproximadamente, los puntos en los que se
-encuentran los máximos y mínimos relativos de la función. }
+Determinamos, aproximadamente, los puntos en los que se encuentran los máximos y mínimos relativos de la función.
 \end{indicacion}
 
 \item Puntos de inflexión.
-
 \begin{indicacion}
-{Determinamos, aproximadamente, los puntos en los que la función
-cambia de curvatura, de cóncava a convexa o a la inversa. }
+Determinamos, aproximadamente, los puntos en los que la función cambia de curvatura, de cóncava a convexa o a la inversa.
 \end{indicacion}
-
+\end{enumerate}
 \end{enumerate}
 
-
-
-\item Representar en una misma gráfica las funciones $2^{x}, e^{x}, 0.7^{x}, 0.5^{x}$.
-\begin{enumerate}
-\item A la vista de las gráficas obtenidas, indicar cuáles de las funciones anteriores son crecientes y cuáles son decrecientes.
-
+\item Representar en una misma gráfica las funciones $2^{x}, e^{x}, 0.7^{x}, 0.5^{x}$. A la vista de las gráficas obtenidas, indicar cuáles
+de las funciones anteriores son crecientes y cuáles son decrecientes.
 \begin{indicacion}
-{
-\begin{enumerate}
-
-\item Aunque podríamos representar en una misma gráfica todas las
-funciones dadas a la vez  (sin más que introducir sus expresiones,
-marcar todas ellas, irnos a la ventana 2D, y pinchando en el botón
-\texttt{Representar Expresiones}), más bien conviene representar
-las funciones una a una, y utilizar el botón \texttt{Insertar
-Anotación} para asignara a cada una de las gráficas una pequeña
-anotación que nos ayude a distinguirla de las demás. Si
-desactivamos el modo de trazado y pasamos al modo habitual en el
-que podemos situarnos con el cursor en cualquier punto de la
-gráfica, podemos trasladar la anotación desde la posición
-inicialmente escogida para su ubicación en cualquier otro punto de
-la gráfica, sin más que pinchar con el ratón en la anotación, y,
-manteniendo pulsado el mismo, arrastrar hasta la nueva ubicación.
-
-\end{enumerate}
-
-
-}
+Aunque podríamos representar en una misma gráfica todas las funciones dadas a la vez  (sin más que introducir sus expresiones, marcar
+todas ellas, irnos a la ventana 2D, y pinchando en el botón \texttt{Representar Expresiones}), más bien conviene representar las funciones
+una a una, y utilizar el botón \texttt{Insertar Anotación} para asignara a cada una de las gráficas una pequeña anotación que nos ayude a
+distinguirla de las demás. Si desactivamos el modo de trazado y pasamos al modo habitual en el que podemos situarnos con el cursor en
+cualquier punto de la gráfica, podemos trasladar la anotación desde la posición inicialmente escogida para su ubicación en cualquier otro
+punto de la gráfica, sin más que pinchar con el ratón en la anotación, y, manteniendo pulsado el mismo, arrastrar hasta la nueva ubicación.
 \end{indicacion}
 
-\item Determinar, a partir de los resultados obtenidos, o representando nuevas funciones si fuera necesario, para qué valores de $a$ será creciente la función $a^{x}$.
-
-
-\item Determinar, a partir de los resultados obtenidos, o representando nuevas funciones si fuera necesario, para qué valores de $a$ será decreciente la función $a^{x}$.
-
-\begin{indicacion}
-{Para los dos apartados anteriores, si no somos capaces de
-determinar para qué valores de $a$ la exponencial es creciente o
-decreciente, representar en una nueva gráfica las funciones:
-$(1,1)^x,1^x$ y $(0,9)^x$.
-
-}
-\end{indicacion}
-
-\end{enumerate}
-
-
+¿En general, para qué valores de $a$ será la función creciente? ¿Y para qué valores de $a$ será decreciente? Probar con
+distintos valores de $a$ representando gráficamente nuevas funciones si fuera necesario.
 
 
 \item Representar en una misma gráfica las funciones siguientes, indicando su período y amplitud.
-
 \begin{enumerate}
-
 \item $\sen{x}$, $\sen{x}+2$, $\sen{(x+2)}$.
-
 \item $\sen{2x}$, $2\sen{x}$, $\sen\frac{x}{2}$.
-
 \begin{indicacion}
-{ De nuevo, en ambos apartados conviene representar las funciones
-una a una, e incluir anotaciones que nos hagan recordar a qué
-función corresponde cada gráfica.
-
-
-}
+De nuevo, en ambos apartados conviene representar las funciones una a una, e incluir anotaciones que nos hagan recordar a qué función
+corresponde cada gráfica.
 \end{indicacion}
-
 \end{enumerate}
 
-\item Representar en una gráfica la función
 
+\item Representar en una gráfica la función
 \[
-\ f(x)=\left\{%
+\ f(x)=\left\{
 \begin{array}{cl}
-    -2x & \hbox{si $x\leq0$;} \\
-    x^{2} & \hbox{si $x>0$.} \\
-\end{array}%
+-2x & \hbox{si $x\leq0$;} \\
+x^{2} & \hbox{si $x>0$.} \\
+\end{array}
 \right.
 \]
 
 \begin{indicacion}
-{Para representar funciones a trozos, Derive utiliza una función
-predefinida llamada $\operatorname{chi}$. La sintaxis de esta
-función es $\operatorname{CHI}$ $(a,x,b)$, donde $a$ u $b$ son los
-límites de un intervalo, y $x$ es la variable de la función, y se
-define cómo:
-
-
+Para representar funciones a trozos, Derive utiliza una función predefinida llamada $\operatorname{chi}$. La sintaxis de esta función es
+$\operatorname{CHI}$ $(a,x,b)$, donde $a$ u $b$ son los límites de un intervalo, y $x$ es la variable de la función, y se define cómo:
 \[
 \operatorname{CHI} (a,x,b) = \left\{ {\begin{array}{*{20}c}
    0 & {\text{si}} & {x < a}  \\
@@ -336,119 +244,76 @@ define cómo:
 
  \end{array} } \right.
 \]
-
-
-Según esto, para representar la función anterior, habría que
-introducir la expresión
-
+Según esto, para representar la función anterior, habría que introducir la expresión
 \[
 -2x \operatorname{CHI}(-inf,x,0)+x^2\operatorname{CHI}(0,x,inf)
 \]
-
-\textbf{¡Cuidado!}: a pesar de que la función $\operatorname{CHI}$
-es una función interna del programa, y que, por tanto, debería
-permitir que se introdujese en mayúsculas o en minúsculas
-indistintamente, al intentar introducirla en minúsculas da
-errores. Por ello, es conveniente, y puede que incluso
-indispensable, introducirla en mayúsculas. }
+\textbf{¡Cuidado!}: a pesar de que la función $\operatorname{CHI}$ es una función interna del programa, y que, por tanto, debería permitir
+que se introdujese en mayúsculas o en minúsculas indistintamente, al intentar introducirla en minúsculas da errores. Por ello, es
+conveniente, y puede que incluso indispensable, introducirla en mayúsculas.
 \end{indicacion}
-
-
 \end{enumerate}
 
 
 \section{Ejercicios propuestos}
-
 \begin{enumerate}[leftmargin=*]
 \item Hallar el dominio de las siguientes funciones a partir de sus representaciones gráficas:
 
 \begin{enumerate}
-\item
-$
-\ f(x)=\dfrac{x^{2} + x + 1}{x^{3} - x}
-$
-
+\item $f(x)=\dfrac{x^{2} + x + 1}{x^{3} - x}$
 \item $g(x)=\sqrt[2]{x^{4}-1}$.
-
 \item $h(x)=\cos{\dfrac{x + 3}{x^{2} + 1}}$.
 \item $l(x)=\arcsen{\dfrac{x}{1+x}}$.
 \end{enumerate}
 
-
 \item Se considera la función
-
 \[
 \ f(x)=\frac{x^{3} + x +2}{5x^{3} - 9x^{2} - 4x + 4}.
 \]
 
 Representarla gráficamente y determinar a partir de dicha representación:
 
-
 \begin{enumerate}
-\item  Dominio.
-\item  Imagen.
-\item  Asíntotas.
-\item  Raíces.
-\item  Signo.
-\item  Intervalos de crecimiento y decrecimiento.
-\item  Intervalos de concavidad y convexidad.
-\item  Extremos relativos.
-\item  Puntos de inflexión.
+\item Dominio.
+\item Imagen.
+\item Asíntotas.
+\item Raíces.
+\item Signo.
+\item Intervalos de crecimiento y decrecimiento.
+\item Intervalos de concavidad y convexidad.
+\item Extremos relativos.
+\item Puntos de inflexión.
 \end{enumerate}
 
 \item Representar en una misma gráfica las funciones $\log_{10}{x}$, $\log_{2}{x}$, $\log{x}$, $\log_{0.5}{x}$.
-
-
 \begin{enumerate}
-
 \item A la vista de las gráficas obtenidas, indicar cuáles de las funciones anteriores son crecientes y cuáles son decrecientes.
-
-\item Determinar, a partir de los resultados obtenidos, o representando nuevas funciones si fuera necesario, para qué valores de $a$ será creciente la función $\log_{a}{x}$.
-
-\item Determinar, a partir de los resultados obtenidos, o representando nuevas funciones si fuera necesario, para qué valores de $a$ será decreciente la función $\log_{a}{x}$.
-
-
+\item Determinar, a partir de los resultados obtenidos, o representando nuevas funciones si fuera necesario, para qué valores de $a$ será
+creciente la función $\log_{a}{x}$.
+\item Determinar, a partir de los resultados obtenidos, o representando nuevas funciones si fuera necesario, para qué valores de $a$ será
+decreciente la función $\log_{a}{x}$.
 \end{enumerate}
 
 \item Completar las siguientes frases con la palabra igual, o el número de veces que sea mayor o menor en cada caso:
-
 \begin{enumerate}
-
 \item La función $\cos{2x}$ tiene un período............ que la función $\cos{x}$.
-
 \item La función $\cos{2x}$ tiene una amplitud............ que la función $\cos{x}$.
-
 \item La función $\cos\dfrac{x}{2}$ tiene un período............ que la función $\cos{3x}$.
-
 \item La función $\cos\dfrac{x}{2}$ tiene una amplitud............ que la función $\cos{3x}$.
-
 \item La función $3\cos{2x}$ tiene un período............ que la función $\cos\dfrac{x}{2}$.
-
 \item La función $3\cos{2x}$ tiene una amplitud............ que la función $\cos\dfrac{x}{2}$.
-
 \end{enumerate}
 
 \item Hallar a partir de la representación gráfica, las soluciones de $e^{-1/x}=\dfrac{1}{x}$.
 
 \item Representar en una gráfica la función
-
 \[
-\ f(x)=\left\{%
+\ f(x)=\left\{
 \begin{array}{ll}
-    x^{3} & \hbox{si $x<0$} \\
-    e^{x}-1 & \hbox{si $x\geq0$} \\
-\end{array}%
+x^{3} & \hbox{si $x<0$} \\
+e^{x}-1 & \hbox{si $x\geq0$} \\
+\end{array}
 \right.
 \]
 
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-

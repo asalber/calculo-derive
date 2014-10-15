@@ -1,8 +1,4 @@
-%$HeadURL: https://practicas-derive.googlecode.com/svn/trunk/limites_continuidad.tex $
-%$LastChangedDate: 2009-11-16 16:11:46 +0100 (lun, 16 nov 2009) $
-%$LastChangedRevision: 5 $
-%$LastChangedBy: asalber $
-
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \chapter{Límites y Continuidad}
 
 \section{Fundamentos teóricos}
@@ -211,102 +207,60 @@ A la diferencia entre ambos límites $l_1-l_2$, se le llama
 
 \section{Ejercicios resueltos}
 \begin{enumerate}[leftmargin=*]
-\item  Se considera la función:
+\item  Dada la función
 \[
-f(x)=\left( 1+\frac 2x\right) ^{x/2}
+f(x)=\left( 1+\frac 2x\right) ^{x/2},
 \]
+se pide:
 
 \begin{enumerate}
-\item  Dibujar su gráfica, y a la vista de misma conjeturar el resultado
-de los siguientes límites:
+\item  Dibujar su gráfica, y a la vista de misma conjeturar el resultado de los siguientes límites:
 \begin{multicols}{2}
 \begin{enumerate}
 \item  $\lim\limits_{x\rightarrow -\,\infty }\ f(x)$
-
 \item  $\lim\limits_{x\rightarrow +\,\infty }\ f(x)$
-
 \item  $\lim\limits_{x\rightarrow -\,2^{-}}\ f(x)$
-
 \item  $\lim\limits_{x\rightarrow -\,2^{+}}\ f(x)$
-
 \item  $\lim\limits_{x\rightarrow 2}\ f(x)$
-
 \item  $\lim\limits_{x\rightarrow 0}\ f(x)$
-
 \end{enumerate}
 \end{multicols}
 
 \begin{indicacion}
-{
 \begin{enumerate}
-
-\item Para representar la gráfica de la función, introducir su
-expresión, acceder a la ventana 2D, y pinchar en el botón
-\boton{Representar Expresión}. Probablemente haya que cambiar la
-escala de la representación original pinchando en el botón de
-\boton{Zoom hacia fuera en ambos ejes}, para tener una perspectiva
-más amplia de la forma de la función.
-
-\item Para predecir cuáles pueden ser los valores de los límites
-pedidos, observar hacia qué valores tiende la función cuando la
-variable $x$ se acerca al valor que aparece en cada límite. Para
-ello, puede resultar conveniente pinchar en el botón \boton{Trazar
-gráficas}, para que el cursor sólo pueda desplazarse a lo largo de
-la misma.
-
-
+\item Para representar la gráfica de la función, introducir su expresión, acceder a la ventana 2D, y pinchar en el botón \boton{Representar
+Expresión}. Probablemente haya que cambiar la escala de la representación original pinchando en el botón de \boton{Zoom hacia fuera en ambos
+ejes}, para tener una perspectiva más amplia de la forma de la función.
+\item Para predecir cuáles pueden ser los valores de los límites pedidos, observar hacia qué valores tiende la función cuando la variable
+$x$ se acerca al valor que aparece en cada límite. Para ello, puede resultar conveniente pinchar en el botón \boton{Trazar gráficas}, para
+que el cursor sólo pueda desplazarse a lo largo de la misma.
 \end{enumerate}
-
-}
 \end{indicacion}
 
-\item  Calcular los límites anteriores. ¿Coinciden los resultados
-con los conjeturados?.
-
-
+\item  Calcular los límites anteriores. ¿Coinciden los resultados con los conjeturados?.
 \begin{indicacion}
-{
 \begin{enumerate}
+\item Utilizar el menú \menu{Cálculo > Límites}, o su correspondiente botón de la barra de botones.
 
-\item Utilizar el menú \menu{Cálculo->Límites}, o su
-correspondiente botón de la barra de botones.
-
-\item En el cuadro de diálogo que aparece, seleccionar tanto la
-variable del límite como el punto en el que queremos calcularlo, y
-la tendencia (izquierda, derecha, o ambas).
+\item En el cuadro de diálogo que aparece, seleccionar tanto la variable del límite como el punto en el que queremos calcularlo, y la
+tendencia (izquierda, derecha, o ambas).
 \end{enumerate}
-}
 \end{indicacion}
-
 \end{enumerate}
 
-\item Para la función: $\ln(x^2-1)$
 
+\item Para la función $\ln(x^2-1)$, se pide: 
 \begin{enumerate}
-
-\item Representar la gráfica. A la vista de la gráfica, ¿que tipo
-de asíntotas crees que tiene la función?.
-
+\item Representar la gráfica. A la vista de la gráfica, ¿que tipo de asíntotas crees que tiene la función?
 \begin{indicacion}
-{
 \begin{enumerate}
-
-\item Para representar la gráfica, seguimos el proceso comentado
-en apartados anteriores (introducir la expresión, acceder a la
-ventana 2D, y utilizar el botón \boton{Representar Expresiones}).
-
-\item Para determinar, de forma gráfica, la presencia de
-asíntotas, hay que ver si la gráfica tiende a una forma rectilínea
-en $\pm \infty$, con lo que tendríamos una asíntota horizontal
-(tendencia a una recta horizontal), u oblicua (si la tendencia es a
-una recta de pendiente no nula); y también ver si la gráfica tiende
-a parecerse a una recta vertical en algún valor concreto de la
-variable, con lo cual tendríamos una asíntota vertical en dicho
-punto.
-
+\item Para representar la gráfica, seguimos el proceso comentado en apartados anteriores (introducir la expresión, acceder a la ventana 2D,
+y utilizar el botón \boton{Representar Expresiones}).
+\item Para determinar, de forma gráfica, la presencia de asíntotas, hay que ver si la gráfica tiende a una forma rectilínea en $\pm \infty$,
+con lo que tendríamos una asíntota horizontal (tendencia a una recta horizontal), u oblicua (si la tendencia es a una recta de pendiente no
+nula); y también ver si la gráfica tiende a parecerse a una recta vertical en algún valor concreto de la variable, con lo cual tendríamos
+una asíntota vertical en dicho punto.
 \end{enumerate}
-
-}
 \end{indicacion}
 
 \item Calcular los límites cuando $x$ tiende a $1$ por la derecha
@@ -314,99 +268,59 @@ y a $-1$ por la izquierda para demostrar la presencia de asíntotas
 verticales.
 
 \begin{indicacion}
-{Utilizar el botón \boton{Calcular un Límite}, y escoger la
-variable, el punto y la tendencia. Si alguno de los límites
-realizados en igual a $+\infty$ ó $-\infty$, entonces sí que hay una
-asíntota vertical en los puntos considerados.
-
-}
+Utilizar el botón \boton{Calcular un Límite}, y escoger la variable, el punto y la tendencia. Si alguno de los límites realizados en igual a
+$+\infty$ ó $-\infty$, entonces sí que hay una asíntota vertical en los puntos considerados.
 \end{indicacion}
 
-\item Calcular los límites cuando $x$ tiende a $\pm\infty$ para
-analizar la presencia de asíntotas horizontales. ¿Qué se concluye a
-la vista de los resultados obtenidos?.
+\item Calcular los límites cuando $x$ tiende a $\pm\infty$ para analizar la presencia de asíntotas horizontales. ¿Qué se concluye a la vista
+de los resultados obtenidos?
 
 \begin{indicacion}
-{
 \begin{enumerate}
-
-\item Para calcular los límites, proceder de la misma forma que en
-el punto anterior pero escogiendo el $\infty$ de la barra de
-operadores y constantes. En cuanto a la tendencia, a pesar de que a
-$+\infty$ sólo se puede tender desde la izquierda, y a $-\infty$
-desde la derecha, en los límites en $\pm\infty$ da igual la forma de
-tendencia que escojamos.
-
-\item En cuanto a la presencia o no de asíntotas horizontales, es
-necesario que los límites anteriores valgan 0.
-
+\item Para calcular los límites, proceder de la misma forma que en el punto anterior pero escogiendo el $\infty$ de la barra de operadores y
+constantes. En cuanto a la tendencia, a pesar de que a $+\infty$ sólo se puede tender desde la izquierda, y a $-\infty$ desde la derecha, en
+los límites en $\pm\infty$ da igual la forma de tendencia que escojamos.
+\item En cuanto a la presencia o no de asíntotas horizontales, es necesario que los límites anteriores valgan 0.
 \end{enumerate}
-
-}
 \end{indicacion}
 
-\item Calcular los límites cuando $x$ tiende a $\pm\infty$ de la
-función dividida entre $x$ para analizar la presencia de asíntotas
+\item Calcular los límites cuando $x$ tiende a $\pm\infty$ de la función dividida entre $x$ para analizar la presencia de asíntotas
 oblicuas. ¿Qué se concluye a la vista de los resultados obtenidos?.
-
 \begin{indicacion}
-{Recordar que, en caso de que la función tenga asíntotas oblicuas,
-la pendiente de la asíntota en $+\infty$ vendría dada por:
+Recordar que, en caso de que la función tenga asíntotas oblicuas, la pendiente de la asíntota en $+\infty$ vendría dada por:
 \[
 m = \mathop {\lim }\limits_{x \to  + \infty } \frac{{f(x)}} {x}
 \]
 e igual en $-\infty$, cambiando el $+\infty$ por $-\infty$.
 
-Por lo tanto, se divide la función entre $x$ y se procede a calcular
-los límites anteriores mediante el botón \boton{Calcular un límite}.
-Si los límites obtenidos valen 0, quiere decir que no hay asíntotas
-oblicuas, que la tendencia creciente de la función es menos marcada
-que la de cualquier recta con pendiente no nula. }
+Por lo tanto, se divide la función entre $x$ y se procede a calcular los límites anteriores mediante el botón \boton{Calcular un límite}.
+Si los límites obtenidos valen 0, quiere decir que no hay asíntotas oblicuas, que la tendencia creciente de la función es menos marcada que
+la de cualquier recta con pendiente no nula.
 \end{indicacion}
-
 \end{enumerate}
 
 \item  Clasificar las discontinuidades de las siguientes funciones en los puntos que se indica.
 \begin{multicols}{2}
 \begin{enumerate}
 \item  $f(x)=\dfrac{\sen x}{x}$ en $x=0$.
-
 \item $g(x)=\dfrac{1}{2^{1/x}}$ en $x=0$.
-
 \item $h(x)=\dfrac{1}{1+e^{\frac{1}{1-x}}}$ en $x=1$.
 \end{enumerate}
 \end{multicols}
 
-
 \begin{indicacion}
-{ Para clasificar las discontinuidades en los puntos que se indican,
-además de definir cada una de las funciones, conviene representar su
-gráfica, lo cual, aunque no sirve para demostrar la presencia de una
-discontinuidad, sí que nos puede dar una idea sobre las
-discontinuidades presentes y su tipo (las discontinuidades evitables
-apenas aparecen visibles en la gráfica, aunque sí que Derive deja un
+Para clasificar las discontinuidades en los puntos que se indican, además de definir cada una de las funciones, conviene representar su
+gráfica, lo cual, aunque no sirve para demostrar la presencia de una discontinuidad, sí que nos puede dar una idea sobre las
+discontinuidades presentes y su tipo (las discontinuidades evitables apenas aparecen visibles en la gráfica, aunque sí que Derive deja un
 pequeño hueco en la misma):
-
 \begin{enumerate}
-
-\item Calcular el valor del límite en el punto. Para ello, se puede
-utilizar el botón \boton{Calcular un límite} de la barra de botones,
-y activar la tendencia por \opcion{Ambas} en el cuadro de diálogo
-que aparece. Si dicho límite existe, entonces la discontinuidad es
-evitable.
-
-\item Si el límite no existe, puede que sí que existan los
-laterales. Para calcularlos utilizar el botón \boton{Calcular un
-límite} y activar la tendencia por la \opcion{Izquierda} y luego por
-la \opcion{Derecha}. Si ambos límites laterales existen pero no son
-iguales, la discontinuidad será de salto.
-
-\item Si alguno de los límites laterales no existe, entonces la
-discontinuidad es esencial.
-
+\item Calcular el valor del límite en el punto. Para ello, se puede utilizar el botón \boton{Calcular un límite} de la barra de botones, y
+activar la tendencia por \opcion{Ambas} en el cuadro de diálogo que aparece. Si dicho límite existe, entonces la discontinuidad es evitable.
+\item Si el límite no existe, puede que sí que existan los laterales. Para calcularlos utilizar el botón \boton{Calcular un límite} y
+activar la tendencia por la \opcion{Izquierda} y luego por la \opcion{Derecha}. Si ambos límites laterales existen pero no son iguales, la
+discontinuidad será de salto.
+\item Si alguno de los límites laterales no existe, entonces la discontinuidad es esencial.
 \end{enumerate}
-
-}
 \end{indicacion}
 
 
@@ -414,143 +328,83 @@ discontinuidad es esencial.
 de dichas discontinuidades en la función:
 \[
 f(x)=
-\left\{%
+\left\{
 \begin{array}{ll}
-    \dfrac{x+1}{x^2-1}, & \hbox{si $x<0$;} \\
-    \dfrac{1}{e^{1/(x^2-1)}}, & \hbox{si $x\geq 0$.} \\
-\end{array}%
+\dfrac{x+1}{x^2-1}, & \hbox{si $x<0$;} \\
+\dfrac{1}{e^{1/(x^2-1)}}, & \hbox{si $x\geq 0$.} \\
+\end{array}
 \right.
 \]
 
-
 \begin{indicacion}
-{
 \begin{enumerate}
-
-\item Para delimitar los posibles puntos de discontinuidad, previamente
-definir la función teniendo en cuenta que se trata de una función
-definida a trozos. Por lo tanto, habrá que multiplicar el primer
-tramo por \comando{CHI}$(\infty,x,0)$, y el segundo por
+\item Para delimitar los posibles puntos de discontinuidad, previamente definir la función teniendo en cuenta que se trata de una función
+definida a trozos. Por lo tanto, habrá que multiplicar el primer tramo por \comando{CHI}$(\infty,x,0)$, y el segundo por
 \comando{CHI}$(0,x,\infty)$.
-
-\item Aunque no sirve para demostrar la presencia o no de una discontinuidad,
-si representamos la gráfica de la función podemos darnos una idea
-sobre los puntos en los que aparecen las discontinuidades, teniendo
-muy presente que las discontinuidades evitables apenas resultan
-visibles en la gráfica, aunque sí que Derive deja un pequeño hueco
-en la misma.
-
-\item Una vez definida la función, hay que encontrar los puntos que
-quedan fuera del dominio de cada uno de los tramos. Para ello, hay
-que analizar dónde se anulan los denominadores presentes en las
-definiciones de ambos tramos. Por ejemplo, si $x<0$, el denominador
-$x^2-1$ se anula en $x=\pm1$; sin embargo tan sólo nos interesa
-$x=-1$ ya que la definición impone que $x<0$.
-
-\item Cuando ya hemos descubierto cuáles son los puntos que están
-fuera del dominio, y por tanto son discontinuidades de la función,
-hay que analizar cual es su tipo. Para ello, aplicamos el mismo
-proceso que en el ejercicio anterior (vemos si existe el límite, con
-lo cual sería discontinuidad evitable, y si no existe analizamos los
-laterales para ver si es discontinuidad de salto; si no existe
-alguno de los laterales es discontinuidad esencial).
-
-\item Por último, también hay que analizar los puntos en los que hay
-un cambio de definición de la función. En nuestro caso, en $x=0$, y,
-de nuevo, analizando el límite general y los límites laterales.
-
+\item Aunque no sirve para demostrar la presencia o no de una discontinuidad, si representamos la gráfica de la función podemos darnos una
+idea sobre los puntos en los que aparecen las discontinuidades, teniendo muy presente que las discontinuidades evitables apenas resultan
+visibles en la gráfica, aunque sí que Derive deja un pequeño hueco en la misma.
+\item Una vez definida la función, hay que encontrar los puntos que quedan fuera del dominio de cada uno de los tramos. Para ello, hay que
+analizar dónde se anulan los denominadores presentes en las definiciones de ambos tramos. Por ejemplo, si $x<0$, el denominador $x^2-1$ se
+anula en $x=\pm1$; sin embargo tan sólo nos interesa $x=-1$ ya que la definición impone que $x<0$.
+\item Cuando ya hemos descubierto cuáles son los puntos que están fuera del dominio, y por tanto son discontinuidades de la función, hay que
+analizar cual es su tipo. Para ello, aplicamos el mismo proceso que en el ejercicio anterior (vemos si existe el límite, con lo cual sería
+discontinuidad evitable, y si no existe analizamos los laterales para ver si es discontinuidad de salto; si no existe alguno de los
+laterales es discontinuidad esencial).
+\item Por último, también hay que analizar los puntos en los que hay un cambio de definición de la función. En nuestro caso, en $x=0$, y, de
+nuevo, analizando el límite general y los límites laterales.
 \end{enumerate}
-
-}
 \end{indicacion}
 
 \end{enumerate}
 
 
 \section{Ejercicios propuestos}
-
 \begin{enumerate}[leftmargin=*]
 \item  Calcular los siguientes límites si existen:
 \begin{multicols}{2}
 \begin{enumerate}
-    \item  $\displaystyle \lim_{x\rightarrow 1}\dfrac{x^3-3x+2}{x^4-4x+3}$.
-
-    \item  $\displaystyle \lim_{x\rightarrow a}\dfrac{\sen x-\sen a}{x-a}$.
-
-    \item $\displaystyle \lim_{x\rightarrow\infty}\dfrac{x^2-3x+2}{e^{2x}}$.
-
-    \item $\displaystyle \lim_{x\rightarrow\infty}\dfrac{\log(x^2-1)}{x+2}$.
-
-    \item $\displaystyle \lim_{x\rightarrow 1}\dfrac{\log(1/x)}{\tg(x+\dfrac{\pi}{2})}$.
-
-    \item $\displaystyle \lim_{x\rightarrow a}\dfrac{x^n-a^n}{x-a}\quad n\in \mathbb{N}$.
-
-    \item $ \displaystyle \lim_{x\rightarrow
-    1}\dfrac{\sqrt[n]{x}-1}{\sqrt[m]{x}-1}\quad n,m \in \mathbb{Z}$.
-
-    \item $\displaystyle \lim_{x\rightarrow 0}\dfrac{\tg x-\sen x}{x^3}$.
-
-    \item $\displaystyle \lim_{x\rightarrow \pi/4}\dfrac{\sen x-\cos x}{1-\tg x}$.
-
-    \item $\displaystyle \lim_{x\rightarrow 0}x^2e^{1/x^2}$.
-
-    \item $\displaystyle \lim_{x\rightarrow \infty}\left(1+\dfrac{a}{x}\right)^x$.
-
-    \item $\displaystyle \lim_{x\rightarrow \infty} \sqrt[x]{x^2}$.
-
-    \item $\displaystyle \lim_{x\rightarrow 0}\left(\dfrac{1}{x}\right)^{\tg x}$.
-
-    \item $\displaystyle \lim_{x\rightarrow 0}(\cos x)^{1/\mbox{\footnotesize sen}\, x}$.
-
-    \item $\displaystyle \lim_{x\rightarrow 0}\dfrac{6}{4+e^{-1/x}}$.
-
-    \item $\displaystyle \lim_{x\rightarrow
-    \infty}\left(\sqrt{x^2+x+1}-\sqrt{x^2-2x-1}\right)$.
-
-    \item $\displaystyle \lim_{x\rightarrow \pi/2}\sec x-\tg x$.
+\item  $\displaystyle \lim_{x\rightarrow 1}\dfrac{x^3-3x+2}{x^4-4x+3}$.
+\item  $\displaystyle \lim_{x\rightarrow a}\dfrac{\sen x-\sen a}{x-a}$.
+\item $\displaystyle \lim_{x\rightarrow\infty}\dfrac{x^2-3x+2}{e^{2x}}$.
+\item $\displaystyle \lim_{x\rightarrow\infty}\dfrac{\log(x^2-1)}{x+2}$.
+\item $\displaystyle \lim_{x\rightarrow 1}\dfrac{\log(1/x)}{\tg(x+\dfrac{\pi}{2})}$.
+\item $\displaystyle \lim_{x\rightarrow a}\dfrac{x^n-a^n}{x-a}\quad n\in \mathbb{N}$.
+\item $ \displaystyle \lim_{x\rightarrow 1}\dfrac{\sqrt[n]{x}-1}{\sqrt[m]{x}-1}\quad n,m \in \mathbb{Z}$.
+\item $\displaystyle \lim_{x\rightarrow 0}\dfrac{\tg x-\sen x}{x^3}$.
+\item $\displaystyle \lim_{x\rightarrow \pi/4}\dfrac{\sen x-\cos x}{1-\tg x}$.
+\item $\displaystyle \lim_{x\rightarrow 0}x^2e^{1/x^2}$.
+\item $\displaystyle \lim_{x\rightarrow \infty}\left(1+\dfrac{a}{x}\right)^x$.
+\item $\displaystyle \lim_{x\rightarrow \infty} \sqrt[x]{x^2}$.
+\item $\displaystyle \lim_{x\rightarrow 0}\left(\dfrac{1}{x}\right)^{\tg x}$.
+\item $\displaystyle \lim_{x\rightarrow 0}(\cos x)^{1/\mbox{\footnotesize sen}\, x}$.
+\item $\displaystyle \lim_{x\rightarrow 0}\dfrac{6}{4+e^{-1/x}}$.
+\item $\displaystyle \lim_{x\rightarrow \infty}\left(\sqrt{x^2+x+1}-\sqrt{x^2-2x-1}\right)$.
+\item $\displaystyle \lim_{x\rightarrow \pi/2}\sec x-\tg x$.
 \end{enumerate}
 \end{multicols}
 
 \item Dada la función:
-
 \[
 \renewcommand{\arraystretch}{2}
-f(x) = \left\{ {\begin{array}{*{20}c}
-   {\dfrac{{x^2  + 1}}
-{{x + 3}}} & {\text{si}\;x < 0}  \\
-   {\dfrac{1}
-{{e^{1/(x^2  - 1)} }}} & {\text{si}\;x \geqslant 0\;}  \\
-
- \end{array} } \right.
+f(x) = \left\{
+\begin{array}{*{20}c}{
+\dfrac{{x^2  + 1}}{{x + 3}}} & {\text{si}\;x < 0}  \\
+{\dfrac{1}{{e^{1/(x^2  - 1)} }}} & {\text{si}\;x \geqslant 0\;}  \\
+\end{array} 
+\right.
 \]
 Calcular todas sus asíntotas.
 
 \item  Las siguientes funciones no están definidas en $x=0$.
-Determinar, cuando sea posible, su valor en dicho punto de modo que
-sean continuas.
+Determinar, cuando sea posible, su valor en dicho punto de modo que sean continuas.
 \begin{multicols}{2}
 \begin{enumerate}
-    \item  $f(x)=\dfrac{(1+x)^n-1}{x}$.
-
-    \item  $h(x)=\dfrac{e^x-e^{-x}}{x}$.
-
-    \item  $j(x)=\dfrac{\log(1+x)-\log(1-x)}{x}$.
-
-    \item  $k(x)=x^2\sen\dfrac{1}{x}$.
+\item  $f(x)=\dfrac{(1+x)^n-1}{x}$.
+\item  $h(x)=\dfrac{e^x-e^{-x}}{x}$.
+\item  $j(x)=\dfrac{\log(1+x)-\log(1-x)}{x}$.
+\item  $k(x)=x^2\sen\dfrac{1}{x}$.
 \end{enumerate}
 \end{multicols}
 
-
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
-
-

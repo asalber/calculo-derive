@@ -1,3 +1,4 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \chapter{Polinomios de Taylor}
 
 \section{Fundamentos teóricos}
@@ -83,12 +84,12 @@ P^2_{f,a}(x,y) = f(a)+\frac{\partial f(a)}{\partial x}(x-x_0)+\frac{\partial f(a
 \section{Ejercicios resueltos}
 
 \begin{enumerate}[leftmargin=*]
-\item Calcular los polinomios de Taylor de la función $f(x)=\log x$ en el punto 1, hasta el grado 4 y representarlos
-junto a la función en la misma gráfica.
+\item Calcular los polinomios de Taylor de la función $f(x)=\log x$ en el punto 1, hasta el grado 4 y representarlos junto a la función en
+la misma gráfica.
 ¿Qué polinomio aproxima mejor a la función en un entorno del punto 1?
 
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Definir la función introduciendo la expresión \comando{f(x):=log(x)}. 
 \item Hacer clic en el botón \boton{Ventana 2D} para pasar a la venta gráfica 2D y hacer clic en el botón
 \boton{Representar expresión}.
@@ -105,7 +106,6 @@ Nota: Un procedimiento más rápido para obtener el polinomo de grado uno es int
 \item Hacer clic en el botón \boton{Activar la ventana de algebra} para volver a la ventana de expresiones, marcar la
 expresión de la función $\log(x)$ y repetir el proceso anterior introduciento sucesivamente 2, 3 y 4 como los grados del polinomio.
 \end{enumerate}
-}
 \end{indicacion}
 
 \item Dar el valor aproximado de $\log 1.2$ utilizando los polinomios del ejercicio anterior y calcular el error cometido en cada caso. 
@@ -125,7 +125,7 @@ Punto & Grado & Aproximación
 \]
 
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{p1(1.2)}.
 \item Hacer clic en el botón \boton{Aproximar} para obtener el valor aproximado de $\log(1.2)$ con el polinomio de grado
 1. 
@@ -133,7 +133,6 @@ Punto & Grado & Aproximación
 \item Hacer clic en el botón \boton{Aproximar} para obtener el error comentido en la aproximación.
 \item Repetir el procedimiento para cada uno de los polinomios calculados en el ejercicio anterior. 
 \end{enumerate}
-}
 \end{indicacion}
 
 \item Calcular el polinomio de Mc Laurin de orden 3 para la función $\sen(x)$, y utilizarlo para aproximar el valor de
@@ -141,7 +140,7 @@ $\sen 1/2$.
 Calcular el error cometido.
 
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Definir la función introduciendo la expresión \comando{f(x):=sin(x)}. 
 \item Introducir la expresión \comando{p3(x):=TAYLOR(f(x),x,0,3)}.
 \item Hacer clic en el botón \boton{Simplificar}.
@@ -151,67 +150,83 @@ de grado 3.
 \item Introducir la expresión \comando{ABS(p3(1/2)-f(1/2))}.
 \item Hacer clic en el botón \boton{Aproximar} para obtener el error en la aproximación.
 \end{enumerate}
-}
 \end{indicacion}
 
-\item Dada la función $f(x,y)=\sqrt{x,y}$, se pide:
+\item Dada la función $f(x,y)=\sqrt{xy}$, se pide:
 \begin{enumerate}
 \item Definir la función y dibujar su gráfica.
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Definir la función introduciendo la expresión \comando{f(x,y):=sqrt(xy)}.
 \item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana de representación de gráficas 3D.
 \item Hacer clic en el botón \boton{Representar}.
 \end{enumerate}
-}
 \end{indicacion}
+
 \item Calcular el polinomio de Taylor de primer grado de $f$ en el punto $(8,2)$.
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{p1(x,y):=f(8,2)+f'(8,2)[x-8,y-2]}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
-}
 \end{indicacion}
+
+\item Representar gráficamente el polinomio anterior.
+\begin{indicacion}
+\begin{enumerate}
+\item Seleccionar la expresión correspondiente al polinomio. 
+\item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana de representación de gráficas 3D.
+\item Hacer clic en el botón \boton{Representar}.
+\end{enumerate}
+\end{indicacion}
+
 \item Utilizar el polinomio anterior para calcular el valor aproximado de $\sqrt{8.02\cdot 1.99}$.
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{p1(8.02,1.99)}.
 \item Hacer clic en el botón \boton{Aproximar}.
 \end{enumerate}
-}
 \end{indicacion}
+
 \item Calcular el error cometido en la aproximación anterior.
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{abs(p1(8.02,1.99)-f(8.02,1.99))}.
 \item Hacer clic en el botón \boton{Aproximar}.
 \end{enumerate}
-}
 \end{indicacion}
+
 \item Calcular el polinomio de Taylor de segundo grado de $f$ en el punto $(8,2)$.
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{p2(x,y):=p1(x,y)+1/2[x-8,y-2]f''(8,2)[x-8,y-2]}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
-}
 \end{indicacion}
+
+\item Representar gráficamente el polinomio anterior.
+\begin{indicacion}
+\begin{enumerate}
+\item Seleccionar la expresión correspondiente al polinomio. 
+\item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana de representación de gráficas 3D.
+\item Hacer clic en el botón \boton{Representar}.
+\end{enumerate}
+\end{indicacion}
+
 \item Utilizar el polinomio anterior para calcular el valor aproximado de $\sqrt{8.02\cdot 1.99}$.
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{p2(8.02,1.99)}.
 \item Hacer clic en el botón \boton{Aproximar}.
 \end{enumerate}
-}
 \end{indicacion}
+
 \item Calcular el error cometido en la aproximación anterior. ¿Qué polinomio da una aproximación mejor?
 \begin{indicacion}
-{\begin{enumerate}
+\begin{enumerate}
 \item Introducir la expresión \comando{abs(p2(8.02,1.99)-f(8.02,1.99))}.
 \item Hacer clic en el botón \boton{Aproximar}.
 \end{enumerate}
-}
 \end{indicacion}
 \end{enumerate}
 \end{enumerate}

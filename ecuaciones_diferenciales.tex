@@ -1,8 +1,4 @@
-%$HeadURL: https://practicas-derive.googlecode.com/svn/trunk/ecuaciones_diferenciales.tex $
-%$LastChangedDate: 2009-11-16 16:11:46 +0100 (lun, 16 nov 2009) $
-%$LastChangedRevision: 5 $
-%$LastChangedBy: asalber $
-
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \chapter{Ecuaciones Diferenciales Ordinarias}
 
 \section{Fundamentos teóricos}
@@ -138,60 +134,56 @@ y=e^{-\int P(x)\,dx}\int Q(x)e^{\int P(x)\,dx}\,dx+C.
 \newpage
 
 \section{Ejercicios resueltos}
-
 \begin{indicacion}
-{ Para resolver ecuaciones diferenciales ordinarias de primer orden utilizaremos los comandos
+Para resolver ecuaciones diferenciales ordinarias de primer orden utilizaremos los comandos
 \begin{quote}
 \texttt{DSOLVE1\_GEN(p,q,x,y,c)} proporciona la solución general de $p(x,y)+q(x,y)y'=0$.
 
 \texttt{DSOLVE1(p,q,x,y,$x_{0},y_{0}$)} proporciona la solución particular de $p(x,y)+q(x,y)y'=0$, con la condición inicial $y_{0}=y(x_{0})$.
 \end{quote}
-}
 \end{indicacion}
 
 \begin{enumerate}[leftmargin=*]
 \item Resolver las siguientes ecuaciones diferenciales de variables separables y dibujar sus curvas integrales para las
-constantes de integración $c=1$, $c=2$ y $c=3$:
+constantes de integración $c=-1$, $c=-2$ y $c=-3$:
 \begin{enumerate}
-\item $2x(1+e^y)+e^y(1+x^{2})y'=0$.
+\item $-2x(1+e^y)+e^y(1+x^{2})y'=0$.
 \begin{indicacion}
-{Para resolver la ecuación diferencial observamos que ya está escrita en la forma $p(x,y)+q(x,y)y'=0$, con
-$p(x,y)=2x(1+e^y)$ y $q(x,y)=e^y(1+x^{2})$.
+Para resolver la ecuación diferencial observamos que ya está escrita en la forma $p(x,y)+q(x,y)y'=0$, con $p(x,y)=-2x(1+e^y)$ y
+$q(x,y)=e^y(1+x^{2})$.
 \begin{enumerate}
 \item Introducir la expresión \comando{DSOLVE1\_GEN(-2x(1+\#e\^{}y),\#e\^{}y(1+x\^{}2),x,y,c)}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
 Para dibujar las curvas integrales:
 \begin{enumerate}[resume]
-\item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $c$, introducir el valor 1 y hacer clic en el
+\item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $c$, introducir el valor -1 y hacer clic en el
 botón \boton{Simplificar}.
 \item Hacer clic en el botón \boton{Ventana 2D} para pasar a la ventana gráfica 2D.
 \item Hacer clic en el botón \boton{Representar expresión}.
-\item Repetir el mismo procedimiento introduciendo los valores 2 y 3 para el valor de $c$.
+\item Repetir el mismo procedimiento introduciendo los valores -2 y -3 para el valor de $c$.
 \end{enumerate}
-}
 \end{indicacion}
 
 \item $y-xy'=1+x^2y'$.
 \begin{indicacion}
-{Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
+Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
 \[
-x-xy'=1+x^2y' \lefrightarrow 1+x^2y'-x+xy'=0 \leftrightarrow 1-x+(x^2+x)y'=0
+y-xy'=1+x^2y' \Leftrightarrow 1+x^2y'-y+xy'=0 \Leftrightarrow 1-y+(x^2+x)y'=0
 \]
-de manera que $p(x,y)=1-x$ y $q(x,y)=x^2+x$.
+de manera que $p(x,y)=1-y$ y $q(x,y)=x^2+x$.
 \begin{enumerate}
-\item Introducir la expresión \comando{DSOLVE1\_GEN(1-x,x\^{}2+x,x,y,c)}.
+\item Introducir la expresión \comando{DSOLVE1\_GEN(1-y,x\^{}2+x,x,y,c)}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
 Para dibujar las curvas integrales:
 \begin{enumerate}[resume]
-\item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $c$, introducir el valor 1 y hacer clic en el
+\item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $c$, introducir el valor -1 y hacer clic en el
 botón \boton{Simplificar}.
 \item Hacer clic en el botón \boton{Ventana 2D} para pasar a la ventana gráfica 2D.
 \item Hacer clic en el botón \boton{Representar expresión}.
-\item Repetir el mismo procedimiento introduciendo los valores 2 y 3 para el valor de $c$.
+\item Repetir el mismo procedimiento introduciendo los valores -2 y -3 para el valor de $c$.
 \end{enumerate}
-}
 \end{indicacion}
 \end{enumerate}
 
@@ -200,55 +192,52 @@ botón \boton{Simplificar}.
 \begin{enumerate}
 \item $x\sqrt{1-y^2}+y\sqrt{1-x^2} y'=0$, con la condición inicial $y(0)=1$.
 \begin{indicacion}
-{Para resolver la ecuación diferencial observamos que ya está escrita en la forma $p(x,y)+q(x,y)y'=0$, con
-$p(x,y)=\sqrt{1-y^2}$ y $q(x,y)=y\sqrt{1-x^2}$.
+Para resolver la ecuación diferencial observamos que ya está escrita en la forma $p(x,y)+q(x,y)y'=0$, con
+$p(x,y)=x\sqrt{1-y^2}$ y $q(x,y)=y\sqrt{1-x^2}$.
 \begin{enumerate}
-\item Introducir la expresión \comando{DSOLVE1(sqrt(1-y\^{}2),ysqrt(1-x\^{}2),x,y,0,1)}.
+\item Introducir la expresión \comando{DSOLVE1(xsqrt(1-y\^{}2),ysqrt(1-x\^{}2),x,y,0,1)}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
-}
 \end{indicacion}
+
 
 \item $(1+e^x)yy'=e^y$, con la condición inicial $y(0)=0$.
 \begin{indicacion}
-{Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
+Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
 \[
-(1+e^x)yy'=e^y \lefrightarrow -e^y+(1+e^x)yy'=0,
+(1+e^x)yy'=e^y \Leftrightarrow -e^y+(1+e^x)yy'=0,
 \]
 de manera que $p(x,y)=-e^y$ y $q(x,y)=(1+e^x)y$.
 \begin{enumerate}
 \item Introducir la expresión \comando{DSOLVE1(-\#e\^{}y,(1+\#e\^{}x)y,x,y,0,0)}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
-}
 \end{indicacion}
 
-\item $y'+y\cos x=\sen x\cos x$ con la condición inicial $y(0)=1$.
 
+\item $y'+y\cos x=\sen x\cos x$ con la condición inicial $y(0)=1$.
 \begin{indicacion}
-{Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
+Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
 \[
-y'+y\cos x=\sen x\cos x \lefrightarrow -\sen x\cos x+y\cos x+y'=0,
+y'+y\cos x=\sen x\cos x \Leftrightarrow -\sen x\cos x+y\cos x+y'=0,
 \]
 de manera que $p(x,y)=-\sen x\cos x+y\cos x$ y $q(x,y)=1$.
 \begin{enumerate}
 \item Introducir la expresión \comando{DSOLVE1(-sinxcosx+ycosx,1,x,y,0,1)}.
 \item Hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
-}
 \end{indicacion}
 \end{enumerate}
 
-\item El azúcar se disuelve en el agua con una velocidad proporcional a la cantidad que queda por disolver. 
-Si inicialmente había $13.6$ kg de azúcar y al cabo de $4$ horas quedan sin disolver $4.5$ kg, ¿cuánto tardará en
-disolverse el $95\%$ del azúcar contando desde el instante inicial?
-
+\item El azúcar se disuelve en el agua con una velocidad proporcional a la cantidad que queda por disolver.
+Si inicialmente había $13.6$ kg de azúcar y al cabo de $4$ horas quedan sin disolver $4.5$ kg, ¿cuánto tardará en disolverse el $95\%$ del
+azúcar contando desde el instante inicial?
 \begin{indicacion}
-{La ecuación diferencial que explica la disolución del azúcar es $y'=ky$, donde $y$ es la cantidad de azúcar, $x$ es el
-tiempo y $k$ es la constante de disolución del azúcar. 
+La ecuación diferencial que explica la disolución del azúcar es $y'=ky$, donde $y$ es la cantidad de azúcar que queda
+por disolver, $x$ es el tiempo y $k$ es la constante de disolución del azúcar. 
 Para resolver la ecuación diferencial primero hay que ponerla en la forma $p(x,y)+q(x,y)y'=0$,
 \[
-y'=ky \lefrightarrow -ky+y'=0,
+y'=ky \Leftrightarrow -ky+y'=0,
 \]
 de manera que $p(x,y)=-ky$ y $q(x,y)=1$.
 \begin{enumerate}
@@ -258,20 +247,17 @@ de manera que $p(x,y)=-ky$ y $q(x,y)=1$.
 Para obtener la constante de disolución se impone la otra condición $y(4)=4.5$:
 \begin{enumerate}[resume]
 \item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $x$ e introducir el valor $4$, seleccionar la
-variable $y$ e introducir el valor $4.5$, y hacer clic en el botón \boton{Simplificar}.
-\item Hacer clic en el botón \boton{Resolver o despejar}, seleccionar el domino Real y hacer clic en el botón
-\boton{Simplicar}.
+variable $y$ e introducir el valor $4.5$, y hacer clic en el botón \boton{Simplificar} y después en el botón
+\boton{Aproximar}.
 \end{enumerate}
 Finalmente, para obtener el tiempo que tiene que pasar hasta que quede un $5\%$ del azúcar inical, es decir $13.6\cdot
 0.05=0.68$ kg:
 \begin{enumerate}[resume]
 \item Seleccionar la expresión correspondiente a la solución general de la ecuación diferencial.
-\item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $k$ e introducir el valor de la constante
-calculado antes, seleccionar la variable $y$ e introducir el valor $0.68$, y hacer clic en el botón \boton{Simplificar}.
-\item Hacer clic en el botón \boton{Resolver o despejar}, seleccionar el domino Real y hacer clic en el botón
-\boton{Simplicar}.
+\item Hacer clic en el botón \boton{Sustituir}, seleccionar la variable $k$ e introducir el valor de la constante calculado antes,
+seleccionar la variable $y$ e introducir el valor $0.68$, y hacer clic en el botón \boton{Simplificar} y después en el botón
+\boton{Aproximar}.
 \end{enumerate}
-}
 \end{indicacion}
 
 \end{enumerate}
