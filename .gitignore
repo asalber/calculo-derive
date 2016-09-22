@@ -23,6 +23,5 @@
 *.out
 *.synctex.gz
 tmp/*
-/practicas_derive.pdf
-/practicas_derive.ps
+
 /tmp/
