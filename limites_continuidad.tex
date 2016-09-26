@@ -249,53 +249,75 @@ tendencia (izquierda, derecha, o ambas).
 \end{enumerate}
 
 
-\item Para la función $\ln(x^2-1)$, se pide: 
-\begin{enumerate}
-\item Representar la gráfica. A la vista de la gráfica, ¿que tipo de asíntotas crees que tiene la función?
-\begin{indicacion}
-\begin{enumerate}
-\item Para representar la gráfica, seguimos el proceso comentado en apartados anteriores (introducir la expresión, acceder a la ventana 2D,
-y utilizar el botón \boton{Representar Expresiones}).
-\item Para determinar, de forma gráfica, la presencia de asíntotas, hay que ver si la gráfica tiende a una forma rectilínea en $\pm \infty$,
-con lo que tendríamos una asíntota horizontal (tendencia a una recta horizontal), u oblicua (si la tendencia es a una recta de pendiente no
-nula); y también ver si la gráfica tiende a parecerse a una recta vertical en algún valor concreto de la variable, con lo cual tendríamos
-una asíntota vertical en dicho punto.
-\end{enumerate}
-\end{indicacion}
-
-\item Calcular los límites cuando $x$ tiende a $1$ por la derecha
-y a $-1$ por la izquierda para demostrar la presencia de asíntotas
-verticales.
-
-\begin{indicacion}
-Utilizar el botón \boton{Calcular un Límite}, y escoger la variable, el punto y la tendencia. Si alguno de los límites realizados en igual a
-$+\infty$ ó $-\infty$, entonces sí que hay una asíntota vertical en los puntos considerados.
-\end{indicacion}
-
-\item Calcular los límites cuando $x$ tiende a $\pm\infty$ para analizar la presencia de asíntotas horizontales. ¿Qué se concluye a la vista
-de los resultados obtenidos?
-
-\begin{indicacion}
-\begin{enumerate}
-\item Para calcular los límites, proceder de la misma forma que en el punto anterior pero escogiendo el $\infty$ de la barra de operadores y
-constantes. En cuanto a la tendencia, a pesar de que a $+\infty$ sólo se puede tender desde la izquierda, y a $-\infty$ desde la derecha, en
-los límites en $\pm\infty$ da igual la forma de tendencia que escojamos.
-\item En cuanto a la presencia o no de asíntotas horizontales, es necesario que los límites anteriores valgan 0.
-\end{enumerate}
-\end{indicacion}
-
-\item Calcular los límites cuando $x$ tiende a $\pm\infty$ de la función dividida entre $x$ para analizar la presencia de asíntotas
-oblicuas. ¿Qué se concluye a la vista de los resultados obtenidos?.
-\begin{indicacion}
-Recordar que, en caso de que la función tenga asíntotas oblicuas, la pendiente de la asíntota en $+\infty$ vendría dada por:
+\item Dada la función 
 \[
-m = \mathop {\lim }\limits_{x \to  + \infty } \frac{{f(x)}} {x}
+f(x)=
+\begin{cases}
+\dfrac{x}{x-2} & \mbox{si $x\leq 0$;}\\
+\dfrac{x^2}{2x-6} & \mbox{si $x>0$;}
+\end{cases}
 \]
-e igual en $-\infty$, cambiando el $+\infty$ por $-\infty$.
+\begin{enumerate}
+\item Dibujar la gráfica de $f$ y determinar gráficamente si existen asíntotas.
+\begin{indicacion}
+\begin{enumerate}
+\item Introducir la expresión \comando{f(x) := x/(x-2) CHI(-inf,x,0) + x\^{}2/(2x-6) CHI(0,x,inf)} en la ventana de Álgebra y seleccionarla.
+\item Abrir una nueva ventana de gráficos en 2D con el menú \menu{Ventana > Nueva Ventana 2D} y selccionar el menú \menu{Ventana -> Mosaico Vertical} para ver la ventana de Álgebra y la de gráficos al mismo tiempo.  
+\item Hacer clic en el botón \boton{Representar Expresión} en la ventana gráfica.
+\end{enumerate}
+\end{indicacion}
 
-Por lo tanto, se divide la función entre $x$ y se procede a calcular los límites anteriores mediante el botón \boton{Calcular un límite}.
-Si los límites obtenidos valen 0, quiere decir que no hay asíntotas oblicuas, que la tendencia creciente de la función es menos marcada que
-la de cualquier recta con pendiente no nula.
+\item Calcular las asíntotas verticales de $f$.
+\begin{indicacion}
+El único punto donde la función no está definida es $x=3$.
+Para ver si existe asíntota vertical en ese punto hay que calcular el límite en el punto.
+\begin{enumerate}
+\item Seleccionar el nombre de la función en la ventana de Álgebra.
+\item Seleccionar el menú \menu{Cálculo > Limites} o hacer clic en el botón \boton{Límites}.
+\item En el cuadro de diálogo que aparece introducir 3 en el campo \campo{Punto}, seleccionar la opción \opcion{Izquierda} en la lista \campo{Tendiendo por} y hacer clic en el botón \boton{Simplificar}. 
+\item Repetir los tres pasos anteriores pero seleccionando la opción \opcion{Derecha} en la lista \campo{Tendiendo por}.
+\item Comprobar si el resultado tiene sentido mirando la gráfica.
+\end{enumerate}
+Existe una asíntota vertical en $x=3$ si alguno de los límites es infinito.
+En tal caso, introducir la expresión de la asíntota en la ventana de Álgebra y hacer clic en el botón \boton{Representar expresión} de la ventana gráfica.
+\end{indicacion}
+
+\item Calcular las asíntotas horizontales de $f$.
+\begin{indicacion}
+Para ver si existen asíntotas horizontales hay que calcular los límites en infinito.
+\begin{enumerate}
+\item Seleccionar el nombre de la función en la ventana de Álgebra.
+\item Seleccionar el menú \menu{Cálculo > Limites} o hacer clic en el botón \boton{Limite}.
+\item En el cuadro de diálogo que aparece introducir \comando{-inf} en el campo \campo{Punto} y hacer clic en el \boton{Simplificar}. 
+\item Repetir los tres pasos anteriores pero introduciendo \comando{inf} en el campo \campo{Punto}.
+\item Comprobar si el resultado tiene sentido mirando la gráfica.
+\end{enumerate}
+Existe una asíntota horizontal $y=a$ si alguno de los límites es $a$.
+En tal caso, introducir la expresión de la asíntota en la ventana de Álgebra y hacer clic en el botón \boton{Representar expresión} de la ventana gráfica.
+\end{indicacion}
+
+\item Calcular las asíntotas oblicuas de $f$.
+\begin{indicacion}
+Para ver si existen asíntotas oblicuas hay que calcular el límite en infinito de la función divida por $x$.
+Para ver si existe asíntota oblicua en $-\infty$, seguir los pasos siguientes:
+\begin{enumerate}
+\item Introducir la expresión \comando{f(x)/x} en la ventana de Álgebra y seleccionarla.
+\item Seleccionar el menú \menu{Cálculo > Limites} o hacer clic en el botón \boton{Limite}.
+\item En el cuadro de diálogo que aparece introducir \comando{-inf} en el campo \campo{Punto} y hacer clic en el \boton{Simplificar}. 
+\end{enumerate}
+Existe asíntota oblicua $y=ax+b$ si el resultado del límite es $a$.
+En tal caso $a$ es la pendiente de la asíntota. 
+Para obtener el término independiente hay que calcular el límite en infinito de la función menos $ax$.
+\begin{enumerate}
+\item Introducir la expresión \comando{f(x)-ax}, donde \comando{a} es el valor del límite anterior, en la ventana de Álgebra y seleccionarla.
+\item Seleccionar el menú \menu{Cálculo > Limites} o hacer clic en el botón \boton{Limite}.
+\item En el cuadro de diálogo que aparece introducir \comando{-inf} en el campo \campo{Punto} y hacer clic en el \boton{Simplificar}. 
+\end{enumerate}
+El término independiente de la asíntota oblicua es el resultado del límite. 
+
+Para ver si hay asíntota oblicua en $\infty$ repetir todos los pasos pero introduciendo \comando{inf} en el campo \campo{Punto}.
+ 
+Si existe alguna asíntota oblicua introducir la expresión de la asíntota en la ventana de Álgebra y hacer clic en el botón \boton{Representar expresión} de la ventana gráfica.
 \end{indicacion}
 \end{enumerate}
 
