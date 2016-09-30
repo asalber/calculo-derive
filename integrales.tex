@@ -291,13 +291,13 @@ $OY$, entre los planos $y=a$ e $y=b$, mediante:
 \begin{indicacion}
 \begin{enumerate}
 \item Introducir la expresión \comando{x\^{}2 log(x)} en la ventana de Álgebra.
-\item Seleccionar el menu \menu{Calculo > Integrales} o hacer clic en el botón \boton{Calcular integral}.
-\item En el cuadro de diálogo que aparece marcar la opción \option{Indefinida}, introducir la constante \comando{C} en el campo \campo{Constante} y hacer clic en el botón \boton{Simplificar}.
+\item Seleccionar el menú \menu{Calculo > Integrales} o hacer clic en el botón \boton{Calcular integral}.
+\item En el cuadro de diálogo que aparece marcar la opción \opcion{Indefinida}, introducir la constante \comando{C} en el campo \campo{Constante} y hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
 Una manera más rápida de calcular la integral es introduciendo la expresión \comando{INT(x\^{}2 log(x), x, C)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplificar}.
 \end{indicacion}
 
-\item $\int \log(\log x)\,dx$
+\item $\displaystyle \int \frac{\log(\log x)}{x}\,dx$
 \begin{indicacion}
 Introducir la expresión \comando{INT(log(log(x)), x, C)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplicar}.
 \end{indicacion}
@@ -321,7 +321,7 @@ Introducir la expresión \comando{INT((6x+5)/((x\^{}2+x+1)\^{}2), x, C)} en la v
 \begin{enumerate}
 \item Introducir la expresión \comando{x\^{}3/(x\^{}2+x+1)} en la ventana de Álgebra.
 \item Seleccionar el menú \menu{Cálculo > Integrales} o hacer clic en el botón \boton{Calcular integral}.
-\item En el cuadro de diálogo que aparece marcar la opción \option{Definida}, introducir \comando{-1/2} en el campo \campo{Límite inferior}, introducir \comando{0} en el campo \campo{Límite superior} y hacer clic en el botón \boton{Simplificar}.
+\item En el cuadro de diálogo que aparece marcar la opción \opcion{Definida}, introducir \comando{-1/2} en el campo \campo{Límite inferior}, introducir \comando{0} en el campo \campo{Límite superior} y hacer clic en el botón \boton{Simplificar}.
 \end{enumerate}
 Una manera más rápida de calcular la integral es introduciendo la expresión \comando{INT(x\^{}3/(x\^{}2+x+1), x, -1/2, 0)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplificar}.
 \end{indicacion}
@@ -360,7 +360,7 @@ Para dibujar la región introducir la expresión \comando{x>2 $\wedge$ x<7 $\wed
 
 \item Calcular y dibujar el área comprendida entres las funciones $\sen x$ y $\cos x$ en el intervalo $[0,2\pi]$.
 \begin{indicacion}
-To plot the area:
+Para dibujar la región:
 \begin{enumerate}
 \item Definir la primera función introduciendo la expresión \comando{f(x):=sin x} en la ventana de Álgebra.
 \item Abrir una nueva ventana gráfica con el menú \menu{Ventana > Nueva Ventana 2D} y seleccionar el menú \menu{Ventana -> Mosaico Vertical} para ver la ventana de Álgebra y la ventana gráfica a la vez.
@@ -368,22 +368,20 @@ To plot the area:
 \item Definir la segunda función introduciendo la expresión \comando{f(x):=cos x} en la ventana de Álgebra y haciendo clic en el botón \boton{Representar Expresión} en la ventana gráfica.
 \item Introducir la expresión \comando{x>0 $\wedge$ x<2pi $\wedge$ y>MIN(f(x),g(x)) $\wedge$ y<MAX(f(x),g(x))} en la ventana de Álgebra y hacer clic en el botón \boton{Plot} en la ventana gráfica.
 \end{enumerate}
-Para calcular el area de la región introducir la expresión \comando{INT(ABS(f(x)-g(x)), x, 0, 2pi)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+Para calcular el área de la región introducir la expresión \comando{INT(ABS(f(x)-g(x)), x, 0, 2pi)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
 \end{indicacion}
 
 
-\item  Representar gráficamente la región del primer cuadrante limitada por la parábola $y^{2}=8x$, la recta $x=2$ y el eje $OX$, y hallar
-el volumen generado en la rotación alrededor del eje $OX$ de la región anterior.
+\item  Representar gráficamente la región del primer cuadrante limitada por la parábola $y^{2}=8x$, la recta $x=2$ y el eje $OX$, y hallar el volumen generado en la rotación alrededor del eje $OX$ de la región anterior.
 \begin{indicacion}
+Para dibujar la región:
 \begin{enumerate}
-\item Se introduce \verb|y^2=8x| en la línea de edición, se pincha en el botón \boton{Ventana 2D} de la barra de botones para acceder
-al entorno de gráficos de dos dimensiones, y una vez allí se pincha en el botón \boton{Representar Expresión}.
-\item Para volver a la Ventana de Álgebra se pincha en el botón \boton{Activar la Ventana de Álgebra}, y una vez en ella se realiza lo
-indicado en el apartado anterior con la expresión \verb|x=2| y se observa en la gráfica la región del primer cuadrante limitada por la
-parábola $y^{2}=8x$, la recta $x=2$ y el eje $OX$.
-\item Para calcular el volumen generado en la rotación alrededor del eje $OX$ de la región anterior, se calcula la integral de $\pi8x$ entre
-$0$ y $2$, siguiendo las indicaciones incluidas en el primer apartado del segundo ejercicio.
+\item Definir la función introduciendo la expresión  \comando{f(x):=sqrt(8x)} en la ventana de Álgebra.
+\item Abrir una nueva ventana gráfica con el menú \menu{Ventana > Nueva Ventana 2D} y seleccionar el menú \menu{Ventana -> Mosaico Vertical} para ver la ventana de Álgebra y la ventana gráfica a la vez.
+\item Hacer clic en el botón \boton{Representar Expresión} en la ventana gráfica.
+\item Introducir la expresión \comando{x>0 $\wedge$ x<2 $\wedge$ y>0 $\wedge$ y<f(x)} en la ventana de Álgebra y hacer clic en el botón \boton{Representar Expresión} en la ventana gráfica.
 \end{enumerate}
+Para calcular el volumen del sólido de revolución introducir la expresión \comando{INT(pi f(x)\^{}2, x, 0, 2)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
 \end{indicacion}
 
 \end{enumerate}
