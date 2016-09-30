@@ -287,74 +287,88 @@ $OY$, entre los planos $y=a$ e $y=b$, mediante:
 \begin{enumerate}[leftmargin=*]
 \item Calcular las siguientes integrales:
 \begin{enumerate}
-\item $ \int{x^{2} \log{x}\,dx}$
+\item $ \int{x^2 \log x\,dx}$
 \begin{indicacion}
-Introducir \verb|x\^2log(x)| en la línea de edición. Utilizar el menú \menu{Cálculo > Integrales}, eligiendo \opcion{Integral Indefinida},
-\opcion{Constante} $c$ y pinchar en el botón \boton{Simplificar}.
-\end{indicacion}
-
-\item $ \dint{\dfrac{5x^{2}+4x+1}{x^{5}-2x^{4}+2x^{3}-2x^{2}+x}\,dx}$
-\begin{indicacion}
-Introducir la expresión \verb|(5x^2+4x+1)/(x^5-2x^4+2x^3-2x^2+x)| en la línea de edición y proceder de la forma indicada en el apartado
-anterior.
-\end{indicacion}
-
-\item $ \dint{\dfrac{6x+5}{(x^{2}+x+1)^{2}}\,dx}$
-\begin{indicacion}
-Introducir la expresión \verb|(6x+5)/((x^2+x+1)^2)| en la línea de edición y proceder de la forma indicada en el apartado anterior.
-\end{indicacion}
-\end{enumerate}
-
-
-\item Calcular las siguientes integrales:
 \begin{enumerate}
-\item $ \dint^{0}_{-\frac{1}{2}}{\dfrac{x^{3}}{x^{2}+x+1}}\,dx$
-\begin{indicacion}
-Introducir \verb|x^3/(x^2+x+1)| en la línea de edición. 
-Utilizar el menú \menu{Cálculo > Integrales} y elegir \opcion{Integral Definida}.
-Introducir \verb|-1/2| en \opcion{Límite Inferior} y \verb|0| en \opcion{Límite Superior}, y pinchar en \boton{Simplificar}.
+\item Introducir la expresión \comando{x\^{}2 log(x)} en la ventana de Álgebra.
+\item Seleccionar el menu \menu{Calculo > Integrales} o hacer clic en el botón \boton{Calcular integral}.
+\item En el cuadro de diálogo que aparece marcar la opción \option{Indefinida}, introducir la constante \comando{C} en el campo \campo{Constante} y hacer clic en el botón \boton{Simplificar}.
+\end{enumerate}
+Una manera más rápida de calcular la integral es introduciendo la expresión \comando{INT(x\^{}2 log(x), x, C)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplificar}.
 \end{indicacion}
 
-\item $ \dint^{4}_{2}{\dfrac{\sqrt{16-x^{2}}}{x}\,dx}$
+\item $\int \log(\log x)\,dx$
 \begin{indicacion}
-Introducir la expresión \verb|sqrt(16-x^2)/x| en la línea de edición y proceder de la forma indicada en el apartado anterior,
-introduciendo los valores \verb|2| y \verb|4| en \opcion{Límite Inferior} y \opcion{Límite Superior} respectivamente.
+Introducir la expresión \comando{INT(log(log(x)), x, C)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplicar}.
 \end{indicacion}
 
-\item $ \dint^{\frac{\pi}{2}}_{0}{\dfrac{dx}{3+\cos(2x)}}$
+\item $\displaystyle \int \frac{5x^{2}+4x+1}{x^{5}-2x^{4}+2x^{3}-2x^{2}+x}\,dx$
 \begin{indicacion}
-Introducir la expresión \verb|1/(3+cos(2x))| y proceder de la forma indicada en el apartado anterior, introduciendo los valores
-\verb|0| y \verb|pi/2| en \opcion{Límite Inferior} y \opcion{Límite Superior} respectivamente.
+Introducir la expresión \comando{INT((5x\^{}2+4x+1)/(x\^{}5-2x\^{}4+2x\^{}3-2x\^{}2+x), x, C)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplificar}.
+\end{indicacion}
+
+\item $\displaystyle \int \frac{6x+5}{(x^{2}+x+1)^{2}}\,dx$
+\begin{indicacion}
+Introducir la expresión \comando{INT((6x+5)/((x\^{}2+x+1)\^{}2), x, C)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplificar}.
 \end{indicacion}
 \end{enumerate}
 
 
-\item Calcular la siguiente integral
-\[
-\  \dint_{2}^{\infty}{x^{2}e^{-x}\,dx}.
-\]
+\item Calcular las siguientes integrales definidas:
+\begin{enumerate}
+\item $\displaystyle \int_{-\frac{1}{2}}^0 \frac{x^{3}}{x^{2}+x+1}\,dx$
 \begin{indicacion}
-Introducir la expresión \verb|x^2exp(-x)| en la línea de edición y seguir las indicaciones del el primer apartado del ejercicio anterior,
-introduciendo los valores \verb|2| e \verb|inf| en \opcion{Límite Inferior} y \opcion{Límite Superior} respectivamente.
+\begin{enumerate}
+\item Introducir la expresión \comando{x\^{}3/(x\^{}2+x+1)} en la ventana de Álgebra.
+\item Seleccionar el menú \menu{Cálculo > Integrales} o hacer clic en el botón \boton{Calcular integral}.
+\item En el cuadro de diálogo que aparece marcar la opción \option{Definida}, introducir \comando{-1/2} en el campo \campo{Límite inferior}, introducir \comando{0} en el campo \campo{Límite superior} y hacer clic en el botón \boton{Simplificar}.
+\end{enumerate}
+Una manera más rápida de calcular la integral es introduciendo la expresión \comando{INT(x\^{}3/(x\^{}2+x+1), x, -1/2, 0)} en la ventana de Álgebra y haciendo clic en el botón \boton{Simplificar}.
 \end{indicacion}
+
+\item $\displaystyle \int_2^4 \frac{\sqrt{16-x^{2}}}{x}\,dx$
+\begin{indicacion}
+Introducir la expresión \comando{INT(sqrt(16-x\^{}2)/x, x, 2, 4)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+\end{indicacion}
+
+\item $\displaystyle \int_0^{\frac{\pi}{2}} \frac{dx}{3+\cos(2x)}$
+\begin{indicacion}
+Introducir la expresión \comando{INT(sqrt(1/(3+cos(2x), x, 0, pi/2)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+\end{indicacion}
+\end{enumerate}
+
+\item Calcular la siguiente integral impropia
+$\int_2^{\infty} x^2e^{-x}\,dx$.
+\begin{indicacion}
+Introducir la expresión \comando{INT(x\^{}2 exp(-x), x, 2, inf)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+\end{indicacion}
+
 
 
 \item Representar la parábola $y=x^{2}-7x+6$, y calcular el área limitada por dicha parábola, el eje de abscisas y las rectas $x=2$ y $x=6$.
 \begin{indicacion}
+Para dibujar la gráfica de la parábola:
 \begin{enumerate}
-\item Introducir la expresión \verb|x^2-7x+6| en la línea de edición, se pincha en el botón \boton{Ventana 2D} de la barra de botones
-para acceder al entorno de gráficos de dos dimensiones, y una vez allí se pincha en el botón \boton{Representar Expresión}.
-\item Para volver a la Ventana de Álgebra se pincha en el botón \boton{Activar la Ventana de Álgebra}, y una vez en ella se realiza lo
-indicado en el apartado anterior sucesivamente con las expresiones \verb|x=2| y \verb|x=6| para obtener sus representaciones gráficas.
-\item Puede observarse en la gráfica que, entre $x=2$ y $x=6$, la parábola $y=x^{2}-7x+6$ se encuentra por debajo del eje de abscisas, por
-lo que si se calcula el valor de la integral definida de $x^{2}-7x+6$ entre esos límites el resultado será negativo. Para hallar el área
-encerrada habrá que cambiar el signo al resultado.
-\item Seleccionar la expresión de la parábola, el menú \menu{Cálculo > Integrales} y elegir \opcion{Integral Definida}. Introducir
-\verb|2| en \opcion{Límite Inferior} y \verb|6| en \opcion{Límite Superior}, y pinchar en \boton{Simplificar}. El área buscada será el
-número obtenido cambiado de signo.
-\item También podría haberse hallado el área pedida calculando la integral definida de $-(x^{2}-7x+6)$, o la de $|x^{2}-7x+6|$, entre $x=2$
-y $x=6$.
+\item Definir la función en la ventana de Álgebra introduciendo la expresión \comando{f(x):=x\^{}2-7x+6}.
+\item Abrir una nueva ventana gráfica con el menú \menu{Ventana > Nueva Ventana 2D} y seleccionar el menú \menu{Ventana -> Mosaico Vertical} para ver la ventana de Álgebra y la ventana gráfica a la vez.
+\item Hacer clic en el botón \boton{Representar expresión} en la ventana gráfica.
 \end{enumerate}
+Para calcular el área de la región introducir la expresión \comando{INT(ABS(f(x)), x, 2, 7)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+
+Para dibujar la región introducir la expresión \comando{x>2 $\wedge$ x<7 $\wedge$ y>MIN(0,f(x)) $\wedge$ y<MAX(0,f(x))} en la ventana de Álgebra y hacer clic en el botón \boton{Representar expresión} en la ventana gráfica.
+\end{indicacion}
+
+\item Calcular y dibujar el área comprendida entres las funciones $\sen x$ y $\cos x$ en el intervalo $[0,2\pi]$.
+\begin{indicacion}
+To plot the area:
+\begin{enumerate}
+\item Definir la primera función introduciendo la expresión \comando{f(x):=sin x} en la ventana de Álgebra.
+\item Abrir una nueva ventana gráfica con el menú \menu{Ventana > Nueva Ventana 2D} y seleccionar el menú \menu{Ventana -> Mosaico Vertical} para ver la ventana de Álgebra y la ventana gráfica a la vez.
+\item Hacer clic en el botón \boton{Representar Expresión} en la ventana gráfica.
+\item Definir la segunda función introduciendo la expresión \comando{f(x):=cos x} en la ventana de Álgebra y haciendo clic en el botón \boton{Representar Expresión} en la ventana gráfica.
+\item Introducir la expresión \comando{x>0 $\wedge$ x<2pi $\wedge$ y>MIN(f(x),g(x)) $\wedge$ y<MAX(f(x),g(x))} en la ventana de Álgebra y hacer clic en el botón \boton{Plot} en la ventana gráfica.
+\end{enumerate}
+Para calcular el area de la región introducir la expresión \comando{INT(ABS(f(x)-g(x)), x, 0, 2pi)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
 \end{indicacion}
 
 
