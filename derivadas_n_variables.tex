@@ -290,6 +290,39 @@ Dado un punto crítico $a=(x_0,y_0)$ de un campo escalar $f(x,y)$ que tiene matr
 
 \section{Ejercicios resueltos}
 \begin{enumerate}[leftmargin=*]
+\item Calcular la recta tangente y el plano normal a la trayectoria
+\[
+f(t)=
+\begin{cases}
+x=\sin(t),\\
+y=\cos(t),\\
+z=\sqrt(t),
+\end{cases}
+\quad t\in \mathbb{R};
+\] 
+en el instante $t=1$ y dibujarlos.
+  
+\begin{indicacion}
+Para dibujar la trayectoria:
+\begin{enumerate}
+\item Definir la función introduciendo la expresión \comando{f(t):=[sin(t),cos(t),sqrt(t)]} en la ventana de Álgebra.
+\item Abrir una nueva venta gráfica en 3D con el menú \menu{Ventana > Nueva Ventana 3D} y seleccionar el menú \menu{Ventana > Mosaico Vertical} para ver al mismo tiempo la venta de Álgebra y la ventana gráfica.
+\item Hacer clic en el botón \boton{Representar} de la ventana gráfica.
+\end{enumerate}
+Para calcular la recta tangente y dibujar su gráfica:
+\begin{enumerate}
+\item Introducir la expresión \comando{f(1)} en la ventana de Álgebra.
+\item Hacer clic en el botón \boton{Representar} de la ventana gráfica.
+\item Introducir la expresión \comando{f(1)+tf'(1)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+\item Hacer clic en el botón \boton{Representar} de la ventana gráfica.
+\end{enumerate}
+Para calcular el plano normal y dibujar su gráfica:
+\begin{enumerate}
+\item Introducir la expresión \comando{([x,y,z]-f(1))f'(1)=0} en la ventana de Álgebra y hacer clic en el botón \boton{Simplificar}.
+\item Hacer clic en el botón \boton{Representar} de la ventana gráfica.
+\end{enumerate}
+\end{indicacion}    
+  
 \item Dada la función $f(x,y)=y^2-x^2$, se pide:
 \begin{enumerate}
 \item Dibujar su gráfica. 
@@ -301,14 +334,14 @@ Dado un punto crítico $a=(x_0,y_0)$ de un campo escalar $f(x,y)$ que tiene matr
 \end{enumerate}
 \end{indicacion}
 
-\item Dibujar las curvas de nivel $f(x,y)=k$, para valores enteros de $k$ desde 1 hasta 5.
-\begin{indicacion}
-\begin{enumerate}
-\item Introducir la ecuación \comando{f(x,y)=k} para cada valor de $k$.
-\item Hacer clic sobre el botón \boton{Ventana 2D} para pasar a la ventana de gráficas 2D.
-\item Hacer clic sobre el botón \boton{Representar Expresión}).
-\end{enumerate}
-\end{indicacion}
+% \item Dibujar las curvas de nivel $f(x,y)=k$, para valores enteros de $k$ desde 1 hasta 5.
+% \begin{indicacion}
+% \begin{enumerate}
+% \item Introducir la ecuación \comando{f(x,y)=k} para cada valor de $k$.
+% \item Hacer clic sobre el botón \boton{Ventana 2D} para pasar a la ventana de gráficas 2D.
+% \item Hacer clic sobre el botón \boton{Representar Expresión}).
+% \end{enumerate}
+% \end{indicacion}
 
 \item Dibujar el plano $x=1$. ¿Qué figura forma la intersección de este plano con la gráfica de $f$?
 \begin{indicacion}
@@ -368,25 +401,12 @@ Dado un punto crítico $a=(x_0,y_0)$ de un campo escalar $f(x,y)$ que tiene matr
 \item  $\dfrac{\partial }{\partial V}\dfrac{nRT}{V}.$
 
 \begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión en Derive.
-\item Hacer click sobre el \boton{Hallar una derivada}.
-\item En el cuadro de diálogo que aparece, en la lista de hipotéticas variables en las que podemos derivar
-(evidentemente, para Derive tanto $n$ como $R$ también son variables), seleccionar la variable $V$, introducir el orden
-$1$ y hacer clic en el botón \boton{Simplificar}.
-\end{enumerate}
+Introducir la expresión \comando{DIF(nRT/V, V)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplicar}.
 \end{indicacion}
 
-\item  $\dfrac{\partial ^{2}}{\partial x\partial y}e^{x+y}\ $sen$\ \dfrac{x}{y}.$
+\item  $\dfrac{\partial ^{2}}{\partial x\partial y}e^{x+y}\sen(x/y).$
 \begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión \comando{sin(x)}.
-\item Hacer clic sobre el botón \boton{Hallar una derivada}, y en el cudadro de diálogo que aparece
-seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
-\item Una vez obtenida primera derivada con respecto a $y$, para obtener la segunda con respecto a $x$, seleccionamos la
-expresión obtenida en el apartado anterior y volvemos a repetir el proceso pero seleccionando la variable
-$x$.
-\end{enumerate}
+Introducir la expresión \comando{DIF(DIF(exp(x+y)sin(x/y), y), x)} en la ventana de Álgebra y hacer clic en el botón \boton{Simplicar}.
 \end{indicacion}
 \end{enumerate}
 
@@ -419,72 +439,75 @@ $x$.
 \end{enumerate} 
 
 
-\item Dada la función
-\[
-f(x,y,z)=\sen((x^2-y^2)z)
-\]
-\begin{enumerate}
-\item Definir la función.
-\begin{indicacion}
-Introducir la expresión \comando{f(x,y,z):=sin((x\^{}2-y\^{}2)z)}.
-\end{indicacion}
-
-\item Calcular su vector gradiente en el punto $(0,-1,\pi/2)$.
-\begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión \comando{f'(0,-1,pi/2)}.
-\item Hacer clic sobre el botón \boton{Simplificar}.
-\end{enumerate}
-\end{indicacion}
-
-\item Calcular su matriz Hessiana en el punto $(0,-1,\pi/2)$.
-\begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión \comando{f''(0,-1,pi/2)}.
-\item Hacer clic sobre el botón \boton{Simplificar}.
-\end{enumerate}
-\end{indicacion}
-
-\item Comprobar que se cumple el teorema Schwartz de las derivadas para las derivas cruzadas:
-\begin{enumerate}
-\item $\dfrac{{\partial ^3 f}} {{\partial x\partial z\partial y}}$
-\begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión \comando{f(x,y,z)}.
-\item Hacer clic sobre el botón \boton{Hallar una derivada}.
-\item En el cuadro de diálogo que aparece seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
-\item Repetir el proceso con la expresión resultante, seleccionando esta vez la variables $z$.
-\item Repetir una vez más el proceso con la expresión resultante, seleccionando esta vez la variables $x$.
-\end{enumerate}
-\end{indicacion}
-
-\item $\dfrac{{\partial ^3 f}} {{\partial z\partial x\partial y}}$
-\begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión \comando{f(x,y,z)}.
-\item Hacer clic sobre el botón \boton{Hallar una derivada}.
-\item En el cuadro de diálogo que aparece seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
-\item Repetir el proceso con la expresión resultante, seleccionando esta vez la variables $x$.
-\item Repetir una vez más el proceso con la expresión resultante, seleccionando esta vez la variables $z$.
-\end{enumerate}
-\end{indicacion}
-\end{enumerate}
-
-¿Puedes predecir el valor de $\dfrac{{\partial ^3 f}} {{\partial y\partial x\partial z}}$?
-\end{enumerate}
+% \item Dada la función
+% \[
+% f(x,y,z)=\sen((x^2-y^2)z)
+% \]
+% \begin{enumerate}
+% \item Definir la función.
+% \begin{indicacion}
+% Introducir la expresión \comando{f(x,y,z):=sin((x\^{}2-y\^{}2)z)}.
+% \end{indicacion}
+% 
+% \item Calcular su vector gradiente en el punto $(0,-1,\pi/2)$.
+% \begin{indicacion}
+% \begin{enumerate}
+% \item Introducir la expresión \comando{f'(0,-1,pi/2)}.
+% \item Hacer clic sobre el botón \boton{Simplificar}.
+% \end{enumerate}
+% \end{indicacion}
+% 
+% \item Calcular su matriz Hessiana en el punto $(0,-1,\pi/2)$.
+% \begin{indicacion}
+% \begin{enumerate}
+% \item Introducir la expresión \comando{f''(0,-1,pi/2)}.
+% \item Hacer clic sobre el botón \boton{Simplificar}.
+% \end{enumerate}
+% \end{indicacion}
+% 
+% \item Comprobar que se cumple el teorema Schwartz de las derivadas para las derivas cruzadas:
+% \begin{enumerate}
+% \item $\dfrac{{\partial ^3 f}} {{\partial x\partial z\partial y}}$
+% \begin{indicacion}
+% \begin{enumerate}
+% \item Introducir la expresión \comando{f(x,y,z)}.
+% \item Hacer clic sobre el botón \boton{Hallar una derivada}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
+% \item Repetir el proceso con la expresión resultante, seleccionando esta vez la variables $z$.
+% \item Repetir una vez más el proceso con la expresión resultante, seleccionando esta vez la variables $x$.
+% \end{enumerate}
+% \end{indicacion}
+% 
+% \item $\dfrac{{\partial ^3 f}} {{\partial z\partial x\partial y}}$
+% \begin{indicacion}
+% \begin{enumerate}
+% \item Introducir la expresión \comando{f(x,y,z)}.
+% \item Hacer clic sobre el botón \boton{Hallar una derivada}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
+% \item Repetir el proceso con la expresión resultante, seleccionando esta vez la variables $x$.
+% \item Repetir una vez más el proceso con la expresión resultante, seleccionando esta vez la variables $z$.
+% \end{enumerate}
+% \end{indicacion}
+% \end{enumerate}
+% 
+% ¿Puedes predecir el valor de $\dfrac{{\partial ^3 f}} {{\partial y\partial x\partial z}}$?
+% \end{enumerate}
 
 \item Hallar la recta normal y el plano tangente a la superficie $S: x+2y-\log z +4 =0$ en el punto $(0,-2,1)$ y dibujarlos.
 \begin{indicacion}
 Para dibujar la gráfica de la superficie:
 \begin{enumerate}
-\item Introducir la expresión \comando{z=exp(x+2y+4)}.
-\item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana gŕafica 3D.
+\item Definir la función introduciendo la expresión \comando{f(x,y,z):=x+2y-log(z)+4} en la ventana de Álgebra.
+\item Introducir la expresión \comando{f(x,y,z)=0} en la ventana de Álgebra.
+\item Seleccionar el menú \menu{Resolver > Expresión}.
+\item En el cuadro de diálogo que aparece seleccionar la variable \opcion{z} en la lista \campo{Variables}, marcar la opción \opcion{Real} en el campo \campo{Dominio} y hacer clic en el botón \boton{Resolver}.
+\item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana gráfica 3D.
 \item Hacer clic en el botón \boton{Representar}.
 \end{enumerate}
 Para dibujar la gráfica de la recta normal:
 \begin{enumerate}[resume]
 \item Hacer clic en el botón \boton{Activar la ventana de Álgebra} para pasar a la ventana de expresiones.
-\item Definir la función introduciendo la expresión \comando{f(x,y,z):=x+2y-log z+4}.
+\item Introducir la expresión \comando{}
 \item Introducir la expresión \comando{[0,-2,1]+tf'(0,-2,1)}.
 \item Hacer clic en botón \boton{Simplificar}.
 \item Hacer clic en el botón \boton{Ventana 3D} para pasar a la ventana gŕafica 3D.
@@ -499,23 +522,23 @@ Para dibujar el plano tangente:
 \end{enumerate}
 \end{indicacion}
 
-\item La ecuación $x+y-2e^y+2=0$ define implícitamente una función $y=f(x)$ alrededor del punto $(0,0)$. Calcular
-$f'(0)$.
-\begin{indicacion}
-\begin{enumerate}
-\item Introducir la expresión \comando{x+y-2\#e\^{}y+2}.
-\item Hacer clic sobre el botón \boton{Hallar una derivada}.
-\item En el cuadro de diálogo que aparece seleccionar la variable $x$ y hacer clic en el botón \boton{Simplificar}. 
-\item Seleccionar de nuevo la expresión inicial.
-\item Hacer clic sobre el botón \boton{Hallar una derivada}.
-\item En el cuadro de diálogo que aparece seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
-\item Introducir la expresión \comando{-\#i/\#j} donde \comando{\#i} es la etiqueta de la expresión de la derivada
-parcial con respecto a $x$ y \comando{\#j} es la etiqueta de la expresión de la derivada parcial con respecto a $y$.
-\item Hacer clic sobre el botón \boton{Sustituir}.
-\item En el cuadro de diálogo que aparece, seleccionar $x$ e introducir el valor $0$, seleccionar $y$ e
-introducir el valor $0$, y hacer clic en el botón \boton{Simplificar}.
-\end{enumerate}
-\end{indicacion}
+% \item La ecuación $x+y-2e^y+2=0$ define implícitamente una función $y=f(x)$ alrededor del punto $(0,0)$. Calcular
+% $f'(0)$.
+% \begin{indicacion}
+% \begin{enumerate}
+% \item Introducir la expresión \comando{x+y-2\#e\^{}y+2}.
+% \item Hacer clic sobre el botón \boton{Hallar una derivada}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $x$ y hacer clic en el botón \boton{Simplificar}. 
+% \item Seleccionar de nuevo la expresión inicial.
+% \item Hacer clic sobre el botón \boton{Hallar una derivada}.
+% \item En el cuadro de diálogo que aparece seleccionar la variable $y$ y hacer clic en el botón \boton{Simplificar}.
+% \item Introducir la expresión \comando{-\#i/\#j} donde \comando{\#i} es la etiqueta de la expresión de la derivada
+% parcial con respecto a $x$ y \comando{\#j} es la etiqueta de la expresión de la derivada parcial con respecto a $y$.
+% \item Hacer clic sobre el botón \boton{Sustituir}.
+% \item En el cuadro de diálogo que aparece, seleccionar $x$ e introducir el valor $0$, seleccionar $y$ e
+% introducir el valor $0$, y hacer clic en el botón \boton{Simplificar}.
+% \end{enumerate}
+% \end{indicacion}
 
 \item Calcular la derivada direccional de la función $h(x,y)= 3x^2+y$ en el punto $(0,0)$, en la dirección del vector
 $(1,1)$.
@@ -568,7 +591,8 @@ hessiana anterior.
 \begin{enumerate}[leftmargin=*]
 \item Una nave espacial está en problemas cerca del sol. 
 Se encuentra en la posición $(1,1,1)$ y la temperatura de la nave cuando está en la posición $(x,y,z)$ viene dada por
-$T(x,y,z)=\mbox{e}^{-x^2-2y^2-3z^2}$ donde $x,y,z$ se miden en metros.
+\[T(x,y,z)=\mbox{e}^{-x^2-2y^2-3z^2},\]
+donde $x,y,z$ se miden en metros.
 ¿En qué dirección debe moverse la nave para que la temperatura decrezca lo más rápidamente posible?
 
 \item Calcular el vector gradiente, la matriz hessiana y el hessiano de la función
